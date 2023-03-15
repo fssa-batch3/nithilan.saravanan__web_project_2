@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login and Signup Page</title>
+	<link rel="stylesheet" href="man.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="form">
+			<h2>Login</h2>
+			<form>
+				<label for="usernma	"> Username</label>
+				<input type="text" id="username" required>
+
+
+				<label for="email">Email:</label>
+				<input type="email" id="email" required>
+
+
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" required>
+
+				<button onclick="oneheart()">Login</button>
+			</form>
+		</div>
+
+	</div>
+	<script>
+
+		function oneheart() {
+
+			let username = document.getElementById("username").value;
+			let email = document.getElementById("email").value;
+			let password = document.getElementById("password").value;
+
+
+
+
+			let user = localStorage.getItem("email")
+			let key = localStorage.getItem("password")
+			if (email == user && password == key) {
+				alert("enter")
+
+			} else {
+				alert(" email or password are wrong ")
+			}
+
+
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sign.css">
+</head>
+<body>
+    <div class="form">
+        <h2>Sign Up</h2>
+        <form>
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button  onclick="oneheart()">Sign Up</button>
+        </form>
+    </div>
+    <script>
+        
+        function oneheart() {
+       
+        let fullname= document.getElementById("fullname").value;
+        let email=document.getElementById("email").value;
+        let Username=document.getElementById("username").value;
+        let password=document.getElementById("password").value;
+
+        localStorage.setItem("fullname",fullname)
+        localStorage.setItem("email",email)
+        localStorage.setItem("username",Username)
+        localStorage.setItem("password",password)
+
+
+   
+        }
+
+
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../assets/css/register.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="form">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" id="first_name" placeholder="Enter your name" pattern="[A-Za-z]{0,32}" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" id="last_name" placeholder="Enter your username" pattern="[A-Za-z]{0,32}" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your email"
+              pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="phone_number" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" id="password" placeholder="Enter your password"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" id="confirm_password" placeholder="Confirm your password"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2, 3}$" required>
+          </div>
+        </div>
+              </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
+  </div>
+  <script>
+    function register() {
+      // getting values from user
+      const first_name = document.getElementById("first_name").value
+      const last_name = document.getElementById("last_name").value
+      const email = document.getElementById("email").value
+      const phone_number = document.getElementById("phone_number").value
+      const password = document.getElementById("password").value
+      const confirm_password = document.getElementById("confirm_password").value
+      //  initiating arr and objects
+      let user;
+      let res;
+      user = JSON.parse(localStorage.getItem("array")) ?? [];
+    if(password==confirm_password){
+      if (user == "") {
+        let user_data = {
+          "first_name": first_name,
+          "last_name": last_name,
+          "email": email,
+          "password": password
+        }
+        user.push(user_data)
+        localStorage.setItem("array", JSON.stringify(user))
+        window.location.href = "login.html"
+      }
+      else {
+        let check = JSON.parse(localStorage.getItem("array"))
+        check.find(e => {
+          if (e["email"] == email) {
+            return res = 1
+          }
+        })
+        if (res == 1) {
+          alert("email already taken")
+        }
+        else {
+          let user_data = {
+            "first_name": first_name,
+            "last_name": last_name,
+            "email": email,
+            "password": password
+          }
+          user.push(user_data)
+          localStorage.setItem("array", JSON.stringify(user))
+          window.location.href = "login.html"
+        }
+      }
+    }
+    else{
+    alert("password is not matched")
+  }
+  }
+    const form = document.getElementById("form");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      register()
+    })
+  </script>
+</body>
+</html>
