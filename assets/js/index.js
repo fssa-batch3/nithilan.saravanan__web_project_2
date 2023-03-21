@@ -618,21 +618,21 @@ function displayItems() {
     console.log(biriyaniData);
 
        // cards
-  let food_detail=JSON.parse(localStorage.getItem("food_details"));
+//   let food_detail=JSON.parse(localStorage.getItem("food_details"));
 //   food_detail.find((e)=>{
 //         if()
 //   })
 
-for(let j=0;j<=food_detail.length-1;j++){
+// for(let j=0;j<=food_detail.length-1;j++){
         
-    let image = document.createElement('img')
-    image.setAttribute('src',food_detail[j]["food_photo"]);
-    document.querySelector("#biriyani").append(image)
-    console.log(food_detail[j]["food_photo"]);
-    console.log(image)
+//     let image = document.createElement('img')
+//     image.setAttribute('src',food_detail[j]["food_photo"]);
+//     document.querySelector("#biriyani").append(image)
+//     console.log(food_detail[j]["food_photo"]);
+//     console.log(image)
 
 
-}
+// }
     biriyaniData.find(item => {
         // for(let i=0;i<biriyaniData.length;i++){
         let itemCard = document.createElement('div');
@@ -667,10 +667,21 @@ for(let j=0;j<=food_detail.length-1;j++){
         itemPrice.setAttribute('id', 'item-price');
         itemPrice.innerText = 'Price : ₹' + item.price;
 
+        let anchor=document.createElement("a");
+        anchor.setAttribute("href","#");
+        let btn=document.createElement("button");
+        btn.setAttribute("id","buynow");
+        btn.innerText="Buy now";
+        // btn.setAttribute("href","https://google.com/");
+        anchor.append(btn);
+        // itemCard.appendChild(anchor)
+        
+
         itemCard.appendChild(cardTop);
         itemCard.appendChild(img);
         itemCard.appendChild(itemName);
         itemCard.appendChild(itemPrice);
+        itemCard.appendChild(anchor)
         document.querySelector("#biriyani").append(itemCard)
         // biriyani.appendChild(itemCard);
 
@@ -713,11 +724,21 @@ for(let j=0;j<=food_detail.length-1;j++){
         let itemPrice = document.createElement('p');
         itemPrice.setAttribute('id', 'item-price');
         itemPrice.innerText = 'Price : ₹' + item.price;
+        let anchor=document.createElement("a");
+        anchor.setAttribute("href","#");
+        let btn=document.createElement("button");
+        btn.setAttribute("id","buynow");
+        btn.innerText="Buy now";
+        // btn.setAttribute("href","https://google.com/");
+        anchor.append(btn);
+        
 
         itemCard.appendChild(cardTop);
         itemCard.appendChild(img);
         itemCard.appendChild(itemName);
+        
         itemCard.appendChild(itemPrice);
+        itemCard.appendChild(anchor)
         document.querySelector("#chicken").append(itemCard)
         // biriyani.appendChild(itemCard);
 
@@ -760,6 +781,14 @@ for(let j=0;j<=food_detail.length-1;j++){
         let itemPrice = document.createElement('p');
         itemPrice.setAttribute('id', 'item-price');
         itemPrice.innerText = 'Price : ₹' + item.price;
+        let anchor=document.createElement("a");
+        anchor.setAttribute("href","#");
+        let btn=document.createElement("button");
+        btn.setAttribute("id","buynow");
+        btn.innerText="Buy now";
+        // btn.setAttribute("href","https://google.com/");
+        anchor.append(btn);
+        itemCard.appendChild(anchor)
 
         itemCard.appendChild(cardTop);
         itemCard.appendChild(img);
@@ -807,11 +836,20 @@ for(let j=0;j<=food_detail.length-1;j++){
         let itemPrice = document.createElement('p');
         itemPrice.setAttribute('id', 'item-price');
         itemPrice.innerText = 'Price : ₹' + item.price;
+        let anchor=document.createElement("a");
+        anchor.setAttribute("href","#");
+        let btn=document.createElement("button");
+        btn.setAttribute("id","buynow");
+        btn.innerText="Buy now";
+        // btn.setAttribute("href","https://google.com/");
+        anchor.append(btn);
 
         itemCard.appendChild(cardTop);
         itemCard.appendChild(img);
         itemCard.appendChild(itemName);
         itemCard.appendChild(itemPrice);
+        itemCard.appendChild(anchor)
+
         document.querySelector("#vegetable").append(itemCard)
         // biriyani.appendChild(itemCard);
 
@@ -853,11 +891,20 @@ for(let j=0;j<=food_detail.length-1;j++){
         let itemPrice = document.createElement('p');
         itemPrice.setAttribute('id', 'item-price');
         itemPrice.innerText = 'Price : ₹' + item.price;
+        let anchor=document.createElement("a");
+        anchor.setAttribute("href","#");
+        let btn=document.createElement("button");
+        btn.setAttribute("id","buynow");
+        btn.innerText="Buy now";
+        // btn.setAttribute("href","https://google.com/");
+        anchor.append(btn);
 
         itemCard.appendChild(cardTop);
         itemCard.appendChild(img);
         itemCard.appendChild(itemName);
         itemCard.appendChild(itemPrice);
+        itemCard.appendChild(anchor)
+
         document.querySelector("#chinise").append(itemCard)
         // biriyani.appendChild(itemCard);
 
@@ -900,10 +947,19 @@ for(let j=0;j<=food_detail.length-1;j++){
         itemPrice.setAttribute('id', 'item-price');
         itemPrice.innerText = 'Price : ₹' + item.price;
 
+        let anchor=document.createElement("a");
+        anchor.setAttribute("href","#");
+        let btn=document.createElement("button");
+        btn.setAttribute("id","buynow");
+        btn.innerText="Buy now";
+        // btn.setAttribute("href","https://google.com/");
+        anchor.append(btn);
+
         itemCard.appendChild(cardTop);
         itemCard.appendChild(img);
         itemCard.appendChild(itemName);
         itemCard.appendChild(itemPrice);
+        itemCard.appendChild(anchor)
         document.querySelector("#south-indian").append(itemCard)
         // biriyani.appendChild(itemCard);
 

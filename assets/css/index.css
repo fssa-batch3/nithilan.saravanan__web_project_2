@@ -120,8 +120,8 @@ margin-top: 40px;
 }
 
 #item-card{
-    width:190;
-    height:220px;
+    width:190px;
+    height:240px;
     padding: 10px;
     margin: 10px;
     display: inline-block;
@@ -129,6 +129,12 @@ margin-top: 40px;
     background: rgb(253,221,226);
     cursor: pointer;
     transition: 0.5s all ease-in-out;
+}
+#buynow{
+    height: 20px;
+    width: 60px;
+    background-color:chocolate;
+    border-radius: 10px;
 }
 #card-top{
     display: flex;
