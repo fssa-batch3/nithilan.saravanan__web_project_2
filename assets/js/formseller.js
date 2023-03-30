@@ -22,7 +22,7 @@ function formSubmit() {
 
 
     if(array.some((y)=>{
-        return y.food_Name==food_name
+        // return y.food_Name==food_name
     })){
         alert("this already taken")
 

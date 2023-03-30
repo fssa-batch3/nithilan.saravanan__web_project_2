@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../Assets/Css/signup.css">
+</head>
+<body>
+  <div class="register">
+    <div class="head">
+      <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+      <h5>Already member?<a href="#">Sign in</a></h5>
+    </div>
+    <div class="h2">
+      <h2>Sign up</h2>
+    </div>
+    <form action="" id="form" >
+      <label for="first_name">First Name :</label>
+      <input type="text" name="first_name" id="first_name" placeholder="first_name" required><br>
+      <label for="last_name">Last Name :</label>
+      <input type="text" name="last_name" id="last_name" placeholder="last_name" required><br>
+      <label for="email">Email :</label>
+      <input type="email" name="email" id="email" placeholder="Email" required><br>
+      <label for="phone_number">Phone Number :</label>
+      <input type="number" name="phone_number" id="phone_number" placeholder="Phone Number" required><br>
+      <label for="age">D.O.B :</label>
+      <input type="date" name="age" id="age" required><br>
+      <label for="password">Password :</label>
+      <input type="password" name="password" id="password" placeholder="Password" required><br>
+      <label for="password">CONFIRM PASSWORD :</label>
+      <input type="password" name="password" id="confirm_password" placeholder="Confirm Password" required><br>
+      <button type="submit" id="btn">Sign up</button>
+    </form>
+  </div>
+  <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
+  </script>
+  <script>
+    
+    
+    const form = document.querySelector("form");
+form.addEventListener("submit",e =>{
+  e.preventDefault();
+  signup()
+})
+
+function signup (){
+    let user;
+    if (JSON.parse(localStorage.getItem("user_details"))) {
+         user = JSON.parse(localStorage.getItem("user_details"))
+      } else {
+           user = [];
+    }
+const First_name = document.getElementById("first_name").value;
+const last_name = document.getElementById("last_name").value;
+const email = document.getElementById("email").value;
+const password = document.getElementById("password").value;
+const conpass = document.getElementById("confirm_password").value;
+const mobile = document.getElementById("phone_number").value
+let res;
+if (password==conpass) {
+    if (user.length==0){
+        res=0;
+    }
+    for (let i = 0; i < user.length; i++) {
+        if (user[i]["user_email"]==email) {
+            res = 1;
+           break;
+        }else{
+            res = 0;
+        }
+        }
+}else{
+    alert("password are not same")
+}
+if(res === 1){
+    alert("email is already is taken")
+}
+if (res === 0){
+    let user_data;
+    user_data = {
+        "user_name":First_name,
+        "second_name":last_name,
+        "user_email":email,
+        "user_Password":password,
+        "mobile":mobile
+        }
+        user.push(user_data);
+            localStorage.setItem("user_details",JSON.stringify(user));
+            window.location.href="./login.html";
+}
+}
+   
+  </script>
+</body>
+</html>
