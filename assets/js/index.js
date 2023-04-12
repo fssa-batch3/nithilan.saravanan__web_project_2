@@ -611,7 +611,7 @@ function cartToggle() {
 
 function displayItems() {
 
-    const productitems=JSON.parse(localStorage.getItem("food_details"));
+    const food_detail=JSON.parse(localStorage.getItem("food_details"));
     let biriyani = document.getElementById('biriyani');
 
     const biriyaniData = foodItem.filter(item => item.category == 'biryani');
@@ -623,16 +623,16 @@ function displayItems() {
 //         if()
 //   })
 
-// for(let j=0;j<=food_detail.length-1;j++){
+for(let j=0;j<=food_detail.length-1;j++){
         
-//     let image = document.createElement('img')
-//     image.setAttribute('src',food_detail[j]["food_photo"]);
-//     document.querySelector("#biriyani").append(image)
-//     console.log(food_detail[j]["food_photo"]);
-//     console.log(image)
+    let image = document.createElement('img')
+    image.setAttribute('src',food_detail[j]["food_photo"]);
+    document.querySelector("#south-indian").append(image)
+    console.log(food_detail[j]["food_photo"]);
+    console.log(image);
 
 
-// }
+}
     biriyaniData.find(item => {
         // for(let i=0;i<biriyaniData.length;i++){
         let itemCard = document.createElement('div');
