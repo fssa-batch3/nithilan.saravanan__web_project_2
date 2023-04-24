@@ -1,4 +1,6 @@
-import { cartData, flag } from './index';
+
+import { cartData, flag} from './index.js'
+
 
 export function cartToggle() {
     if (cartData.length > 0) {

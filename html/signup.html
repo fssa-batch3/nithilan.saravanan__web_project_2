@@ -18,19 +18,25 @@
     </div>
     <form action="" id="form" >
       <label for="first_name">First Name :</label>
-      <input type="text" name="first_name" id="first_name" placeholder="first_name" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"><br>
+      <input type="text" name="first_name" id="first_name" placeholder="first_name" required pattern=^[a-zA-Z]{2,30}$><br>
       <label for="last_name">Last Name :</label>
-      <input type="text" name="last_name" id="last_name" placeholder="last_name" required pattern="^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$"><br>
+      <input type="text" name="last_name" id="last_name" placeholder="last_name" required pattern=^[a-zA-Z]{2,30}$><br>
       <label for="email">Email :</label>
-      <input type="email" name="email" id="email" placeholder="Email"  value="" required><br>
+      <input type="email" name="email" id="email" placeholder="Email"  value="" pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required><br>
       <label for="phone_number">Phone Number :</label>
-      <input type="number" name="phone_number" id="phone_number" placeholder="Phone Number" required pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}"><br>
-      <label for="age">D.O.B :</label>
-      <input type="date" name="age" id="age" required><br>
+      <input type="tel" name="phone_number" id="phone_number" placeholder="Phone Number" required pattern="[0-9]{10}"><br>
+      <label for="Pincode"> Pincode:</label>
+      <input type="number" name="pincode" id="pincode" pattern="[0-9]{6}" required><br>
+      <label for="Pincode"> Pincode:</label>
+      <select id="selectcity">
+        <option value="Chennai">Chennai</option>
+        <option value="Vellore">Vellore</option>
+        <option value="kallakurichi">Kallakurichi</option>
+      </select>
       <label for="password">Password :</label>
-      <input type="password" name="password" id="password" placeholder="Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8-14,}"><br>
+      <input type="password" name="password" id="password" placeholder="Password"  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Your password must be at least 8 characters long, contain at least one digit or special character, one uppercase letter, and one lowercase letter, and must not contain dots or newline characters." required><br>
       <label for="password">CONFIRM PASSWORD :</label>
-      <input type="password" name="password" id="confirm_password" placeholder="Confirm Password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8-14,}"><br>
+      <input type="password" name="password" id="confirm_password" placeholder="Confirm Password"  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" title="Your password must be at least 8 characters long, contain at least one digit or special character, one uppercase letter, and one lowercase letter, and must not contain dots or newline characters." required><br>
       <button type="submit" id="btn">Sign up</button>
     </form>
   </div>
@@ -55,9 +61,11 @@ function signup (){
 const First_name = document.getElementById("first_name").value;
 const last_name = document.getElementById("last_name").value;
 const email = document.getElementById("email").value;
+const pincode = document.getElementById("pincode").value;
 const password = document.getElementById("password").value;
 const conpass = document.getElementById("confirm_password").value;
-const mobile = document.getElementById("phone_number").value
+const mobile = document.getElementById("phone_number").value;
+const city=document.getElementById("selectcity").value
 let res;
 if (password==conpass) {
     if (user.length==0){
@@ -84,7 +92,9 @@ if (res === 0){
         "second_name":last_name,
         "user_email":email,
         "user_Password":password,
-        "mobile":mobile
+        "mobile":mobile,
+        "pincode":pincode,
+        "city":city
         }
         user.push(user_data);
             localStorage.setItem("user_details",JSON.stringify(user));

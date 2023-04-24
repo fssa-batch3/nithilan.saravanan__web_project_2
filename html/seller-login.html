@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="../Assets/Css/login.css">
 </head>
+
 <body>
     <div class="login">
         <div class="head">
             <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
-            <h5>New member? <a href="./signup.html" id="Sign_up">Sign Up</a></h5>
+            <h5>New member? <a href="./seller-sign.html" id="Sign_up">Sign Up</a></h5>
         </div>
         <div class="h2">
             <h2>Seller Sign In</h2>
@@ -26,52 +28,67 @@
     </div>
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
+
+
+
+
     <script>
-       let form = document.querySelector("form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  login();
-});
-function login() {
-  const log_email = document.getElementById("email").value;
-  const log_password = document.getElementById("password").value;
-  let arr = JSON.parse(localStorage.getItem("seller_details"));
-//   let result = arr.find(function (value) {
-//     return value.user_email === log_email;
-//   });
-let result ;
-let res;
-for (let i = 0; i < arr.length; i++) {
-    if (log_email===arr[i].user_email) {
-        result = arr[i];
-        res=1;
-        console.log(result);
-        break;
-    }
-    else{
-   res = 0
-}
-}
-console.log(res);
- if (res==0) {
-    alert("don't have an account ,create a new account");
- }
-  let ind = arr.findIndex(value => value == result);
- if (res==1) {
-    console.log("1111");
-    if (log_password == result.user_Password) {
-        localStorage.setItem("details",result.user_email);
-        alert("login succes");
-        window.location.href = "./profile.html";
-      } else {
-        alert("incorret password");
-      }
- }
-}
+        let form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            login();
+        });
+        function login() {
+            const log_email = document.getElementById("email").value;
+            const log_password = document.getElementById("password").value;
+            let arr = JSON.parse(localStorage.getItem("seller_details")) ?? [];
+            //   let result = arr.find(function (value) {
+            //     return value.user_email === log_email;
+            //   });
+            let result;
+            let res;
+            for (let i = 0; i < arr.length; i++) {
+                if (log_email === arr[i].seller_email) {
+                    result = arr[i];
+                    res = 1;
+                    console.log(result);
+                    break;
+                }
+                else {
+                    res = 0
+                }
+            }
+            console.log(res);
+
+
+            if (res == 0) {
+                alert("don't have an account ,create a new account");
+            }
+
+
+            let ind = arr.findIndex(value => value == result);
+            
+            if (res == 1) {
+                console.log("1111");
+                if (log_password == result.seller_Password) {
+
+                    let seller_id = [{
+                        "sellerid": result.seller_id,
+
+                    }]
+                    localStorage.setItem("sellerlogg", seller_id);
+                    alert("login succes");
+                    window.location.href = "./profile.html";
+                } else {
+                    alert("incorret password");
+                }
+            }
+        }
 
 
 
 
     </script>
 </body>
+
 </html>

@@ -411,7 +411,7 @@ document.querySelectorAll('.add-to-cart').forEach(item=>{
     item.addEventListener('click',addToCart)
 })
 
-var cartData=[];
+export var cartData=[];
 function addToCart(){
     
     var itemToAdd= this.parentNode.nextSibling.nextSibling.innerText;
@@ -540,7 +540,7 @@ function totalAmount(){
 document.getElementById('cart-plus').addEventListener('click',cartToggle);
 // document.getElementById('m-cart-plus').addEventListener('click',cartToggle);
 
-// export let flag= false;
+export let flag= false;
 window.onresize= window.onload= function(){
     let size= window.screen.width;
     console.log(size)
@@ -622,17 +622,49 @@ function displayItems() {
 //   food_detail.find((e)=>{
 //         if()
 //   })
-
+if(food_detail == null){}
+else{
 for(let j=0;j<=food_detail.length-1;j++){
         
-    let image = document.createElement('img')
-    image.setAttribute('src',food_detail[j]["food_photo"]);
-    document.querySelector("#south-indian").append(image)
-    console.log(food_detail[j]["food_photo"]);
-    console.log(image);
+    // let image = document.createElement('img')
+    // image.setAttribute('src',food_detail[j]["food_photo"]);
+    // // image.setAttribute("item-card")
+    // document.querySelector("#south-indian").append(image)
+    // console.log(food_detail[j]["food_photo"]);
+    // console.log(image);
+
+    let item_card = document.createElement("div")
+    item_card.setAttribute("id","item-card")
+    document.querySelector("#south-indian").append(item_card)
+    let card_top = document.createElement("div")
+    card_top.setAttribute("id","card-top")
+    item_card.append(card_top)
+    let i_tag = document.createElement("i")
+    i_tag.setAttribute("class","fa fa-star")
+    i_tag.setAttribute("id","rating")
+    i_tag.innerText="$.3"
+    card_top.append(i_tag)
+    let i2_tag = document.createElement("i")
+    i2_tag.setAttribute("class","fa fa-heart-o add-to-cart")
+    card_top.append(i2_tag)
+    let img = document.createElement("img")
+    img.setAttribute("src",food_detail[j]["food_photo"])
+    item_card.append(img)
+    let p_tag = document.createElement("p")
+    p_tag.setAttribute("id","item-name")
+    p_tag.innerText=food_detail[j]["food_Name"]
+    card_top.append(p_tag)
+    let p2_tag = document.createElement("p")
+    p2_tag.setAttribute("id","item-price")
+    p2_tag.innerText="Price : "+food_detail[j]["food_price"]
+    card_top.append(p2_tag)
+
+    
+
 
 
 }
+}   
     biriyaniData.find(item => {
         // for(let i=0;i<biriyaniData.length;i++){
         let itemCard = document.createElement('div');
@@ -968,4 +1000,3 @@ for(let j=0;j<=food_detail.length-1;j++){
 
 
 }
-

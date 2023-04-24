@@ -34,17 +34,17 @@ function formSubmit() {
             "seller_address":address,
             "seller_phone":phone,
             "food_price":price,
-            "food_photo":photo
+            "food_photo":photo,
+            "status":true,
         });
     }
 
 
     localStorage.setItem("food_details",JSON.stringify(array))
     
+}
 
 
-
-
-
+function delete_obj(index){
     
 }
