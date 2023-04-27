@@ -349,6 +349,11 @@ margin-top: 40px;
 
 } 
 
+#cart-page{
+    background-color: #212121;
+    display: block;
+}
+
 /* responsive */
 /* @media screen and (max-width : 800px) and (-webkit-min-device-pixel-ratio: 2){
     .container{

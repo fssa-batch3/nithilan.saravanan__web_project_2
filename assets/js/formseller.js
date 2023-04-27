@@ -37,6 +37,8 @@ function formSubmit() {
             "food_photo":photo,
             "status":true,
         });
+
+    alert('sucssefully  added')
     }
 
 

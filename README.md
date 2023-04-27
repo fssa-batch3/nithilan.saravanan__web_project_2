@@ -44,3 +44,5 @@
 
 
 ### Add product 
+
+- scenario  1: You want to add a product 
