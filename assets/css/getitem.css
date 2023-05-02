@@ -1,0 +1,66 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Set background color for the body */
+body {
+  background-color: #f2f2f2;
+  font-family: Arial, sans-serif;
+}
+
+/* Style the h1 tag */
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Style the form */
+form {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the form labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style the form inputs */
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* Style the submit button */
+#submit {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style the delete button */
+#delete {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}

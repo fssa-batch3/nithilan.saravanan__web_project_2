@@ -22,7 +22,7 @@ function formSubmit() {
 
 
     if(array.some((y)=>{
-        return y.food_Name==food_name
+        // return y.food_Name==food_name
     })){
         alert("this already taken")
 
@@ -34,17 +34,19 @@ function formSubmit() {
             "seller_address":address,
             "seller_phone":phone,
             "food_price":price,
-            "food_photo":photo
+            "food_photo":photo,
+            "status":true,
         });
+
+    alert('sucssefully  added')
     }
 
 
     localStorage.setItem("food_details",JSON.stringify(array))
     
+}
 
 
-
-
-
+function delete_obj(index){
     
 }

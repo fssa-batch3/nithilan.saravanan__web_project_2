@@ -1,0 +1,122 @@
+/* Set box-sizing to border-box to include padding in the element's total width and height */
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style for the body */
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Style for the account section */
+  .account-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Style for the side item */
+  .side-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+  
+  /* Style for the profile image */
+  #profile {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the customer name */
+  #customer {
+    margin: 0;
+  }
+  
+  /* Style for the main item */
+  .main-item {
+    width: 70%;
+    padding: 20px;
+  }
+  
+  /* Style for the user container */
+  .user-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  /* Style for the form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Style for the input fields */
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e6e6e6;
+  }
+  
+  /* Style for the select field */
+  select {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e6e6e6;
+  }
+  
+  /* Style for the button */
+  button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /* Style for the button:hover */
+  button:hover {
+    background-color: #0062cc;
+  }
+  
+  /* Style for the edit button */
+  #edit_btn {
+    display: block;
+  }
+  
+  /* Style for the save button */
+  #save {
+    /* display: none; */
+  }
+  
+  /* Style for the align-num div */
+  #align-num {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Style for the more label */
+  .more {
+    width: 100px;
+  }
+  
+  /* Style for the error message */
+  .error {
+    color: red;
+    font-size: 14px;
+  }

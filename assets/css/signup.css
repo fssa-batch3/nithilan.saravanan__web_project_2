@@ -1,0 +1,159 @@
+/* * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #EDF3FD;
+    height: 900px;
+    display: flex;
+    justify-content:space-between;
+    background-image: url(../Images/1.png);
+    background-position: 600%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+.all{
+    padding: 100px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 10px;
+}
+.h2{
+    margin: 20px 0px 30px 160px ;
+}
+label{
+    margin: 0px 30px 0px 0px;
+}
+a:hover{
+   color: #4062FF;
+}
+input{
+    border-radius: 15px;
+    color: gray;
+    border-style: none;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin: 10px 10px 10px 0px;
+}
+button{
+    margin: 20px 10px 10px 120px;
+    border-radius: 15px;
+    padding: 5px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: #4062FF;
+    font-size: 20px;
+    color: white;
+} */
+
+
+
+
+
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Global styles */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Styles for the registration form */
+  .register {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  .head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .head h5 {
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .head a {
+    color: #333;
+    font-size: 20px;
+  }
+  
+  .h2 {
+    margin-bottom: 20px;
+  }
+  
+  .h2 h2 {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+  }
+  
+  input,
+select {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+margin-bottom: 10px;
+font-size: 16px;
+}
+
+button {
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 4px;
+padding: 10px;
+font-size: 16px;
+cursor: pointer;
+margin-top: 20px;
+}
+
+button:hover {
+background-color: #555;
+}
