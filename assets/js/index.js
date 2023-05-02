@@ -581,6 +581,10 @@ displayItems();
 
 document.getElementById('add-address').addEventListener('click', addAddress);
 
+<<<<<<< HEAD
+=======
+document.getElementById('m-add-address').addEventListener('click',addAddress);
+>>>>>>> 6ed1824289a66963744ae91cbf303a2da77ffa00
 
 function addAddress() {
     let address = prompt('Enter your address', '');
@@ -1152,7 +1156,11 @@ item_card.forEach((e) => {
             }
 
             add_to_cart.push(cart);
+<<<<<<< HEAD
             alert("Food add to cart");
+=======
+            alert("Food add to cart")
+>>>>>>> 6ed1824289a66963744ae91cbf303a2da77ffa00
             console.log("Created new");
 
         }
