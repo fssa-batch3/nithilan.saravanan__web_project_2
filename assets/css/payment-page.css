@@ -35,66 +35,9 @@ a{
 }
 
 
-/* nav finished */
-
-/*
-header{
-    display: flex;
-}
-.header{
-    width: 800px;
-    margin: 100px;
-    border: 1px solid black;
-}
-
-.heading{
-    background-color: rgb(0, 255, 179);
-    height: 60px;
-    display: flex;
-    align-items: center;
-}
-
-.heading h1{
-    margin: 0%;
-}
-.gif{
-    width: 50px;
-}
-.gif-alinment{
-    display: flex;
-    align-items: center;
-}
-.upi{
-    margin-left: 50px;
-}
-.price-details{
-    display: flex;
-    justify-content: space-between;
-}
-#price{
-    padding: 40px;
-    margin-top: 100px;
-    width: 300px;
-    border: 1px solid black;
-    height: 250px;
-    background-color: #f5f5f7;
-}
-.place-order-btn{
-    font-size: 24px;
-    padding: 20px;
-    background-color: whitesmoke;
-    color: black;
-    display: inline-block;
-    float: right;
-    margin-right: 20px;
-}
-.payment-options-name{
-    font-size: 24px;
-} */
 
 
 
-/* New Payment Page */
 
 form{
     width: 60%;

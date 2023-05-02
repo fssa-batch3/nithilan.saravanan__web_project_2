@@ -128,4 +128,7 @@ a{
     
     } 
 
-
+#checkout{
+    display: flex;
+    flex-direction: column;
+}
