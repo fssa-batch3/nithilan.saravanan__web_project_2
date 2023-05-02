@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link rel="stylesheet" href="../assets/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <!-- This is profile-section -->
+    <div class="account-section">
+        <div class="side-item">
+            <div class="page">
+                <img src="https://ui-avatars.com/api/?name=Nithilan" id="profile" alt="error">
+                <div>
+                    <h4 id="customer">namw</h4>
+                    <small>Customer_ID</small>
+                </div>
+            </div>
+
+        </div>
+        <div class="main-item">
+            <!-- This is header section -->
+            <!-- This is profile update section-->
+            <div class="user-condainer">
+                <div class="information">
+                    <form id="formBtn">
+                        <!-- This is First name  -->
+                        <div class="first-name" id="align-num">
+                            <label class="more"> First Name</label>
+                            <input class="name" id="user-firstname" type="text" pattern="[A-Za-z]{1,32}"
+                                name="user name" title="First name connot contain spaces" placeholder="First Name"
+                                value="" disabled>
+                        </div>
+                        <!-- This is Last name  -->
+                        <div class="last-name" id="align-num">
+                            <label class="more"> Last Name</label>
+                            <input class="name" id="user-lastname" type="text" name="user name" pattern="[A-Za-z]{1,32}"
+                                placeholder="Last Name" value="" title="Last name connot contain spaces" disabled>
+                        </div>
+                        <!-- This is email input  -->
+                        <div class="email" id="align-num">
+                            <label class="more"> Email</label>
+                            <input class="name_email" id="user-email" type="email" name="user email"
+                                placeholder="name@gmail.com" value="" required="true" disabled>
+                        </div>
+                        <!-- This is password input  -->
+                        <div class="password" id="align-num">
+                            <label class="more"> Password</label>
+                            <input class="name" id="user-password" type="password" name="user password" disabled>
+                        </div>
+                        <!-- This is city -->
+                        <div class="fCity-name" id="align-num">
+                            <label class="more"> City</label>
+                            <select name="city"  id="district">
+                                <option value="Chennai">Chennai</option>
+                                <option value="Tiruchy">Tiruchy</option>
+                                <option value="Vilupuram">Vilupuram</option>
+                                <option value="Madurai">Madurai</option>
+                                <option value="Selem">Selem</option>
+                            </select>
+                            <!-- <input class="name" id="user-firstname" type="text" pattern="[A-Za-z]{1,32}" name="user name"
+                                title="First name connot contain spaces" placeholder="First Name" value="" required="true"> -->
+                        </div>
+                        <!-- This is number -->
+                        <div class="Number" id="align-num">
+                            <label class="more"> mobile number</label>
+                            <input class="name" id="number" type="text" pattern="[A-za-z0-9]{10,12}" name="number"
+                                placeholder="mobile number" disabled>
+                        </div>
+                        <!-- This is Address input  -->
+                        <div class="pincode" id="align-num">
+                            <label class="more"> Pincode</label>
+                            <input class="name" id="pincode" type="text" type="text" pattern="[0-9]{6}" maxlength="6" name="user address"
+                                placeholder="Pincode" disabled>
+                        </div>
+                        <div>
+                            <button  id="edit_btn">edit</button>
+                            <button id="delete_btn">Delete profile</button>
+                            <button  type="submit" id="save">save</button>
+                            <a href="../index.html">back to page</a>
+               
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+            <script>
+
+                let form = document.getElementById("edit_btn");
+                form.addEventListener("click", (e) => {
+
+                    e.preventDefault();
+                    profile();
+                });
+
+                let forms = document.getElementById("formBtn");
+                forms.addEventListener("submit", (ex) => {
+
+                    ex.preventDefault();
+                    update();
+                });
+
+            //  function profile(){
+            //     let name=document.getElementById("user-firstname")
+            //     name.removeAttribute("disabled")
+            //  }
+
+
+                let remove = document.getElementById("delete_btn");
+                remove.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    delete1();
+
+
+                })
+                let arr = JSON.parse(localStorage.getItem("user_details"));
+                let details = localStorage.getItem("logdetails");
+                console.log(details);
+                let result = arr.find(function (value) {
+                    return value.user_email === details;
+                });
+                document.getElementById("profile").setAttribute("src", "https://ui-avatars.com/api/?name=" + result.user_name)
+                document.getElementById("customer").innerHTML = result.user_name;
+                document.getElementById("user-firstname").value = result.user_name;
+                document.getElementById("user-lastname").value = result.second_name;
+                document.getElementById("user-email").value = result.user_email;
+                document.getElementById("user-password").value = result.user_Password;
+                document.getElementById("number").value = result.mobile;
+               let cit= document.getElementById("district")
+                cit.value=result.city;
+                document.getElementById("pincode").value = result.pincode;
+                // let new123 = document.getElementsByClassName("name");
+                // new123.setAttribute = ("disabled");
+
+
+                function profile() {
+                    let ind = arr.findIndex(function (value) {
+                        return value.user_email === details
+                    });
+                    let firstname = document.getElementById("user-firstname");
+                    let lastname = document.getElementById("user-lastname");
+                    let useremail = document.getElementById("user-email");
+                    let password = document.getElementById("user-password");
+                    let mobile = document.getElementById("number");
+                    let district = document.getElementById("district");
+                    let pincode = document.getElementById("pincode");
+                    let new123 = document.getElementsByClassName("name");
+                    new123.setAttribute = ("enable");
+
+                    firstname.removeAttribute("disabled")
+                    lastname .removeAttribute("disabled")                  
+                    password .removeAttribute("disabled")                  
+                    mobile.removeAttribute("disabled")   
+                    district.removeAttribute("disabled")  
+                    pincode.removeAttribute("disabled")                  
+
+
+
+                    // let selectedValue;
+                    // district.addEventListener("change", (event) => {
+                    //     check = event.target.innerText
+                    //     selectedValue = event.target.value;
+                    // });
+                    // let user_data = {
+                    //     "user_name": firstname,
+                    //     "second_name": lastname,
+                    //     "user_email": useremail,
+                    //     "user_Password": password,
+                    //     "district": selectedValue,
+                    //     "mobile_number": mobile,
+                    //     "pincode": pincode,
+                    //     "city": district
+                    // }
+                    // arr[ind] = user_data;
+                    // arr[ind].mobile_number = `${mobile}`;
+                    // arr[ind].pincode = `${pincode}`;
+                    // arr[ind].pincode = selectedValue;
+                    // console.log(selectedValue);
+                    // localStorage.setItem("user_details", JSON.stringify(arr));
+                }
+
+
+ let logOut= document.getElementById ("delete_btn");
+ let loggedOut = localStorage.getItem("logdetails");
+ logOut.addEventListener("click",()=>{
+    let loggedOut=delete loggedOut
+    localStorage.setItem("logdetails",loggedOut)
+    window.location.href="../index.html"
+ }) ;
+   let arr1 = JSON.parse(localStorage.getItem("user_details"));
+                    console.log(arr1);
+                
+                function update() {
+                
+                    let firstname = document.getElementById("user-firstname");
+                    let lastname = document.getElementById("user-lastname");
+                    let useremail = document.getElementById("user-email");
+                    let password = document.getElementById("user-password");
+                    let mobile = document.getElementById("number");
+                    let district = document.getElementById("district");
+                    let pincode = document.getElementById("pincode");
+                    let new123 = document.getElementsByClassName("name");
+                    // new123.setAttribute = ("enable");
+                    
+
+                    arr1.find((e)=>{
+                        
+                        if(details == e["user_email"]){
+                          
+                            e["user_name"]=firstname.value;
+                            e["second_name"]=lastname.value;
+                            e["user_Password"]=password.value;
+                            e["mobile"]=mobile.value;
+                            e["city"]=district.value;
+                            e["pincode"]=pincode.value;
+
+
+                            localStorage.setItem("user_details",JSON.stringify(arr1));
+                            firstname.setAttribute("disabled","")
+                    lastname .setAttribute("disabled","")                  
+                    password .setAttribute("disabled","")                  
+                    mobile.setAttribute("disabled","")   
+                    district.setAttribute("disabled","")  
+                    pincode.setAttribute("disabled","")   
+                            
+                        }
+                    })
+
+          
+                }
+            </script>
+</body>
+
+</html>

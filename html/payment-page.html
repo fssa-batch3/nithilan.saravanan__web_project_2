@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/payment-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>fresh-food-payment-page</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+<body>
+    <nav id="#homepage">
+        <img id="logo" src="../assets/images/feshfood-logo.png" alt="logo1" />
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../services/services.html">Services</a></li>
+            <li><a href="../cart/add-to- cart.html">Cart</a></li>
+            <li><a href="../../index.html"><span class="material-symbols-outlined"
+                        style="width: 50px;">person</span></a></li>
+        </ul>
+    </nav>
+
+   
+
+    <!-- New Payment Page Starting -->
+
+
+
+    <form action="" onsubmit="page()">
+
+        <div class="cards">
+            <div>
+                <input type="radio">
+                <img src="../assets/images/payment-img/mastercard.png" alt="card brands">
+            </div>
+
+            <div>
+                <input type="radio">
+                <img src="../assets/images/payment-img/paypal.png" alt="card brands">
+            </div>
+
+            <div>
+                <input type="radio">
+                <img src="../assets/images/payment-img/visa.jfif" alt="card brands">
+            </div>
+
+            <div>
+                <input type="radio">
+                <h2>CASH ON<br>DELIVERY</h2>
+            </div>
+
+        </div>
+
+        <div class="label margin">
+            <label for="">Card number*
+                <input type="number" class="input_box" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}">
+            </label>
+            <label for="">Cardholder*
+                <input type="text" class="input_box">
+            </label>
+        </div>
+
+        <div class="label margin">
+            <label for="">Expiry date*
+                <select name="" id="" class="select_box">
+                    <option value="">Month</option>
+                    <option value="">01</option>
+                    <option value="">02</option>
+                    <option value="">03</option>
+                    <option value="">04</option>
+                    <option value="">05</option>
+                    <option value="">06</option>
+                    <option value="">07</option>
+                    <option value="">08</option>
+                    <option value="">09</option>
+                    <option value="">10</option>
+                    <option value="">11</option>
+                    <option value="">12</option>
+                </select>
+
+                <select name="" id="" class="select_box">
+                    <option value="">Year</option>
+                    <option value="">2023</option>
+                    <option value="">2024</option>
+                    <option value="">2025</option>
+                    <option value="">2026</option>
+                    <option value="">2027</option>
+                    <option value="">2028</option>
+                    <option value="">2029</option>
+                    <option value="">2030</option>
+                    <option value="">2031</option>
+                    <option value="">2032</option>
+                </select>
+            </label>
+
+            <label for="">CVC
+                <input type="number" class="input_box">
+                <span>!</span>
+            </label>
+        </div>
+
+        <label for="">
+            <input type="checkbox" id="checkbox">Save my details for future purchases
+        </label>
+
+        <div class="total_background margin">
+
+            <div class="label">
+                <h3>Subtotal</h3>
+                <h3>$60.80</h3>
+            </div>
+            <div class="label">
+                <p>Home Delivery Cost</p>
+                <p>Free Delivery</p>
+            </div>
+
+        </div>
+        <div class="label total_background">
+            <h3>TOTAL AMOUNT</h3>
+            <h3>$60.80</h3>
+        </div>
+<!-- 
+        <a href="confirm_order.html"> -->
+        <div class="label btn margin">
+                <p>.</p>
+               <a href="../index.html"> <button>CONFIRM PAYMENT</button></a>
+                <p>.</p>
+        </div>
+    </a>
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>     

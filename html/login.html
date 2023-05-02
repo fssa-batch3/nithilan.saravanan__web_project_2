@@ -1,79 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login page</title>
-    <link rel="stylesheet" href="../assets/css/login-page.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Zen+Dots&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="../Assets/Css/login.css">
 </head>
-
 <body>
-    <div class="first">
-        <h3>Sign up</h3>
-        <form action="#">
-            <div class="container">
-                <div class="label">
-                    <label for="name,email"> User Name(or)E-mail:</label><br><br>
-                    <label for="password,">password:</label><br><br>
-                </div>
-                <div>
-                    <input type="text" id="name" name="name" placeholder="Name(or)e-mail" ><br><br>
-                    <input type="password" id="password" name="password" placeholder="password"  ><br>
-                </div>
-            </div>
-            <button type="button" onclick="getData()" >Login</button>
-            <p>create <a href="sign.html">account</a></p>
-            <div class="line"><span>OR</span></div>
-            <div class="last">
-                <div class="goo">
-                    <a href="#"><img src="../assets/icons/google1.png" alt="erorr" width="20px"> </a>
-                </div>
-                <div class="fb">
-                    <a href="#"><img src="../assets/icons/fb.jpg" alt="erorr" width="20px"></a>
-                </div>
-            </div>
-
+    <div class="login">
+        <div class="head">
+            <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
+            <h5>New member? <a href="./signup.html" id="Sign_up">Sign Up</a></h5>
+        </div>
+        <div class="h2">
+            <h2>Sign In</h2>
+        </div>
+        <form action="" id="form">
+            <label for="email">Email :</label>
+            <input type="email" name="email" id="email" placeholder="Email" required ><br>
+            <label for="password">Password :</label>
+            <input type="password" name="password" id="password" placeholder="Password" required  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+            title="Your password must be at least 8 characters long, contain at least one digit or special character, one uppercase letter, and one lowercase letter, and must not contain dots or newline characters."><br>
+            <button type="submit" id="btn">Sign in</button>
         </form>
     </div>
-    <script>
-     
-        function getData(){
-        const e_mail = document.getElementById("name").value
-        const password1 = document.getElementById("password").value
-        let array = JSON.parse(localStorage.getItem("user_details"))
-
-        
-        let res;
-            array.find(element =>{
-                if(element["user_email"] == e_mail && element["user_password"] == password1){
-                    return res==1;
-                }
-                else{
-                    return res=0;
-                }
-            });
-            if(res==1){
-                window.location.href="../content.html"
-                alert("login");
-            }
-            else{
-                alert("wrong");
-            }
-        
-        }
-        //  console.log(email)
-        //  console.log(password)
-        
+    <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
+    <script>
+       let form = document.querySelector("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  login();
+});
+function login() {
+  const log_email = document.getElementById("email").value;
+  const log_password = document.getElementById("password").value;
+  let arr = JSON.parse(localStorage.getItem("user_details"));
+//   let result = arr.find(function (value) {
+//     return value.user_email === log_email;
+//   });
+let result ;
+let res;
+for (let i = 0; i < arr.length; i++) {
+    if (log_email===arr[i].user_email) {
+        result = arr[i];
+        res=1;
+        console.log(result);
+        break;
+    }
+    else{
+   res = 0
+}
+}
+console.log(res);
+ if (res==0) {
+    alert("don't have an account ,create a new account");
+ }
+  let ind = arr.findIndex(value => value == result);
+ if (res==1) {
+    console.log("1111");
+    if (log_password == result.user_Password) {
+        localStorage.setItem("logdetails",result.user_email);
+        alert("login succes");
+        window.location.href = "./profile.html";
+      } else {
+        alert("incorret password");
+      }
+ }
+}
 
+
+
+
+    </script>
 </body>
-
 </html>
