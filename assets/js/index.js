@@ -8,7 +8,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 13,
-        img: 'assets/images/biryani/Ambur-Chicken-Biryani.jpg',
+        img: 'https://iili.io/HSRLAmB.jpg',
         quantity: 1
     },
     {
@@ -17,7 +17,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 15,
-        img: 'assets/images/biryani/Chicken-Biryani-hyd.jpg',
+        img: 'https://iili.io/HSRLo0b.jpg',
         quantity: 1
     },
     {
@@ -26,7 +26,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 18,
-        img: 'assets/images/biryani/egg-biryani.jpeg',
+        img: 'https://iili.io/HSRLBse.jpg',
         quantity: 1
     },
     {
@@ -35,7 +35,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 15,
-        img: 'assets/images/biryani/goan-fish-biryani.jpg',
+        img: 'https://iili.io/HSRLqX9.jpg',
         quantity: 1
     },
     {
@@ -44,7 +44,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 10,
-        img: 'assets/images/biryani/goan-fish-biryani.jpg',
+        img: 'https://iili.io/HSRLxgj.png',
         quantity: 1
     },
     {
@@ -53,7 +53,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 12,
-        img: 'assets/images/biryani/kamrupi-biryani.jpg',
+        img: 'https://iili.io/HSRLT5Q.jpg',
         quantity: 1
     },
     {
@@ -62,7 +62,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 13,
-        img: 'assets/images/biryani/kashmiri.pulao.jpg',
+        img: 'https://iili.io/HSRLIdx.jpg',
         quantity: 1
     },
     {
@@ -71,7 +71,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 20,
-        img: 'assets/images/biryani/memonibiryani.png',
+        img: 'https://iili.io/HSRLueV.jpg',
         quantity: 1
     },
     {
@@ -80,7 +80,7 @@ const foodItem = [
         category: 'biryani',
         rating: 4.3,
         price: 15,
-        img: 'assets/images/biryani/mughlai-biryani.jpg',
+        img: 'https://iili.io/HSRL5zP.jpg',
         quantity: 1
     },
     {
@@ -89,7 +89,7 @@ const foodItem = [
         category: 'chicken',
         rating: 4.3,
         price: 11,
-        img: 'assets/images/chicken/Chicken_roast.jpg',
+        img: 'https://iili.io/HSRZqKu.jpg',
         quantity: 1
     },
     {
@@ -98,7 +98,7 @@ const foodItem = [
         category: 'chicken',
         rating: 4.3,
         price: 10,
-        img: 'assets/images/chicken/Chicken-Curry.jpg',
+        img: 'https://iili.io/HSRZFV9.jpg',
         quantity: 1
     },
     {
@@ -107,7 +107,7 @@ const foodItem = [
         category: 'chicken',
         rating: 4.3,
         price: 14,
-        img: 'assets/images/chicken/Chicken-do-Pyaza.jpg',
+        img: 'https://iili.io/HSRZBcb.jpg',
         quantity: 1
     },
     {
@@ -116,7 +116,7 @@ const foodItem = [
         category: 'chicken',
         rating: 4.3,
         price: 12,
-        img: 'assets/images/chicken/Chicken-Masala.jpeg',
+        img: 'https://iili.io/HSRZ3o7.jpg',
         quantity: 1
     },
     {
@@ -125,7 +125,7 @@ const foodItem = [
         category: 'chicken',
         rating: 4.3,
         price: 17,
-        img: 'assets/images/chicken/Handi-chicken.jpg',
+        img: 'https://iili.io/HSRZFV9.jpg',
         quantity: 1
     },
     {
@@ -134,7 +134,7 @@ const foodItem = [
         category: 'chicken',
         rating: 4.3,
         price: 20,
-        img: 'assets/images/chicken/Murgh-Musallam.jpg',
+        img: 'https://iili.io/HSRZBcb.jpg',
         quantity: 1
     },
     {
@@ -143,7 +143,7 @@ const foodItem = [
         category: 'paneer',
         rating: 4.3,
         price: 15,
-        img: 'assets/images/paneer/Matar-Paneer.jpg',
+        img: 'https://iili.io/HSRbHAv.jpg',
         quantity: 1
 
     },
@@ -153,7 +153,7 @@ const foodItem = [
         category: 'paneer',
         rating: 4.3,
         price: 10,
-        img: 'assets/images/paneer/palak-paneer.jpg',
+        img: 'https://iili.io/HSRb9HJ.png',
         quantity: 1
     },
     {
@@ -162,7 +162,7 @@ const foodItem = [
         category: 'paneer',
         rating: 4.3,
         price: 15,
-        img: 'assets/images/paneer/paneer-butter-masala.jpg',
+        img: 'https://iili.io/HSRbHAv.jpg',
         quantity: 1
 
     },
@@ -172,7 +172,7 @@ const foodItem = [
         category: 'paneer',
         rating: 4.3,
         price: 12,
-        img: 'assets/images/paneer/Paneer-Do-Pyaza.jpg',
+        img: 'https://iili.io/HSRb9HJ.png',
         quantity: 1
 
     },
@@ -182,7 +182,7 @@ const foodItem = [
         category: 'paneer',
         rating: 4.3,
         price: 8,
-        img: 'assets/images/paneer/Paneer-Hyderabadi.jpg',
+        img: 'https://iili.io/HSRDpSa.jpg',
         quantity: 1
     },
     {
@@ -191,7 +191,7 @@ const foodItem = [
         category: 'paneer',
         rating: 4.3,
         price: 7,
-        img: 'assets/images/paneer/paneer-lababdar.jpg',
+        img: 'https://iili.io/HSRtiBt.jpg',
         quantity: 1
     },
     {
@@ -201,7 +201,7 @@ const foodItem = [
         category: 'paneer',
         rating: 4.3,
         price: 5,
-        img: 'assets/images/paneer/shahi-paneer.jpg',
+        img: 'https://iili.io/HSRtsEX.jpg',
         quantity: 1
     },
     {
@@ -210,7 +210,7 @@ const foodItem = [
         category: 'vegetable',
         rating: 4.3,
         price: 8,
-        img: 'assets/images/vegetable/navratan-korma_-vegetable.png',
+        img: 'https://iili.io/HSRmhhl.jpg',
         quantity: 1
     },
     {
@@ -219,7 +219,7 @@ const foodItem = [
         category: 'vegetable',
         rating: 4.3,
         price: 7,
-        img: 'assets/images/vegetable/VEG-JALFREZI.jpg',
+        img: ' https://iili.io/HSRmXI4.jpg',
         quantity: 1
     },
     {
@@ -228,7 +228,7 @@ const foodItem = [
         category: 'vegetable',
         rating: 4.3,
         price: 5,
-        img: 'assets/images/vegetable/vegetable-biryani.jpg',
+        img: 'https://iili.io/HSRmjQ2.jpg',
         quantity: 1
     },
     {
@@ -237,7 +237,7 @@ const foodItem = [
         category: 'vegetable',
         rating: 4.3,
         price: 7,
-        img: 'assets/images/vegetable/vegetable-curry.jpeg',
+        img: ' https://iili.io/HSRmNBS.jpg',
         quantity: 1
     },
     {
@@ -246,7 +246,7 @@ const foodItem = [
         category: 'vegetable',
         rating: 4.3,
         price: 10,
-        img: 'assets/images/vegetable/vegetable-kolhapuri.jpg',
+        img: 'https://iili.io/HSRmOE7.png',
         quantity: 1
     },
     {
@@ -255,7 +255,7 @@ const foodItem = [
         category: 'vegetable',
         rating: 4.3,
         price: 4,
-        img: 'assets/images/vegetable/vegetable-masala.jpg',
+        img: 'https://iili.io/HSRme49.jpg',
         quantity: 1
     },
     {
@@ -264,7 +264,7 @@ const foodItem = [
         category: 'vegetable',
         rating: 4.3,
         price: 4,
-        img: 'assets/images/vegetable/vegetable-pakora.jpg',
+        img: ' https://iili.io/HSRm8Yu.jpg',
         quantity: 1
     },
     {
@@ -273,7 +273,7 @@ const foodItem = [
         category: 'chinese',
         rating: 4.3,
         price: 8,
-        img: 'assets/images/chinese/cabbage-momos-.jpg',
+        img: 'https://iili.io/HSRpT67.jpg',
         quantity: 1
     },
     {
@@ -282,7 +282,7 @@ const foodItem = [
         category: 'chinese',
         rating: 4.3,
         price: 7,
-        img: 'assets/images/chinese/ChickenManchurian.jpg',
+        img: 'https://iili.io/HSRpzn2.jpg',
         quantity: 1
     },
     {
@@ -291,7 +291,7 @@ const foodItem = [
         category: 'chinese',
         rating: 4.3,
         price: 5,
-        img: 'assets/images/chinese/Chili-Chicken.jpg',
+        img: 'https://iili.io/HSRpIGS.jpg    ',
         quantity: 1
     },
     {
@@ -300,7 +300,7 @@ const foodItem = [
         category: 'chinese',
         rating: 4.3,
         price: 16,
-        img: 'assets/images/chinese/chowmin.jpg',
+        img: 'https://iili.io/HSRpoZl.jpg',
         quantity: 1
     },
     {
@@ -309,7 +309,7 @@ const foodItem = [
         category: 'chinese',
         rating: 4.3,
         price: 14,
-        img: 'assets/images/chinese/spring-rolls.jpg',
+        img: 'https://iili.io/HSRp7yb.jpg',
         quantity: 1
     },
     {
@@ -318,7 +318,7 @@ const foodItem = [
         category: 'chinese',
         rating: 4.3,
         price: 10,
-        img: 'assets/images/chinese/szechuan-chicken.jpg',
+        img: 'https://iili.io/HSRpAF9.jpg',
         quantity: 1
     },
     {
@@ -327,7 +327,7 @@ const foodItem = [
         category: 'chinese',
         rating: 4.3,
         price: 8,
-        img: 'assets/images/chinese/veg-fried-rice.jpg',
+        img: ' https://iili.io/HSRp58u.jpg',
         quantity: 1
     },
     {
@@ -336,7 +336,7 @@ const foodItem = [
         category: 'south indian',
         rating: 4.3,
         price: 18,
-        img: 'assets/images/south indian/Butter-Masala-Dosa.png',
+        img: 'https://iili.io/HSRpRae.jpg',
         quantity: 1
     },
     {
@@ -345,7 +345,7 @@ const foodItem = [
         category: 'south indian',
         rating: 4.3,
         price: 20,
-        img: 'assets/images/south indian/idli-with-rice-flour.jpg',
+        img: 'https://iili.io/HSRyJNj.jpg',
         quantity: 1
     },
     {
@@ -354,7 +354,7 @@ const foodItem = [
         category: 'south indian',
         rating: 4.3,
         price: 12,
-        img: 'assets/images/south indian/masala-dosa.jpg',
+        img: ' https://iili.io/HSRyFVV.jpg',
         quantity: 1
     },
     {
@@ -363,7 +363,7 @@ const foodItem = [
         category: 'south indian',
         rating: 4.3,
         price: 10,
-        img: 'assets/images/south indian/mysore-bonda.jpg',
+        img: 'https://iili.io/HSRydDx.jpg',
         quantity: 1
     },
     {
@@ -372,7 +372,7 @@ const foodItem = [
         category: 'south indian',
         rating: 4.3,
         price: 15,
-        img: 'assets/images/south indian/onion-uttapam.jpg',
+        img: 'https://iili.io/HSRy3oQ.jpg',
         quantity: 1
     },
     {
@@ -381,7 +381,7 @@ const foodItem = [
         category: 'south indian',
         rating: 4.3,
         price: 40,
-        img: 'assets/images/south indian/plain-dosa.jpeg',
+        img: ' https://iili.io/HSRyKiB.jpg',
         quantity: 1
     },
     {
@@ -390,7 +390,7 @@ const foodItem = [
         category: 'south indian',
         rating: 4.3,
         price: 25,
-        img: 'assets/images/south indian/Rava-Uttapam.jpg',
+        img: ' https://iili.io/HSRyBl1.jpg',
         quantity: 1
     },
     {
@@ -399,7 +399,8 @@ const foodItem = [
         category: 'south indian',
         rating: 4.3,
         price: 34,
-        img: 'assets/images/south indian/sambhar-vada.jpg',
+        img: 'https://iili.io/HSRyqKP.jpg',
+        // https://iili.io/HSRyCUF.png',
         quantity: 1
     },
 ]
@@ -579,23 +580,18 @@ displayItems();
 //     })
 // }
 
-document.getElementById('add-address').addEventListener('click', addAddress);
+// document.querySelectorAll('#add-address').addEventListener('click', addAddress());
 
-<<<<<<< HEAD
-=======
-document.getElementById('m-add-address').addEventListener('click',addAddress);
->>>>>>> 6ed1824289a66963744ae91cbf303a2da77ffa00
-
-function addAddress() {
-    let address = prompt('Enter your address', '');
-    if (address) {
-        document.getElementById('add-address').innerText = ' ' + address;
-    }
-    else {
-        alert("Address not added")
-    }
+// function addAddress() {
+//     let address = prompt('Enter your address', '');
+//     if (address) {
+//         document.getElementById('add-address').innerText = ' ' + address;
+//     }
+//     else {
+//         alert("Address not added")
+//     }
     
-}
+// }
 // document.getElementById('cart-plus').addEventListener("click", function check() {
 //     document.getElementById('cart-page').classList.toggle('cart-toggle');
 //     // document.getElementById('checkout').classList.toggle('cart-toggle');
@@ -1033,36 +1029,8 @@ function displayItems() {
     )
 }
 
-// let food_item = document.querySelectorAll(".fa-star");
-
-// console.log(food_item);
-
-// let add_cart = JSON.parse(localStorage.getItem("cart") ?? [])
-
-// function add_to_cart() {
-
-// for(let cart=0;cart<food_item;cart++){
 
 
-
-//     // if(){
-
-//     // }
-// }
-
-//     food_item.addEventListener("click", function () {
-
-//         let contant = {
-
-//             "image": "",
-//             "name": "",
-//             "rate": "",
-
-//         }
-
-//         add_to_cart.push(contant);
-
-//         localStorage.setItem("cart"), JSON.stringify(contant);
 
 
 
@@ -1156,11 +1124,7 @@ item_card.forEach((e) => {
             }
 
             add_to_cart.push(cart);
-<<<<<<< HEAD
             alert("Food add to cart");
-=======
-            alert("Food add to cart")
->>>>>>> 6ed1824289a66963744ae91cbf303a2da77ffa00
             console.log("Created new");
 
         }
