@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... -->
+</head>
+<body>
+    <!-- ... -->
+
+    <form id="paymentForm">
+        <!-- Payment form content -->
+
+        <!-- Submit button -->
+        <div class="label btn margin">
+            <p>.</p>
+            <button type="submit">CONFIRM PAYMENT</button>
+            <p>.</p>
+        </div>
+    </form>
+
+    <script>
+        // Get the payment form element
+        const paymentForm = document.getElementById("paymentForm");
+
+        // Add submit event listener to the form
+        paymentForm.addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the form inputs
+            const cardNumberInput = document.querySelector('input[name="fav_language"]:checked + img').alt;
+            const cardholderInput = document.querySelector('input[type="text"]').value;
+            const expiryMonthInput = document.querySelectorAll('.select_box')[0].value;
+            const expiryYearInput = document.querySelectorAll('.select_box')[1].value;
+            const cvcInput = document.querySelector('input[type="number"]').value;
+            const saveDetailsInput = document.getElementById('checkbox').checked;
+
+            // Validate the form inputs
+            if (!cardNumberInput || !cardholderInput || !expiryMonthInput || !expiryYearInput || !cvcInput) {
+                alert("Please fill in all the required fields.");
+                return;
+            }
+
+            // Create an object to store the payment details
+            const paymentDetails = {
+                cardNumber: cardNumberInput,
+                cardholder: cardholderInput,
+                expiryMonth: expiryMonthInput,
+                expiryYear: expiryYearInput,
+                cvc: cvcInput,
+                saveDetails: saveDetailsInput
+            };
+
+            // Store the payment details in local storage
+            localStorage.setItem("paymentDetails", JSON.stringify(paymentDetails));
+
+            // Optionally, you can redirect to a confirmation page
+            window.location.href = "confirm_order.html";
+        });
+    </script>
+</body>
+</html>

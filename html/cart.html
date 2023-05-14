@@ -14,17 +14,24 @@
 <body>
 
     <nav id="#homepage">
-        <img id="logo" src="../assets/images/feshfood-logo.png" alt="logo1" />
+        <img id="logo" src="../assets/images/feshfood-logo.png" alt="logo1">
         <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../services/services.html">Services</a></li>
+            <li>
+<a href="../../index.html">Home</a>
+</li>
+            <li>
+<a href="../services/services.html">Services</a>
+</li>
             <!-- <li><a href="../cart/add-to- cart.html">Cart</a></li> -->
-            <li><a href="../../index.html"><span class="material-symbols-outlined"
+            <li>
+<a href="../../index.html">
+<span class="material-symbols-outlined"
                         style="width: 50px;">person</span></a></li>
         </ul>
     </nav>
 
     <div id="cart-page" class="cart-toggle">
+
         <p id="cart-title">Add-to-cart</p>
         <p id="m-total-amount">Total-Amount : $100</p>
         <table id="table">
@@ -57,120 +64,115 @@
             <p id="total-item">Total Item :</p>
             <p id="total-price">Total price : $ 50</p>
             <p id="delievery">Free delievery </p>
-            <a href="payment-page.html"> <button class="cart-btn"> Checkout</button></a>
+            <a href="payment-page.html">
+ <button class="cart-btn" onclick="deletedata()"> Checkout</button>
+</a>
         </div>
     </div>
 
-    <script>
-
-
-        let cart_details = JSON.parse(localStorage.getItem("add_to_cart"))
-        let user = localStorage.getItem("logdetails");
+    <script>        const cart_details = JSON.parse(localStorage.getItem("add_to_cart"))
+        const user = localStorage.getItem("logdetails");
         // console.log(cart_details)
 
-
         let span;
-        let plused = 1;
+        const plused = 1;
         let add;
         let cart_index;
 
         let count = 0;
         cart_details.forEach(element => {
-            if (element["user"] == user) {
+            if (element.user == user) {
                 count++
-                document.querySelector("#total-item").innerText = "Total Item :" + Number(count)
+                document.querySelector("#total-item").innerText = `Total Item :${  Number(count)}`
 
-                let table_body = document.createElement("tbody")
+                const table_body = document.createElement("tbody")
                 table_body.setAttribute("id", "table-body")
                 document.querySelector("#table").append(table_body);
 
-                let tr = document.createElement("tr")
+                const tr = document.createElement("tr")
                 table_body.append(tr)
 
-                let td_1 = document.createElement("td");
+                const td_1 = document.createElement("td");
                 tr.append(td_1);
 
-                let img = document.createElement("img");
-                img.setAttribute("src",element["food_image"] )
+                const img = document.createElement("img");
+                img.setAttribute("src", element.food_image)
                 td_1.append(img);
 
-                let td_2 = document.createElement("td")
-                td_2.innerText = element["food_name"]
+                const td_2 = document.createElement("td")
+                td_2.innerText = element.food_name
                 tr.append(td_2)
 
-                let td_3 = document.createElement("td");
+                const td_3 = document.createElement("td");
                 tr.append(td_3);
 
-                let decerease_item = document.createElement("button");
+                const decerease_item = document.createElement("button");
                 decerease_item.setAttribute("class", "decerease-item");
                 decerease_item.innerText = "-";
                 td_3.append(decerease_item)
 
                 span = document.createElement("span")
                 span.setAttribute("class", "span")
-                span.innerText = element["quantity"];
+                span.innerText = element.quantity;
                 td_3.append(span);
 
-                let increase_item = document.createElement("button");
+                const increase_item = document.createElement("button");
                 increase_item.setAttribute("class", "increase-item");
                 increase_item.innerText = "+";
                 td_3.append(increase_item);
 
-                let td_4 = document.createElement("td");
+                const td_4 = document.createElement("td");
                 td_4.setAttribute("class", "price_data")
-                td_4.innerText = element["price"] * element["quantity"];
+                td_4.innerText = element.price * element.quantity;
                 tr.append(td_4);
 
-                let td_5 = document.createElement("td");
-                td_5.setAttribute("class","removebtn")
+                const td_5 = document.createElement("td");
+                td_5.setAttribute("class", "removebtn")
                 td_5.innerText = "Remove"
                 tr.append(td_5)
 
-                
                 // console.log(element["price"])
             }
 
         });
 
         // let add_item = document.querySelectorAll(".increase-item")
-        let increment = document.querySelectorAll(".increase-item");
-        let decrement = document.querySelectorAll(".decerease-item");
-        let ttl_price = document.querySelectorAll("#table-body");
-        let span_value = document.querySelectorAll(".span")
-        let price_count = 0;
-        let cnt = 1;
-        let price_data = document.querySelectorAll(".price_data")
+        const increment = document.querySelectorAll(".increase-item");
+        const decrement = document.querySelectorAll(".decerease-item");
+        const ttl_price = document.querySelectorAll("#table-body");
+        const span_value = document.querySelectorAll(".span")
+        const price_count = 0;
+        const cnt = 1;
+        const price_data = document.querySelectorAll(".price_data")
 
         function total_price_view() {
 
-            let cart_details = JSON.parse(localStorage.getItem("add_to_cart"))
-            let total_price_id = document.getElementById("total-price")
+            const cart_details = JSON.parse(localStorage.getItem("add_to_cart"))
+            const total_price_id = document.getElementById("total-price")
             let total_price = 0
             cart_details.forEach(e => {
-                if (user == e["user"]) {
-                    total_price += e["total_individual_price"]
+                if (user == e.user) {
+                    total_price += e.total_individual_price
                 }
-
 
             })
             total_price_id.innerHTML = total_price
 
-
-        }
+        }//1
         increment.forEach((e, ind) => {
 
             e.addEventListener("click", (el) => {
-
-                let cart_data = JSON.parse(localStorage.getItem("add_to_cart"))
-                let user_cart = []
-                let new_cart = []
+                
+                const cart_data = JSON.parse(localStorage.getItem("add_to_cart"))
+                const user_cart = []
+                const new_cart = []
                 cart_data.forEach((elem, index) => {
-                    if (elem["user"] == user) {
+                    if (elem.user == user) {
                         user_cart.push(elem)
                     }
                 });
                 cart_data.forEach((elem, index) => {
-                    if (elem["user"] == user) {
+                    if (elem.user == user) {
                         // cart_data.splice(index,1)
 
                     }
@@ -178,18 +180,14 @@
                         new_cart.push(elem)
                     }
                 });
-
-
                 console.log(user_cart, "usercart")
                 console.log(new_cart, "cart")
 
-
-
-                user_cart[ind]["quantity"] += 1
-                let total_individual_price = user_cart[ind]["quantity"] * user_cart[ind]["price"]
+                user_cart[ind].quantity += 1
+                const total_individual_price = user_cart[ind].quantity * user_cart[ind].price
                 price_data[ind].innerHTML = total_individual_price
-                user_cart[ind]["total_individual_price"] = total_individual_price
-                span_value[ind].innerHTML = user_cart[ind]["quantity"]
+                user_cart[ind].total_individual_price = total_individual_price
+                span_value[ind].innerHTML = user_cart[ind].quantity
                 user_cart.forEach(e => {
                     new_cart.push(e)
                 })
@@ -199,46 +197,42 @@
                 total_price_view()
             }
 
-
-
-
             )
-        })
+        })//2
 
         decrement.forEach((e, ind) => {
             // console.log(decrement);
             e.addEventListener("click", (el) => {
-
-
-                let cart_data = JSON.parse(localStorage.getItem("add_to_cart"))
-                let user_cart = []
-                let new_cart = []
+                
+                const cart_data = JSON.parse(localStorage.getItem("add_to_cart"))
+                const user_cart = []
+                const new_cart = []
                 cart_data.forEach((elem, index) => {
-                    if (elem["user"] == user) {
+                    if (elem.user == user) {
                         user_cart.push(elem)
                     }
                 });
                 cart_data.forEach((elem, index) => {
-                    if (elem["user"] == user) {
+                    if (elem.user == user) {
                         // cart_data.splice(index,1)
 
                     }
                     else {
                         new_cart.push(elem)
+                      
                     }
                 });
-                user_cart[ind]["quantity"] -= 1
-                if (user_cart[ind]["quantity"] >= 1) {
-                    span_value[ind].innerHTML = user_cart[ind]["quantity"]
+                user_cart[ind].quantity -= 1
+                if (user_cart[ind].quantity >= 1) {
+                    span_value[ind].innerHTML = user_cart[ind].quantity
 
-                    let total_individual_price = user_cart[ind]["quantity"] * user_cart[ind]["price"]
+                    const total_individual_price = user_cart[ind].quantity * user_cart[ind].price
                     price_data[ind].innerHTML = total_individual_price
-                    user_cart[ind]["total_individual_price"] = total_individual_price
+                    user_cart[ind].total_individual_price = total_individual_price
 
                     user_cart.forEach(e => {
                         new_cart.push(e)
                     })
-
                     localStorage.setItem("add_to_cart", JSON.stringify(new_cart))
                     total_price_view()
 
@@ -246,40 +240,72 @@
                 else {
                     alert("no")
                 }
+            })
+        })//3
 
+        // remove
+        const removebtn = document.querySelectorAll(".removebtn")
 
+        removebtn.forEach((data) => {
+            data.addEventListener("click", (e) => {
 
-
+                for (let i = 0; i < cart_details.length; i++) {
+                    if (user == cart_details[i].user) {
+                        cart_details.splice(i, 1);
+                        localStorage.setItem("add_to_cart", JSON.stringify(cart_details));
+                        alert("Are you sure remove cart");
+                        location.reload();
+                        break;
+                    }
+                }
             })
         })
 
-
-        // remove
-        let removebtn=document.querySelectorAll(".removebtn")
-        
-        removebtn.forEach((data)=>{
-            data.addEventListener("click", (e) => {
-
-                            for (let i = 0; i< cart_details.length; j++) {
-                                if (user == cart_details[i]["user"]) {
-                                    cart_details.splice(i, 1);
-                                    localStorage.setItem("add_to_cart", JSON.stringify(cart_details));
-                                    alert("Are you sure remove cart");
-                                    location.reload();
-                                    break;
-                                }
-                            }
-                        })
-        })
-
-
         total_price_view()
 
+        // Sample order data
+        // let orders = [
+        //     { date: '2023-05-01', orderID: '001', product: 'Product A', price: '$19.99' },
+        //     { date: '2023-04-28', orderID: '002', product: 'Product B', price: '$14.99' },
+        //     { date: '2023-04-25', orderID: '003', product: 'Product C', price: '$9.99' }
+        //     // Add more orders as needed
+        // ];
+
+        // Generate table rows dynamically
+
+        // cart_details.forEach(function (order) {
+        
+            // let tableBody = document.querySelector('#orderTable tbody');
+            // let row = document.createElement('tr');
+
+            // let dateCell = document.createElement('td');
+            // dateCell.textContent = cart_details.date;
+            // row.appendChild(dateCell);
+
+            // let orderIDCell = document.createElement('td');
+            // orderIDCell.textContent = cart_details.orderID;
+            // row.appendChild(orderIDCell);
+
+            // let productCell = document.createElement('td');
+            // productCell.textContent = cart_details.product;
+            // row.appendChild(productCell);
+
+            // let priceCell = document.createElement('td');
+            // priceCell.textContent = cart_details.price;
+            // row.appendChild(priceCell);
+
+            // tableBody.append(row);
+      
+        // });
+
+        // let checkout = document.getElementsByClassName("cart-btn");
+        // checkout.addEventListener("click", () => {
+        //    let  cart = [{}]
+        //     cart_details.push(cart)
+        //     localStorage.setItem('cart_details', JSON.stringify(cart_details))
+
+        // })
     </script>
 </body>
 
 </html>
-
-
-
-

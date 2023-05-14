@@ -11,26 +11,30 @@
     <title>fresh-food-payment-page</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
 </head>
 
 <body>
     <nav id="#homepage">
-        <img id="logo" src="../assets/images/feshfood-logo.png" alt="logo1" />
+        <img id="logo" src="../assets/images/feshfood-logo.png" alt="logo1">
         <ul>
-            <li><a href="../../index.html">Home</a></li>
-            <li><a href="../services/services.html">Services</a></li>
-            <li><a href="../cart/add-to- cart.html">Cart</a></li>
-            <li><a href="../../index.html"><span class="material-symbols-outlined"
+            <li>
+<a href="../../index.html">Home</a>
+</li>
+            <li>
+<a href="../services/services.html">Services</a>
+</li>
+            <li>
+<a href="../cart/add-to- cart.html">Cart</a>
+</li>
+            <li>
+<a href="../../index.html">
+<span class="material-symbols-outlined"
                         style="width: 50px;">person</span></a></li>
         </ul>
     </nav>
 
-   
-
     <!-- New Payment Page Starting -->
-
-
 
     <form action="" onsubmit="page()">
 
@@ -52,7 +56,9 @@
 
             <div>
                 <input type="radio" name="fav_language">
-                <h2>CASH ON<br>DELIVERY</h2>
+                <h2>
+CASH ON<br>DELIVERY
+</h2>
             </div>
 
         </div>
@@ -99,7 +105,7 @@
                 </select>
             </label>
 
-            <label for="">CVC
+            <label for="">CVV
                 <input type="number" class="input_box">
                 <span>!</span>
             </label>
@@ -110,10 +116,13 @@
         </label>
 
         <div class="total_background margin">
+            
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" required></textarea>
 
             <div class="label">
                 <h3>Subtotal</h3>
-                <h3>$60.80</h3>
+                <h3>₹60.80</h3>
             </div>
             <div class="label">
                 <p>Home Delivery Cost</p>
@@ -123,30 +132,50 @@
         </div>
         <div class="label total_background">
             <h3>TOTAL AMOUNT</h3>
-            <h3>$60.80</h3>
+            <h3>₹60.80</h3>
         </div>
 <!-- 
         <a href="confirm_order.html"> -->
         <div class="label btn margin">
                 <p>.</p>
-               <a href="../index.html"> <button>CONFIRM PAYMENT</button></a>
+                <button>
+<a href="../index.html">CONFIRM PAYMENT</a></a>
+</button>
+
                 <p>.</p>
         </div>
     </a>
 
-
     </form>
 
+<script>
+    const add_to_cart = JSON.parse(localStorage.getItem("add_to_cart"))
+    const user=JSON.parse(localStorage.getItem("logdetails"))
+    add_to_cart.find((e)=>{
+        if(e.user==user){
+            
+        }
+    })
 
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // prevent form submission
 
+  var name = document.getElementById("name").value;
+  var address = document.getElementById("address").value;
+  var food = document.getElementById("food").value;
 
+  var order = {
+    name: name,
+    address: address,
+    food: food
+  };
 
+  // Save order to local storage
+  localStorage.setItem("order", JSON.stringify(order));
 
-
-
-
-
-
+  alert("Order placed successfully!");
+});
+</script>
 
 </body>
 

@@ -106,9 +106,15 @@ button {
   margin-right: 10px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  text-decoration:none ;
+}
+#page{
+  text-decoration: none;
+   color: #fff;
 }
 
 button:hover {
+
   background-color: #23233D;
 }
 

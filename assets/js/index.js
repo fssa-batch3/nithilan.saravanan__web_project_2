@@ -1,411 +1,403 @@
-
-
-
 const foodItem = [
-    {
-        id: 1,
-        name: 'Ambur Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 13,
-        img: 'https://iili.io/HSRLAmB.jpg',
-        quantity: 1
-    },
-    {
-        id: 2,
-        name: 'Hyderabadi Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 15,
-        img: 'https://iili.io/HSRLo0b.jpg',
-        quantity: 1
-    },
-    {
-        id: 3,
-        name: 'Egg Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 18,
-        img: 'https://iili.io/HSRLBse.jpg',
-        quantity: 1
-    },
-    {
-        id: 4,
-        name: 'Goan Fish Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 15,
-        img: 'https://iili.io/HSRLqX9.jpg',
-        quantity: 1
-    },
-    {
-        id: 5,
-        name: 'Mutton Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 10,
-        img: 'https://iili.io/HSRLxgj.png',
-        quantity: 1
-    },
-    {
-        id: 6,
-        name: 'Kamrupi Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 12,
-        img: 'https://iili.io/HSRLT5Q.jpg',
-        quantity: 1
-    },
-    {
-        id: 7,
-        name: 'Kashmiri Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 13,
-        img: 'https://iili.io/HSRLIdx.jpg',
-        quantity: 1
-    },
-    {
-        id: 8,
-        name: 'Memoni Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 20,
-        img: 'https://iili.io/HSRLueV.jpg',
-        quantity: 1
-    },
-    {
-        id: 9,
-        name: 'Mughlai Biryani',
-        category: 'biryani',
-        rating: 4.3,
-        price: 15,
-        img: 'https://iili.io/HSRL5zP.jpg',
-        quantity: 1
-    },
-    {
-        id: 10,
-        name: 'Chicken Roast',
-        category: 'chicken',
-        rating: 4.3,
-        price: 11,
-        img: 'https://iili.io/HSRZqKu.jpg',
-        quantity: 1
-    },
-    {
-        id: 11,
-        name: 'Chicken Curry',
-        category: 'chicken',
-        rating: 4.3,
-        price: 10,
-        img: 'https://iili.io/HSRZFV9.jpg',
-        quantity: 1
-    },
-    {
-        id: 12,
-        name: 'Chicken Do Pyaza',
-        category: 'chicken',
-        rating: 4.3,
-        price: 14,
-        img: 'https://iili.io/HSRZBcb.jpg',
-        quantity: 1
-    },
-    {
-        id: 13,
-        name: 'Chicken Masala',
-        category: 'chicken',
-        rating: 4.3,
-        price: 12,
-        img: 'https://iili.io/HSRZ3o7.jpg',
-        quantity: 1
-    },
-    {
-        id: 14,
-        name: 'Handi Chicken',
-        category: 'chicken',
-        rating: 4.3,
-        price: 17,
-        img: 'https://iili.io/HSRZFV9.jpg',
-        quantity: 1
-    },
-    {
-        id: 15,
-        name: 'Murgh Musallam',
-        category: 'chicken',
-        rating: 4.3,
-        price: 20,
-        img: 'https://iili.io/HSRZBcb.jpg',
-        quantity: 1
-    },
-    {
-        id: 16,
-        name: 'Matar Paneer',
-        category: 'paneer',
-        rating: 4.3,
-        price: 15,
-        img: 'https://iili.io/HSRbHAv.jpg',
-        quantity: 1
-
-    },
-    {
-        id: 17,
-        name: 'Palak Paneer',
-        category: 'paneer',
-        rating: 4.3,
-        price: 10,
-        img: 'https://iili.io/HSRb9HJ.png',
-        quantity: 1
-    },
-    {
-        id: 18,
-        name: 'Paneer Butter Masala',
-        category: 'paneer',
-        rating: 4.3,
-        price: 15,
-        img: 'https://iili.io/HSRbHAv.jpg',
-        quantity: 1
-
-    },
-    {
-        id: 19,
-        name: 'Paneer Do Pyaza',
-        category: 'paneer',
-        rating: 4.3,
-        price: 12,
-        img: 'https://iili.io/HSRb9HJ.png',
-        quantity: 1
-
-    },
-    {
-        id: 20,
-        name: 'Hyderabadi Paneer',
-        category: 'paneer',
-        rating: 4.3,
-        price: 8,
-        img: 'https://iili.io/HSRDpSa.jpg',
-        quantity: 1
-    },
-    {
-        id: 21,
-        name: 'Paneer Lababdar',
-        category: 'paneer',
-        rating: 4.3,
-        price: 7,
-        img: 'https://iili.io/HSRtiBt.jpg',
-        quantity: 1
-    },
-    {
-        id: 22,
-        name: 'Shahi Paneer',
-        age: '32',
-        category: 'paneer',
-        rating: 4.3,
-        price: 5,
-        img: 'https://iili.io/HSRtsEX.jpg',
-        quantity: 1
-    },
-    {
-        id: 23,
-        name: 'Navratan Korma',
-        category: 'vegetable',
-        rating: 4.3,
-        price: 8,
-        img: 'https://iili.io/HSRmhhl.jpg',
-        quantity: 1
-    },
-    {
-        id: 24,
-        name: 'Veg Jalfrezi',
-        category: 'vegetable',
-        rating: 4.3,
-        price: 7,
-        img: ' https://iili.io/HSRmXI4.jpg',
-        quantity: 1
-    },
-    {
-        id: 25,
-        name: 'Veg Biryani',
-        category: 'vegetable',
-        rating: 4.3,
-        price: 5,
-        img: 'https://iili.io/HSRmjQ2.jpg',
-        quantity: 1
-    },
-    {
-        id: 26,
-        name: 'Veg Curry',
-        category: 'vegetable',
-        rating: 4.3,
-        price: 7,
-        img: ' https://iili.io/HSRmNBS.jpg',
-        quantity: 1
-    },
-    {
-        id: 27,
-        name: 'Veg Kolhapur',
-        category: 'vegetable',
-        rating: 4.3,
-        price: 10,
-        img: 'https://iili.io/HSRmOE7.png',
-        quantity: 1
-    },
-    {
-        id: 28,
-        name: 'Veg Masala',
-        category: 'vegetable',
-        rating: 4.3,
-        price: 4,
-        img: 'https://iili.io/HSRme49.jpg',
-        quantity: 1
-    },
-    {
-        id: 29,
-        name: 'Veg Pakora',
-        category: 'vegetable',
-        rating: 4.3,
-        price: 4,
-        img: ' https://iili.io/HSRm8Yu.jpg',
-        quantity: 1
-    },
-    {
-        id: 30,
-        name: 'Momos',
-        category: 'chinese',
-        rating: 4.3,
-        price: 8,
-        img: 'https://iili.io/HSRpT67.jpg',
-        quantity: 1
-    },
-    {
-        id: 31,
-        name: 'Chicken Manchurian',
-        category: 'chinese',
-        rating: 4.3,
-        price: 7,
-        img: 'https://iili.io/HSRpzn2.jpg',
-        quantity: 1
-    },
-    {
-        id: 32,
-        name: 'Chili Chicken',
-        category: 'chinese',
-        rating: 4.3,
-        price: 5,
-        img: 'https://iili.io/HSRpIGS.jpg    ',
-        quantity: 1
-    },
-    {
-        id: 33,
-        name: 'Chowmein',
-        category: 'chinese',
-        rating: 4.3,
-        price: 16,
-        img: 'https://iili.io/HSRpoZl.jpg',
-        quantity: 1
-    },
-    {
-        id: 34,
-        name: 'Spring Roll',
-        category: 'chinese',
-        rating: 4.3,
-        price: 14,
-        img: 'https://iili.io/HSRp7yb.jpg',
-        quantity: 1
-    },
-    {
-        id: 35,
-        name: 'Szechuan Chicken',
-        category: 'chinese',
-        rating: 4.3,
-        price: 10,
-        img: 'https://iili.io/HSRpAF9.jpg',
-        quantity: 1
-    },
-    {
-        id: 36,
-        name: 'Fried Rice',
-        category: 'chinese',
-        rating: 4.3,
-        price: 8,
-        img: ' https://iili.io/HSRp58u.jpg',
-        quantity: 1
-    },
-    {
-        id: 37,
-        name: 'Butter Masala Dosa',
-        category: 'south indian',
-        rating: 4.3,
-        price: 18,
-        img: 'https://iili.io/HSRpRae.jpg',
-        quantity: 1
-    },
-    {
-        id: 38,
-        name: 'Idli',
-        category: 'south indian',
-        rating: 4.3,
-        price: 20,
-        img: 'https://iili.io/HSRyJNj.jpg',
-        quantity: 1
-    },
-    {
-        id: 39,
-        name: 'Masala Dosa',
-        category: 'south indian',
-        rating: 4.3,
-        price: 12,
-        img: ' https://iili.io/HSRyFVV.jpg',
-        quantity: 1
-    },
-    {
-        id: 40,
-        name: 'Mysore Bonda',
-        category: 'south indian',
-        rating: 4.3,
-        price: 10,
-        img: 'https://iili.io/HSRydDx.jpg',
-        quantity: 1
-    },
-    {
-        id: 41,
-        name: 'Onion Uttapam',
-        category: 'south indian',
-        rating: 4.3,
-        price: 15,
-        img: 'https://iili.io/HSRy3oQ.jpg',
-        quantity: 1
-    },
-    {
-        id: 42,
-        name: 'Plain Dosa',
-        category: 'south indian',
-        rating: 4.3,
-        price: 40,
-        img: ' https://iili.io/HSRyKiB.jpg',
-        quantity: 1
-    },
-    {
-        id: 43,
-        name: 'Rava Uttapam',
-        category: 'south indian',
-        rating: 4.3,
-        price: 25,
-        img: ' https://iili.io/HSRyBl1.jpg',
-        quantity: 1
-    },
-    {
-        id: 44,
-        name: 'Sambhar Vada',
-        category: 'south indian',
-        rating: 4.3,
-        price: 34,
-        img: 'https://iili.io/HSRyqKP.jpg',
-        // https://iili.io/HSRyCUF.png',
-        quantity: 1
-    },
-]
-
-
+  {
+    id: 1,
+    name: "Ambur Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 13,
+    img: "https://iili.io/HSRLAmB.jpg",
+    quantity: 1,
+  },
+  {
+    id: 2,
+    name: "Hyderabadi Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 15,
+    img: "https://iili.io/HSRLo0b.jpg",
+    quantity: 1,
+  },
+  {
+    id: 3,
+    name: "Egg Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 18,
+    img: "https://iili.io/HSRLBse.jpg",
+    quantity: 1,
+  },
+  {
+    id: 4,
+    name: "Goan Fish Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 15,
+    img: "https://iili.io/HSRLqX9.jpg",
+    quantity: 1,
+  },
+  {
+    id: 5,
+    name: "Mutton Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 10,
+    img: "https://iili.io/HSRLxgj.png",
+    quantity: 1,
+  },
+  {
+    id: 6,
+    name: "Kamrupi Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 12,
+    img: "https://iili.io/HSRLT5Q.jpg",
+    quantity: 1,
+  },
+  {
+    id: 7,
+    name: "Kashmiri Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 13,
+    img: "https://iili.io/HSRLIdx.jpg",
+    quantity: 1,
+  },
+  {
+    id: 8,
+    name: "Memoni Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 20,
+    img: "https://iili.io/HSRLueV.jpg",
+    quantity: 1,
+  },
+  {
+    id: 9,
+    name: "Mughlai Biryani",
+    category: "biryani",
+    rating: 4.3,
+    price: 15,
+    img: "https://iili.io/HSRL5zP.jpg",
+    quantity: 1,
+  },
+  {
+    id: 10,
+    name: "Chicken Roast",
+    category: "chicken",
+    rating: 4.3,
+    price: 11,
+    img: "https://iili.io/HSRZqKu.jpg",
+    quantity: 1,
+  },
+  {
+    id: 11,
+    name: "Chicken Curry",
+    category: "chicken",
+    rating: 4.3,
+    price: 10,
+    img: "https://iili.io/HSRZFV9.jpg",
+    quantity: 1,
+  },
+  {
+    id: 12,
+    name: "Chicken Do Pyaza",
+    category: "chicken",
+    rating: 4.3,
+    price: 14,
+    img: "https://iili.io/HSRZBcb.jpg",
+    quantity: 1,
+  },
+  {
+    id: 13,
+    name: "Chicken Masala",
+    category: "chicken",
+    rating: 4.3,
+    price: 12,
+    img: "https://iili.io/HSRZ3o7.jpg",
+    quantity: 1,
+  },
+  {
+    id: 14,
+    name: "Handi Chicken",
+    category: "chicken",
+    rating: 4.3,
+    price: 17,
+    img: "https://iili.io/HSRZFV9.jpg",
+    quantity: 1,
+  },
+  {
+    id: 15,
+    name: "Murgh Musallam",
+    category: "chicken",
+    rating: 4.3,
+    price: 20,
+    img: "https://iili.io/HSRZBcb.jpg",
+    quantity: 1,
+  },
+  {
+    id: 16,
+    name: "Matar Paneer",
+    category: "paneer",
+    rating: 4.3,
+    price: 15,
+    img: "https://iili.io/HSRbHAv.jpg",
+    quantity: 1,
+  },
+  {
+    id: 17,
+    name: "Palak Paneer",
+    category: "paneer",
+    rating: 4.3,
+    price: 10,
+    img: "https://iili.io/HSRb9HJ.png",
+    quantity: 1,
+  },
+  {
+    id: 18,
+    name: "Paneer Butter Masala",
+    category: "paneer",
+    rating: 4.3,
+    price: 15,
+    img: "https://iili.io/HSRbHAv.jpg",
+    quantity: 1,
+  },
+  {
+    id: 19,
+    name: "Paneer Do Pyaza",
+    category: "paneer",
+    rating: 4.3,
+    price: 12,
+    img: "https://iili.io/HSRb9HJ.png",
+    quantity: 1,
+  },
+  {
+    id: 20,
+    name: "Hyderabadi Paneer",
+    category: "paneer",
+    rating: 4.3,
+    price: 8,
+    img: "https://iili.io/HSRDpSa.jpg",
+    quantity: 1,
+  },
+  {
+    id: 21,
+    name: "Paneer Lababdar",
+    category: "paneer",
+    rating: 4.3,
+    price: 7,
+    img: "https://iili.io/HSRtiBt.jpg",
+    quantity: 1,
+  },
+  {
+    id: 22,
+    name: "Shahi Paneer",
+    age: "32",
+    category: "paneer",
+    rating: 4.3,
+    price: 5,
+    img: "https://iili.io/HSRtsEX.jpg",
+    quantity: 1,
+  },
+  {
+    id: 23,
+    name: "Navratan Korma",
+    category: "vegetable",
+    rating: 4.3,
+    price: 8,
+    img: "https://iili.io/HSRmhhl.jpg",
+    quantity: 1,
+  },
+  {
+    id: 24,
+    name: "Veg Jalfrezi",
+    category: "vegetable",
+    rating: 4.3,
+    price: 7,
+    img: " https://iili.io/HSRmXI4.jpg",
+    quantity: 1,
+  },
+  {
+    id: 25,
+    name: "Veg Biryani",
+    category: "vegetable",
+    rating: 4.3,
+    price: 5,
+    img: "https://iili.io/HSRmjQ2.jpg",
+    quantity: 1,
+  },
+  {
+    id: 26,
+    name: "Veg Curry",
+    category: "vegetable",
+    rating: 4.3,
+    price: 7,
+    img: " https://iili.io/HSRmNBS.jpg",
+    quantity: 1,
+  },
+  {
+    id: 27,
+    name: "Veg Kolhapur",
+    category: "vegetable",
+    rating: 4.3,
+    price: 10,
+    img: "https://iili.io/HSRmOE7.png",
+    quantity: 1,
+  },
+  {
+    id: 28,
+    name: "Veg Masala",
+    category: "vegetable",
+    rating: 4.3,
+    price: 4,
+    img: "https://iili.io/HSRme49.jpg",
+    quantity: 1,
+  },
+  {
+    id: 29,
+    name: "Veg Pakora",
+    category: "vegetable",
+    rating: 4.3,
+    price: 4,
+    img: " https://iili.io/HSRm8Yu.jpg",
+    quantity: 1,
+  },
+  {
+    id: 30,
+    name: "Momos",
+    category: "chinese",
+    rating: 4.3,
+    price: 8,
+    img: "https://iili.io/HSRp58u.jpg  ",
+    quantity: 1,
+  },
+  {
+    id: 31,
+    name: "Chicken Manchurian",
+    category: "chinese",
+    rating: 4.3,
+    price: 7,
+    img: "https://iili.io/HSRpzn2.jpg",
+    quantity: 1,
+  },
+  {
+    id: 32,
+    name: "Chili Chicken",
+    category: "chinese",
+    rating: 4.3,
+    price: 5,
+    img: "https://iili.io/HSRpIGS.jpg    ",
+    quantity: 1,
+  },
+  {
+    id: 33,
+    name: "Chowmein",
+    category: "chinese",
+    rating: 4.3,
+    price: 16,
+    img: "https://iili.io/HSRpoZl.jpg",
+    quantity: 1,
+  },
+  {
+    id: 34,
+    name: "Spring Roll",
+    category: "chinese",
+    rating: 4.3,
+    price: 14,
+    img: "https://iili.io/HSRp7yb.jpg",
+    quantity: 1,
+  },
+  {
+    id: 35,
+    name: "Szechuan Chicken",
+    category: "chinese",
+    rating: 4.3,
+    price: 10,
+    img: "https://iili.io/HSRpAF9.jpg",
+    quantity: 1,
+  },
+  {
+    id: 36,
+    name: "Fried Rice",
+    category: "chinese",
+    rating: 4.3,
+    price: 8,
+    img: "https://iili.io/HSRpT67.jpg ",
+    quantity: 1,
+  },
+  {
+    id: 37,
+    name: "Butter Masala Dosa",
+    category: "south indian",
+    rating: 4.3,
+    price: 18,
+    img: "https://iili.io/HSRpRae.jpg",
+    quantity: 1,
+  },
+  {
+    id: 38,
+    name: "Idli",
+    category: "south indian",
+    rating: 4.3,
+    price: 20,
+    img: "https://iili.io/HSRyJNj.jpg",
+    quantity: 1,
+  },
+  {
+    id: 39,
+    name: "Masala Dosa",
+    category: "south indian",
+    rating: 4.3,
+    price: 12,
+    img: " https://iili.io/HSRyFVV.jpg",
+    quantity: 1,
+  },
+  {
+    id: 40,
+    name: "Mysore Bonda",
+    category: "south indian",
+    rating: 4.3,
+    price: 10,
+    img: "https://iili.io/HSRydDx.jpg",
+    quantity: 1,
+  },
+  {
+    id: 41,
+    name: "Onion Uttapam",
+    category: "south indian",
+    rating: 4.3,
+    price: 15,
+    img: "https://iili.io/HSRy3oQ.jpg",
+    quantity: 1,
+  },
+  {
+    id: 42,
+    name: "Plain Dosa",
+    category: "south indian",
+    rating: 4.3,
+    price: 40,
+    img: " https://iili.io/HSRyKiB.jpg",
+    quantity: 1,
+  },
+  {
+    id: 43,
+    name: "Rava Uttapam",
+    category: "south indian",
+    rating: 4.3,
+    price: 25,
+    img: " https://iili.io/HSRyBl1.jpg",
+    quantity: 1,
+  },
+  {
+    id: 44,
+    name: "Sambhar Vada",
+    category: "south indian",
+    rating: 4.3,
+    price: 34,
+    img: "https://iili.io/HSRyqKP.jpg",
+    // https://iili.io/HSRyCUF.png',
+    quantity: 1,
+  },
+];
 
 displayItems();
 
@@ -435,7 +427,6 @@ displayItems();
 //     totalAmount();
 //     cartItems();
 // }
-
 
 // function cartItems() {
 //     let tableBody = document.getElementById('table-body');
@@ -484,7 +475,6 @@ displayItems();
 //         item.addEventListener('click', decrementItem)
 //     })
 // }
-
 
 // function incrementItem() {
 //     let itemToInc = this.parentNode.previousSibling.innerText;
@@ -580,7 +570,7 @@ displayItems();
 //     })
 // }
 
-// document.querySelectorAll('#add-address').addEventListener('click', addAddress());
+// document.querySelector('#add-address').addEventListener('click', addAddress());
 
 // function addAddress() {
 //     let address = prompt('Enter your address', '');
@@ -590,7 +580,7 @@ displayItems();
 //     else {
 //         alert("Address not added")
 //     }
-    
+
 // }
 // document.getElementById('cart-plus').addEventListener("click", function check() {
 //     document.getElementById('cart-page').classList.toggle('cart-toggle');
@@ -609,450 +599,388 @@ displayItems();
 //     }
 // }
 
-
 const loginUser = JSON.parse(localStorage.getItem("user_logged_in"));
 console.log(loginUser);
-const loginbtn = document.querySelector(".login")
-
+const loginbtn = document.querySelector(".login");
 
 if (loginUser == null) {
+} else if (loginUser !== false) {
+  loginbtn.style.display = "none";
+  const myprofile = document.createElement("button");
+  myprofile.setAttribute("class", "login");
+  myprofile.innerText = "My Account";
+  myprofile.style.width = "150px";
+  myprofile.style.left = "50px";
+  myprofile.addEventListener("click", () => {
+    window.location.href = "html/profile.html";
+  });
+  document.querySelector(".contact").append(myprofile);
+} else {
+  loginbtn.style.display = "block";
 }
-else {
-    if (loginUser !== false) {
-        loginbtn.style.display = "none"
-        const myprofile = document.createElement("button");
-        myprofile.setAttribute("class", "login");
-        myprofile.innerText = "My Account"
-        myprofile.style.width = "150px";
-        myprofile.style.left = "50px"
-        myprofile.addEventListener("click", () => {
-            window.location.href = "html/profile.html"
-        });
-        document.querySelector(".contact").append(myprofile)
-    }
-    else {
-        loginbtn.style.display = "block"
-
-
-    }
-
-}
-
 
 function displayItems() {
+  const food_detail = JSON.parse(localStorage.getItem("food_details"));
+  const biriyani = document.getElementById("biriyani");
 
-    const food_detail = JSON.parse(localStorage.getItem("food_details"));
-    let biriyani = document.getElementById('biriyani');
+  const biriyaniData = foodItem.filter((item) => item.category == "biryani");
+  // console.log(biriyaniData);
 
-    const biriyaniData = foodItem.filter(item => item.category == 'biryani');
-    // console.log(biriyaniData);
+  // cards
+  //   let food_detail=JSON.parse(localStorage.getItem("food_details"));
+  //   food_detail.find((e)=>{
+  //         if()
+  //   })
+  if (food_detail == null) {
+  } else {
+    for (let j = 0; j <= food_detail.length - 1; j++) {
+      // let image = document.createElement('img')
+      // image.setAttribute('src',food_detail[j]["food_photo"]);
+      // // image.setAttribute("item-card")
+      // document.querySelector("#south-indian").append(image)
+      // console.log(food_detail[j]["food_photo"]);
+      // console.log(image);
 
-    // cards
-    //   let food_detail=JSON.parse(localStorage.getItem("food_details"));
-    //   food_detail.find((e)=>{
-    //         if()
-    //   })
-    if (food_detail == null) { }
-    else {
-        for (let j = 0; j <= food_detail.length - 1; j++) {
-
-            // let image = document.createElement('img')
-            // image.setAttribute('src',food_detail[j]["food_photo"]);
-            // // image.setAttribute("item-card")
-            // document.querySelector("#south-indian").append(image)
-            // console.log(food_detail[j]["food_photo"]);
-            // console.log(image);
-
-            let item_card = document.createElement("div")
-            item_card.setAttribute("id", "item-card")
-            document.querySelector("#south-indian").append(item_card)
-            let card_top = document.createElement("div")
-            card_top.setAttribute("id", "card-top")
-            item_card.append(card_top)
-            let i_tag = document.createElement("i")
-            i_tag.setAttribute("class", "fa fa-star")
-            i_tag.setAttribute("id", "rating")
-            i_tag.innerText = "$.3"
-            card_top.append(i_tag)
-            let i2_tag = document.createElement("i")
-            i2_tag.setAttribute("class", "fa fa-heart-o add-to-cart")
-            card_top.append(i2_tag)
-            let img = document.createElement("img")
-            img.setAttribute("src", food_detail[j]["food_photo"])
-            item_card.append(img)
-            let p_tag = document.createElement("p")
-            p_tag.setAttribute("id", "item-name")
-            p_tag.innerText = food_detail[j]["food_Name"]
-            card_top.append(p_tag)
-            let p2_tag = document.createElement("p")
-            p2_tag.setAttribute("id", "item-price")
-            p2_tag.innerText = "Price : " + food_detail[j]["food_price"]
-            card_top.append(p2_tag)
-
-
-
-
-
-        }
+      const item_card = document.createElement("div");
+      item_card.setAttribute("id", "item-card");
+      document.querySelector("#south-indian").append(item_card);
+      const card_top = document.createElement("div");
+      card_top.setAttribute("id", "card-top");
+      item_card.append(card_top);
+      const i_tag = document.createElement("i");
+      i_tag.setAttribute("class", "fa fa-star");
+      i_tag.setAttribute("id", "rating");
+      i_tag.innerText = "$.3";
+      card_top.append(i_tag);
+      const i2_tag = document.createElement("i");
+      i2_tag.setAttribute("class", "fa fa-heart-o add-to-cart");
+      card_top.append(i2_tag);
+      const img = document.createElement("img");
+      img.setAttribute("src", food_detail[j].food_photo);
+      item_card.append(img);
+      const p_tag = document.createElement("p");
+      p_tag.setAttribute("id", "item-name");
+      p_tag.innerText = food_detail[j].food_Name;
+      card_top.append(p_tag);
+      const p2_tag = document.createElement("p");
+      p2_tag.setAttribute("id", "item-price");
+      p2_tag.innerText = `Price : ${food_detail[j].food_price}`;
+      card_top.append(p2_tag);
     }
-    biriyaniData.find(item => {
-        // for(let i=0;i<biriyaniData.length;i++){
-        let itemCard = document.createElement('div');
-        itemCard.setAttribute('id', 'item-card');
-
-
-        let cardTop = document.createElement('div');
-        cardTop.setAttribute('id', 'card-top');
-        itemCard.append(cardTop)
-
-        let star = document.createElement('i');
-        star.setAttribute('class', 'fa fa-star');
-        star.setAttribute('id', 'ratting');
-        star.innerText = ' ' + item.rating;
-
-        let heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
-        heart.setAttribute('id', item.id);
-        heart.innerText = ' ' + item.rating;
-
-        cardTop.appendChild(star);
-        cardTop.appendChild(heart);
-
-        let img = document.createElement('img');
-        img.src = item.img;
-
-        let itemName = document.createElement('p');
-        itemName.setAttribute('id', 'item-name');
-        itemName.innerText = item.name;
-
-        let itemPrice = document.createElement('p');
-        itemPrice.setAttribute('id', 'item-price');
-        itemPrice.innerText = 'Price : ₹' + item.price;
-
-        let anchor = document.createElement("a");
-        anchor.setAttribute("href", "#");
-        let btn = document.createElement("button");
-        btn.setAttribute("id", "buynow");
-        btn.innerText = "Buy now";
-        // btn.setAttribute("href","https://google.com/");
-        anchor.append(btn);
-        // itemCard.appendChild(anchor)
-
-
-        itemCard.appendChild(cardTop);
-        itemCard.appendChild(img);
-        itemCard.appendChild(itemName);
-        itemCard.appendChild(itemPrice);
-        itemCard.appendChild(anchor)
-        document.querySelector("#biriyani").append(itemCard)
-        // biriyani.appendChild(itemCard);
-
-    }
-    )
-
-    const chickenData = foodItem.filter(item => item.category == 'chicken');
-    // console.log(biriyaniData);
-
-    chickenData.find(item => {
-        // for(let i=0;i<biriyaniData.length;i++){
-        let itemCard = document.createElement('div');
-        itemCard.setAttribute('id', 'item-card');
-
-
-        let cardTop = document.createElement('div');
-        cardTop.setAttribute('id', 'card-top');
-        itemCard.append(cardTop)
-
-        let star = document.createElement('i');
-        star.setAttribute('class', 'fa fa-star');
-        star.setAttribute('id', 'ratting');
-        star.innerText = ' ' + item.rating;
-
-        let heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
-        heart.setAttribute('id', item.id);
-        // heart.innerText = ' ' + item.rating;
-
-        cardTop.appendChild(star);
-        cardTop.appendChild(heart);
-
-        let img = document.createElement('img');
-        img.src = item.img;
-
-        let itemName = document.createElement('p');
-        itemName.setAttribute('id', 'item-name');
-        itemName.innerText = item.name;
-
-        let itemPrice = document.createElement('p');
-        itemPrice.setAttribute('id', 'item-price');
-        itemPrice.innerText = 'Price : ₹' + item.price;
-        let anchor = document.createElement("a");
-        anchor.setAttribute("href", "#");
-        let btn = document.createElement("button");
-        btn.setAttribute("id", "buynow");
-        btn.innerText = "Buy now";
-        // btn.setAttribute("href","https://google.com/");
-        anchor.append(btn);
-
-
-        itemCard.appendChild(cardTop);
-        itemCard.appendChild(img);
-        itemCard.appendChild(itemName);
-
-        itemCard.appendChild(itemPrice);
-        itemCard.appendChild(anchor)
-        document.querySelector("#chicken").append(itemCard)
-        // biriyani.appendChild(itemCard);
-
-    }
-    )
-
-    const paneerData = foodItem.filter(item => item.category == 'paneer');
-    // console.log(biriyaniData);
-
-    paneerData.find(item => {
-        // for(let i=0;i<biriyaniData.length;i++){
-        let itemCard = document.createElement('div');
-        itemCard.setAttribute('id', 'item-card');
-
-
-        let cardTop = document.createElement('div');
-        cardTop.setAttribute('id', 'card-top');
-        itemCard.append(cardTop)
-
-        let star = document.createElement('i');
-        star.setAttribute('class', 'fa fa-star');
-        star.setAttribute('id', 'ratting');
-        star.innerText = ' ' + item.rating;
-
-        let heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
-        heart.setAttribute('id', item.id);
-        // heart.innerText = ' ' + item.rating;
-
-        cardTop.appendChild(star);
-        cardTop.appendChild(heart);
-
-        let img = document.createElement('img');
-        img.src = item.img;
-
-        let itemName = document.createElement('p');
-        itemName.setAttribute('id', 'item-name');
-        itemName.innerText = item.name;
-
-        let itemPrice = document.createElement('p');
-        itemPrice.setAttribute('id', 'item-price');
-        itemPrice.innerText = 'Price : ₹' + item.price;
-        let anchor = document.createElement("a");
-        anchor.setAttribute("href", "#");
-        let btn = document.createElement("button");
-        btn.setAttribute("id", "buynow");
-        btn.innerText = "Buy now";
-        // btn.setAttribute("href","https://google.com/");
-        anchor.append(btn);
-        itemCard.appendChild(anchor)
-
-        itemCard.appendChild(cardTop);
-        itemCard.appendChild(img);
-        itemCard.appendChild(itemName);
-        itemCard.appendChild(itemPrice);
-        document.querySelector("#paneer").append(itemCard)
-        // biriyani.appendChild(itemCard);
-
-    }
-    )
-
-    const vegetableData = foodItem.filter(item => item.category == 'vegetable');
-    // console.log(biriyaniData);
-
-    vegetableData.find(item => {
-        // for(let i=0;i<biriyaniData.length;i++){
-        let itemCard = document.createElement('div');
-        itemCard.setAttribute('id', 'item-card');
-
-
-        let cardTop = document.createElement('div');
-        cardTop.setAttribute('id', 'card-top');
-        itemCard.append(cardTop)
-
-        let star = document.createElement('i');
-        star.setAttribute('class', 'fa fa-star');
-        star.setAttribute('id', 'ratting');
-        star.innerText = ' ' + item.rating;
-
-        let heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
-        heart.setAttribute('id', item.id);
-        // heart.innerText = ' ' + item.rating;
-
-        cardTop.appendChild(star);
-        cardTop.appendChild(heart);
-
-        let img = document.createElement('img');
-        img.src = item.img;
-
-        let itemName = document.createElement('p');
-        itemName.setAttribute('id', 'item-name');
-        itemName.innerText = item.name;
-
-        let itemPrice = document.createElement('p');
-        itemPrice.setAttribute('id', 'item-price');
-        itemPrice.innerText = 'Price : ₹' + item.price;
-        let anchor = document.createElement("a");
-        anchor.setAttribute("href", "#");
-        let btn = document.createElement("button");
-        btn.setAttribute("id", "buynow");
-        btn.innerText = "Buy now";
-        // btn.setAttribute("href","https://google.com/");
-        anchor.append(btn);
-
-        itemCard.appendChild(cardTop);
-        itemCard.appendChild(img);
-        itemCard.appendChild(itemName);
-        itemCard.appendChild(itemPrice);
-        itemCard.appendChild(anchor)
-
-        document.querySelector("#vegetable").append(itemCard)
-        // biriyani.appendChild(itemCard);
-
-    }
-    )
-    const chiniseData = foodItem.filter(item => item.category == 'chinese');
-    // console.log(biriyaniData);
-
-    chiniseData.find(item => {
-        // for(let i=0;i<biriyaniData.length;i++){
-        let itemCard = document.createElement('div');
-        itemCard.setAttribute('id', 'item-card');
-
-
-        let cardTop = document.createElement('div');
-        cardTop.setAttribute('id', 'card-top');
-        itemCard.append(cardTop)
-
-        let star = document.createElement('i');
-        star.setAttribute('class', 'fa fa-star');
-        star.setAttribute('id', 'ratting');
-        star.innerText = ' ' + item.rating;
-
-        let heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
-        heart.setAttribute('id', item.id);
-        // heart.innerText = ' ' + item.rating;
-
-        cardTop.appendChild(star);
-        cardTop.appendChild(heart);
-
-        let img = document.createElement('img');
-        img.src = item.img;
-
-        let itemName = document.createElement('p');
-        itemName.setAttribute('id', 'item-name');
-        itemName.innerText = item.name;
-
-        let itemPrice = document.createElement('p');
-        itemPrice.setAttribute('id', 'item-price');
-        itemPrice.innerText = 'Price : ₹' + item.price;
-        let anchor = document.createElement("a");
-        anchor.setAttribute("href", "#");
-        let btn = document.createElement("button");
-        btn.setAttribute("id", "buynow");
-        btn.innerText = "Buy now";
-        // btn.setAttribute("href","https://google.com/");
-        anchor.append(btn);
-
-        itemCard.appendChild(cardTop);
-        itemCard.appendChild(img);
-        itemCard.appendChild(itemName);
-        itemCard.appendChild(itemPrice);
-        itemCard.appendChild(anchor)
-
-        document.querySelector("#chinise").append(itemCard)
-        // biriyani.appendChild(itemCard);
-
-    }
-    )
-    const southData = foodItem.filter(item => item.category == 'south indian');
-    // console.log(biriyaniData);
-
-    southData.find(item => {
-        // for(let i=0;i<biriyaniData.length;i++){
-        let itemCard = document.createElement('div');
-        itemCard.setAttribute('id', 'item-card');
-
-
-        let cardTop = document.createElement('div');
-        cardTop.setAttribute('id', 'card-top');
-        itemCard.append(cardTop)
-
-        let star = document.createElement('i');
-        star.setAttribute('class', 'fa fa-star');
-        star.setAttribute('id', 'ratting');
-        star.innerText = ' ' + item.rating;
-
-        let heart = document.createElement('i');
-        heart.setAttribute('class', 'fa fa-heart-o add-to-cart');
-        heart.setAttribute('id', item.id);
-        // heart.innerText = ' ' + item.rating;
-
-        cardTop.appendChild(star);
-        cardTop.appendChild(heart);
-
-        let img = document.createElement('img');
-        img.src = item.img;
-
-        let itemName = document.createElement('p');
-        itemName.setAttribute('id', 'item-name');
-        itemName.innerText = item.name;
-
-        let itemPrice = document.createElement('p');
-        itemPrice.setAttribute('id', 'item-price');
-        itemPrice.innerText = 'Price : ₹' + item.price;
-
-        let anchor = document.createElement("a");
-        anchor.setAttribute("href", "#");
-        let btn = document.createElement("button");
-        btn.setAttribute("id", "buynow");
-        btn.innerText = "Buy now";
-        // btn.setAttribute("href","https://google.com/");
-        anchor.append(btn);
-
-        itemCard.appendChild(cardTop);
-        itemCard.appendChild(img);
-        itemCard.appendChild(itemName);
-        itemCard.appendChild(itemPrice);
-        itemCard.appendChild(anchor)
-        document.querySelector("#south-indian").append(itemCard)
-        // biriyani.appendChild(itemCard);
-
-    }
-    )
+  }
+  biriyaniData.find((item) => {
+    // for(let i=0;i<biriyaniData.length;i++){
+    const itemCard = document.createElement("div");
+    itemCard.setAttribute("id", "item-card");
+
+    const cardTop = document.createElement("div");
+    cardTop.setAttribute("id", "card-top");
+    itemCard.append(cardTop);
+
+    const star = document.createElement("i");
+    star.setAttribute("class", "fa fa-star");
+    star.setAttribute("id", "ratting");
+    star.innerText = ` ${item.rating}`;
+
+    const heart = document.createElement("i");
+    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("id", item.id);
+    heart.innerText = ` ${item.rating}`;
+
+    cardTop.appendChild(star);
+    cardTop.appendChild(heart);
+
+    const img = document.createElement("img");
+    img.src = item.img;
+
+    const itemName = document.createElement("p");
+    itemName.setAttribute("id", "item-name");
+    itemName.innerText = item.name;
+
+    const itemPrice = document.createElement("p");
+    itemPrice.setAttribute("id", "item-price");
+    itemPrice.innerText = `Price : ₹${item.price}`;
+
+    const anchor = document.createElement("a");
+    anchor.setAttribute("href", "#");
+    const btn = document.createElement("button");
+    btn.setAttribute("id", "buynow");
+    btn.innerText = "Buy now";
+    // btn.setAttribute("href","https://google.com/");
+    anchor.append(btn);
+    // itemCard.appendChild(anchor)
+
+    itemCard.appendChild(cardTop);
+    itemCard.appendChild(img);
+    itemCard.appendChild(itemName);
+    itemCard.appendChild(itemPrice);
+    itemCard.appendChild(anchor);
+    document.querySelector("#biriyani").append(itemCard);
+    // biriyani.appendChild(itemCard);
+  });
+
+  const chickenData = foodItem.filter((item) => item.category == "chicken");
+  // console.log(biriyaniData);
+
+  chickenData.find((item) => {
+    // for(let i=0;i<biriyaniData.length;i++){
+    const itemCard = document.createElement("div");
+    itemCard.setAttribute("id", "item-card");
+
+    const cardTop = document.createElement("div");
+    cardTop.setAttribute("id", "card-top");
+    itemCard.append(cardTop);
+
+    const star = document.createElement("i");
+    star.setAttribute("class", "fa fa-star");
+    star.setAttribute("id", "ratting");
+    star.innerText = ` ${item.rating}`;
+
+    const heart = document.createElement("i");
+    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("id", item.id);
+    // heart.innerText = ' ' + item.rating;
+
+    cardTop.appendChild(star);
+    cardTop.appendChild(heart);
+
+    const img = document.createElement("img");
+    img.src = item.img;
+
+    const itemName = document.createElement("p");
+    itemName.setAttribute("id", "item-name");
+    itemName.innerText = item.name;
+
+    const itemPrice = document.createElement("p");
+    itemPrice.setAttribute("id", "item-price");
+    itemPrice.innerText = `Price : ₹${item.price}`;
+    const anchor = document.createElement("a");
+    anchor.setAttribute("href", "#");
+    const btn = document.createElement("button");
+    btn.setAttribute("id", "buynow");
+    btn.innerText = "Buy now";
+    // btn.setAttribute("href","https://google.com/");
+    anchor.append(btn);
+
+    itemCard.appendChild(cardTop);
+    itemCard.appendChild(img);
+    itemCard.appendChild(itemName);
+
+    itemCard.appendChild(itemPrice);
+    itemCard.appendChild(anchor);
+    document.querySelector("#chicken").append(itemCard);
+    // biriyani.appendChild(itemCard);
+  });
+
+  const paneerData = foodItem.filter((item) => item.category == "paneer");
+  // console.log(biriyaniData);
+
+  paneerData.find((item) => {
+    // for(let i=0;i<biriyaniData.length;i++){
+    const itemCard = document.createElement("div");
+    itemCard.setAttribute("id", "item-card");
+
+    const cardTop = document.createElement("div");
+    cardTop.setAttribute("id", "card-top");
+    itemCard.append(cardTop);
+
+    const star = document.createElement("i");
+    star.setAttribute("class", "fa fa-star");
+    star.setAttribute("id", "ratting");
+    star.innerText = ` ${item.rating}`;
+
+    const heart = document.createElement("i");
+    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("id", item.id);
+    // heart.innerText = ' ' + item.rating;
+
+    cardTop.appendChild(star);
+    cardTop.appendChild(heart);
+
+    const img = document.createElement("img");
+    img.src = item.img;
+
+    const itemName = document.createElement("p");
+    itemName.setAttribute("id", "item-name");
+    itemName.innerText = item.name;
+
+    const itemPrice = document.createElement("p");
+    itemPrice.setAttribute("id", "item-price");
+    itemPrice.innerText = `Price : ₹${item.price}`;
+    const anchor = document.createElement("a");
+    anchor.setAttribute("href", "#");
+    const btn = document.createElement("button");
+    btn.setAttribute("id", "buynow");
+    btn.innerText = "Buy now";
+    // btn.setAttribute("href","https://google.com/");
+    anchor.append(btn);
+
+    itemCard.appendChild(cardTop);
+    itemCard.appendChild(img);
+    itemCard.appendChild(itemName);
+    itemCard.appendChild(itemPrice);
+    itemCard.appendChild(anchor);
+    document.querySelector("#paneer").append(itemCard);
+    // biriyani.appendChild(itemCard);
+  });
+
+  const vegetableData = foodItem.filter((item) => item.category == "vegetable");
+  // console.log(biriyaniData);
+
+  vegetableData.find((item) => {
+    // for(let i=0;i<biriyaniData.length;i++){
+    const itemCard = document.createElement("div");
+    itemCard.setAttribute("id", "item-card");
+
+    const cardTop = document.createElement("div");
+    cardTop.setAttribute("id", "card-top");
+    itemCard.append(cardTop);
+
+    const star = document.createElement("i");
+    star.setAttribute("class", "fa fa-star");
+    star.setAttribute("id", "ratting");
+    star.innerText = ` ${item.rating}`;
+
+    const heart = document.createElement("i");
+    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("id", item.id);
+    // heart.innerText = ' ' + item.rating;
+
+    cardTop.appendChild(star);
+    cardTop.appendChild(heart);
+
+    const img = document.createElement("img");
+    img.src = item.img;
+
+    const itemName = document.createElement("p");
+    itemName.setAttribute("id", "item-name");
+    itemName.innerText = item.name;
+
+    const itemPrice = document.createElement("p");
+    itemPrice.setAttribute("id", "item-price");
+    itemPrice.innerText = `Price : ₹${item.price}`;
+    const anchor = document.createElement("a");
+    anchor.setAttribute("href", "#");
+    const btn = document.createElement("button");
+    btn.setAttribute("id", "buynow");
+    btn.innerText = "Buy now";
+    // btn.setAttribute("href","https://google.com/");
+    anchor.append(btn);
+
+    itemCard.appendChild(cardTop);
+    itemCard.appendChild(img);
+    itemCard.appendChild(itemName);
+    itemCard.appendChild(itemPrice);
+    itemCard.appendChild(anchor);
+
+    document.querySelector("#vegetable").append(itemCard);
+    // biriyani.appendChild(itemCard);
+  });
+  const chiniseData = foodItem.filter((item) => item.category == "chinese");
+  // console.log(biriyaniData);
+
+  chiniseData.find((item) => {
+    // for(let i=0;i<biriyaniData.length;i++){
+    const itemCard = document.createElement("div");
+    itemCard.setAttribute("id", "item-card");
+
+    const cardTop = document.createElement("div");
+    cardTop.setAttribute("id", "card-top");
+    itemCard.append(cardTop);
+
+    const star = document.createElement("i");
+    star.setAttribute("class", "fa fa-star");
+    star.setAttribute("id", "ratting");
+    star.innerText = ` ${item.rating}`;
+
+    const heart = document.createElement("i");
+    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("id", item.id);
+    // heart.innerText = ' ' + item.rating;
+
+    cardTop.appendChild(star);
+    cardTop.appendChild(heart);
+
+    const img = document.createElement("img");
+    img.src = item.img;
+
+    const itemName = document.createElement("p");
+    itemName.setAttribute("id", "item-name");
+    itemName.innerText = item.name;
+
+    const itemPrice = document.createElement("p");
+    itemPrice.setAttribute("id", "item-price");
+    itemPrice.innerText = `Price : ₹${item.price}`;
+    const anchor = document.createElement("a");
+    anchor.setAttribute("href", "#");
+    const btn = document.createElement("button");
+    btn.setAttribute("id", "buynow");
+    btn.innerText = "Buy now";
+    // btn.setAttribute("href","https://google.com/");
+    anchor.append(btn);
+
+    itemCard.appendChild(cardTop);
+    itemCard.appendChild(img);
+    itemCard.appendChild(itemName);
+    itemCard.appendChild(itemPrice);
+    itemCard.appendChild(anchor);
+
+    document.querySelector("#chinise").append(itemCard);
+    // biriyani.appendChild(itemCard);
+  });
+  const southData = foodItem.filter((item) => item.category == "south indian");
+  // console.log(biriyaniData);
+
+  southData.find((item) => {
+    // for(let i=0;i<biriyaniData.length;i++){
+    const itemCard = document.createElement("div");
+    itemCard.setAttribute("id", "item-card");
+
+    const cardTop = document.createElement("div");
+    cardTop.setAttribute("id", "card-top");
+    itemCard.append(cardTop);
+
+    const star = document.createElement("i");
+    star.setAttribute("class", "fa fa-star");
+    star.setAttribute("id", "ratting");
+    star.innerText = ` ${item.rating}`;
+
+    const heart = document.createElement("i");
+    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("id", item.id);
+    // heart.innerText = ' ' + item.rating;
+
+    cardTop.appendChild(star);
+    cardTop.appendChild(heart);
+
+    const img = document.createElement("img");
+    img.src = item.img;
+
+    const itemName = document.createElement("p");
+    itemName.setAttribute("id", "item-name");
+    itemName.innerText = item.name;
+
+    const itemPrice = document.createElement("p");
+    itemPrice.setAttribute("id", "item-price");
+    itemPrice.innerText = `Price : ₹${item.price}`;
+
+    const anchor = document.createElement("a");
+    anchor.setAttribute("href", "#");
+    const btn = document.createElement("button");
+    btn.setAttribute("id", "buynow");
+    btn.innerText = "Buy now";
+    // btn.setAttribute("href","https://google.com/");
+    anchor.append(btn);
+
+    itemCard.appendChild(cardTop);
+    itemCard.appendChild(img);
+    itemCard.appendChild(itemName);
+    itemCard.appendChild(itemPrice);
+    itemCard.appendChild(anchor);
+    document.querySelector("#south-indian").append(itemCard);
+    // biriyani.appendChild(itemCard);
+  });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //     })
 // }
@@ -1067,72 +995,177 @@ function displayItems() {
 //     console.log("aakash");
 //     display_cart_page.style.display="none";
 
-
 // } )
 
+const login_detail = localStorage.getItem("logdetails") ?? [];
+console.log(login_detail);
+const item_card = document.querySelectorAll(".add-to-cart");
 
-let login_detail = localStorage.getItem("logdetails");
-console.log(login_detail)
-let item_card = document.querySelectorAll(".add-to-cart");
 let food_name;
 let res;
-// console.log(item_card)
+
 item_card.forEach((e) => {
-    e.addEventListener("click", (el) => {
-        // alert("ok")
-        food_name = e.parentElement.parentElement.children[2].innerText
+  e.addEventListener("click", (el) => {
+    if (login_detail == "") {
+      alert("please login");
+    } else {
+      food_name = e.parentElement.parentElement.children[2].innerText;
 
-        foodItem.find((element) => {
-            if (food_name == element["name"]) {
-                res = element
-            }
-        })
-        console.log(res)
-        console.log(food_name);
-
-
-        let add_to_cart = JSON.parse(localStorage.getItem("add_to_cart")) ?? [];
-        let check = 0
-        let cart_food
-        add_to_cart.forEach(e => {
-            if (food_name == e["food_name"]&&login_detail==e["user"]) {
-                check = 1
-                cart_food = e
-            }
-        })
-        if (check == 1) {
-           let new_q = Number(cart_food["quantity"]) + 1
-            cart_food["quantity"] = new_q
-            cart_food["total_individual_price"]=cart_food["quantity"]*cart_food["price"]
-            add_to_cart.forEach((e, index) => {
-                if (cart_food["food_name"] == e["food_name"]) {
-                    add_to_cart[index] = cart_food
-
-                }
-            })
-            console.log("already there");
+      foodItem.find((element) => {
+        if (food_name == element.name) {
+          res = element;
         }
-        else {
-            let cart = {
-                "food_name": food_name,
-                "price": res["price"],
-                "food_image": res["img"],
-                "rating": res["rating"],
-                "user": login_detail,
-                "quantity": 1,
-                total_individual_price: res["price"]
-            }
+      });
+      console.log(res);
+      console.log(food_name);
 
-            add_to_cart.push(cart);
-            alert("Food add to cart");
-            console.log("Created new");
-
+      const add_to_cart = JSON.parse(localStorage.getItem("add_to_cart")) ?? [];
+      let check = 0;
+      let cart_food;
+      add_to_cart.forEach((e) => {
+        if (food_name == e.food_name && login_detail == e.user) {
+          check = 1;
+          cart_food = e;
         }
+      });
 
+      if (check == 1) {
+        const new_q = Number(cart_food.quantity) + 1;
+        cart_food.quantity = new_q;
+        cart_food.total_individual_price = cart_food.quantity * cart_food.price;
+        add_to_cart.forEach((e, index) => {
+          if (cart_food.food_name == e.food_name) {
+            add_to_cart[index] = cart_food;
+          }
+        });
+        console.log("already there");
+      } else {
+        const cart = {
+          food_name,
+          price: res.price,
+          food_image: res.img,
+          rating: res.rating,
+          user: login_detail,
+          quantity: 1,
+          total_individual_price: res.price,
+        };
 
-        localStorage.setItem("add_to_cart", JSON.stringify(add_to_cart))
-        window.location.href ="./html/cart.html"
+        add_to_cart.push(cart);
+        // alert("Food add to cart");
+        console.log("Created new");
+      }
 
+      localStorage.setItem("add_to_cart", JSON.stringify(add_to_cart));
+      alert("Food add to cart");
+      // window.location.href = "./html/cart.html"
+    }
+  });
+});
 
-    })
-})
+// console.log(user[k]["email"])
+console.log(login_detail);
+const user = JSON.parse(localStorage.getItem("user_details"));
+let code;
+if (user == null) {
+} else {
+  for (let k = 0; k < user.length; k++) {
+    if (login_detail == user[k].user_email) {
+      code = user[k].status;
+      console.log(`${code}ok`);
+    }
+  }
+}
+
+const login_butn = document.getElementById("login");
+const account_btn = document.getElementById("account_btn");
+if (login_detail !== "") {
+  (login_butn.style.display = "none"), (account_btn.style.display = "block");
+} else {
+  account_btn.style.display = "none";
+}
+
+const add_product = document.getElementById("add_product");
+if (code == "user") {
+  add_product.style.display = "none";
+}
+// else if(code === "seller"){
+//     add_product.style.display = "block"
+// }
+
+// user.for()
+
+const hotel_image = [
+  {
+    hotel_name: "Serenity Sands Resort",
+  },
+  {
+    hotel_name: "Azure Haven Hotel",
+  },
+  {
+    hotel_name: " Mountain View Retreat",
+  },
+  {
+    hotel_name: "Royal Oak Manor",
+  },
+  {
+    hotel_name: "Tranquil Waters Resort",
+  },
+  {
+    hotel_name: " Golden Horizon Inn",
+  },
+  {
+    hotel_name: " The Grand Tower Hotel",
+  },
+  {
+    hotel_name: "Whispering Pines Lodge",
+  },
+
+  {
+    hotel_name: " Majestic Bay Resort",
+  },
+  {
+    hotel_name: "The Ivy Manor Hotel",
+  },
+  {
+    hotel_name: "A2ertB",
+  },
+  {
+    hotel_name: "A2Bhg",
+  },
+];
+
+const preveiwContainer = document.querySelector(".products-preview");
+const previewBox = preveiwContainer.querySelectorAll(".preview");
+const header_ = document.getElementById("header");
+console.log(previewBox);
+console.log(hotel_image.length);
+
+document.querySelectorAll("#item-card").forEach((product) => {
+  product.onclick = () => {
+    console.log(product.children[1]);
+    preveiwContainer.style.display = "flex";
+    previewBox[0].children[1].src = product.children[1].src;
+    previewBox[0].children[2].innerText = product.children[2].innerText;
+    previewBox[0].children[5].innerText = product.children[3].innerText;
+    // for (let i = 0; i < hotel_image.length; i++) {//12
+    //   cnt++
+    previewBox[0].children[4].innerHTML =
+      hotel_image[Math.floor(Math.random() * 12)].hotel_name; // 0
+    // }
+    // let name = product.getAttribute('data-name');
+    // previewBox.forEach(preview =>{
+    // //   let target = preview.getAttribute('data-target');
+    // //   if(name == target){
+    previewBox[0].classList.add("active");
+
+    //   }
+    // });
+  };
+});
+
+previewBox.forEach((close) => {
+  close.querySelector(".fa-times").onclick = () => {
+    close.classList.remove("active");
+    preveiwContainer.style.display = "none";
+  };
+});

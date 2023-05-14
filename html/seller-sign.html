@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,100 +8,120 @@
   <title>Document</title>
   <link rel="stylesheet" href="../Assets/Css/signup.css">
 </head>
+
 <body>
   <div class="register">
     <div class="head">
-      <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
-      <h5>Already member?<a href="seller-login.html">Sign in</a></h5>
+      <a href="../index.html">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+      <h5>
+Already member?<a href="seller-login.html">Sign in</a>
+</h5>
     </div>
     <div class="h2">
       <h2> Seller Sign up</h2>
     </div>
-    <form action="" id="form" >
-      <label for="first_name">First Name :</label>
-      <input type="text" name="first_name" id="first_name" placeholder="first_name" required><br>
-
-      <label for="last_name">Last Name :</label>
-      <input type="text" name="last_name" id="last_name" placeholder="last_name" required><br>
+    <form action="" id="form">
+      <label for="name"> Name :</label>
+      <input type="text" name="name" id="name" placeholder="name" required>
+<br>
 
       <label for="email">Email :</label>
-      <input type="email" name="email" id="email" placeholder="Email" required><br>
+      <input type="email" name="email" id="email" placeholder="Email" required>
+<br>
 
       <label for="phone_number">Phone Number :</label>
-      <input type="number" name="phone_number" id="phone_number" placeholder="Phone Number" required><br>
+      <input type="number" name="phone_number" id="phone_number" placeholder="Phone Number" required>
+<br>
 
-      <label for="age">D.O.B :</label>
-      <input type="date" name="age" id="age" required><br>
+      <label for="password">Password :</label>
+      <input type="password" name="password" id="password" placeholder="password" required>
+<br>
 
-      <label for="password">Food name:</label>
-      <input type="password" name="password" id="password" placeholder="Password" required><br>
+      <label for="password1"> Confirm Password :</label>
+      <input type="password" name="password1" id="password1" placeholder="Confirm password" required>
+<br>
 
-      <label for="password"> :</label>
-      <input type="password" name="password" id="confirm_password" placeholder="Confirm Password" required><br>
+      <label for="Hotel"> Hotel Name :</label>
+      <input type="text" name="Hotel" id="hotel" placeholder="Hotel " required>
+<br>
+
+      <label for="hotel Address"> Which Hotel from :</label>
+      <input type="text" name="hotel_address" id="hotel_address" placeholder="hotel_address " required>
+<br>
 
       <button type="submit" id="btn">Sign up</button>
     </form>
   </div>
   <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
   </script>
-  <script>
-    
-    
-    const form = document.querySelector("form");
-form.addEventListener("submit",e =>{
-  e.preventDefault();
-  signup()
-})
+  <script>    const form = document.querySelector("form");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      signup()
+    })
 
-function signup (){
-    let seller;
-    if (JSON.parse(localStorage.getItem("seller_details"))) {
-         seller = JSON.parse(localStorage.getItem("seller_details"))
+                document.getElementById("")
+    function signup() {
+     
+      if (JSON.parse(localStorage.getItem("seller_details"))) {
+        seller = JSON.parse(localStorage.getItem("seller_details"))
       } else {
-           seller = [];
-    }
-const First_name = document.getElementById("first_name").value;
-const last_name = document.getElementById("last_name").value;
-const email = document.getElementById("email").value;
-const password = document.getElementById("password").value;
-const conpass = document.getElementById("confirm_password").value;
-const mobile = document.getElementById("phone_number").value
-let seller_id= Math.floor(Math.random()*500);
-let res;
-if (password==conpass) {
-    if (seller.length==0){
-        res=0;
-    }
-    for (let i = 0; i < seller.length; i++) {
-        if (seller[i]["seller_email"]==email) {
+        seller = [];
+      }
+
+      const First_name = document.getElementById("name").value;
+      // const last_name = document.getElementById("food_name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const conpass = document.getElementById("password1").value;
+      const mobile = document.getElementById("phone_number").value;
+      const hotelName = document.getElementById("hotel").value;
+      const hotel_address = document.getElementById("hotel_address").value;
+
+      const seller_id = Math.floor(Math.random() * 500);
+
+      let res;
+
+      if (password == conpass) {
+        if (seller.length == 0) {
+          res = 0;
+        }
+        for (let i = 0; i < seller.length; i++) {
+          if (seller[i].seller_email == email) {
             res = 1;
-           break;
-        }else{
+            break;
+          } else {
             res = 0;
+          }
         }
-        }
-}else{
-    alert("password are not same")
-}
-if(res === 1){
-    alert("email is already is taken")
-}
-if (res === 0){
-    let seller_data;
-    seller_data = {
-      "seller_id":seller_id,
-        "seller_name":First_name,
-        "second_name":last_name,
-        "seller_email":email,
-        "seller_Password":password,
-        "mobile":mobile
+      } else {
+        alert("password are not same")
+      }
+      if (res === 1) {
+        alert("email is already is taken")
+      }
+      if (res === 0) {
+        let seller_data;
+        seller_data = {
+          "status": "seller",
+          seller_id,
+          "seller_name": First_name,
+
+          "seller_email": email,
+          "seller_Password": password,
+          mobile,
+          hotel_address,
+          "hotel_name": hotelName,
+
         }
         seller.push(seller_data);
-            localStorage.setItem("seller_details",JSON.stringify(seller));
-            window.location.href="./seller-login.html";
-}
-}
-   
+        localStorage.setItem("seller_details", JSON.stringify(seller));
+        window.location.href = "./seller-login.html";
+      }
+    }
   </script>
 </body>
+
 </html>

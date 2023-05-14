@@ -7,8 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food webpage
     </title>
-    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- <link rel="stylesheet" href="assets/css/summa.css"> -->
 
 </head>
 
@@ -20,12 +22,14 @@
                 <img src="assets/images/feshfood-logo.png" alt="error">
             </div>
             <div class="menu-item">
-                <a href="html/getitem.html"> Add product</a>
-                <a href="#"> Your order</a>
-
+                <a href="html/getitem.html" id="add_product"> Add product</a>
+                <a href="html/booking-history.html"> Your order</a>
+               
                 <a href="./html/cart.html" id="cart"> Cart</a>
                 <a href="#"> Address</a>
                 <a href="html/help.html"> help</a>
+                <a href="#">Join a delivery boy</a>
+                <a href="html/seller-login.html">Seller</a>
 
             </div>
         </div>
@@ -40,10 +44,9 @@
                 </div>
                 <div class="util">
                     <i class="fa fa-search">Sea</i>
-                    <a href="html/login.html">login </a>
                     <i class="fa fa-tags"> Offers</i>
                     <i class="fa fa-cart-plus" id="cart-plus"> Item</i>
-
+                    <a href="html/login.html" id="login">login </a>
                 </div>
             </div>
 
@@ -136,9 +139,6 @@
 
                 </div>
 
-
-
-
                 <div id="chicken">
                     <p id="catagory-name">
                         Chicken delicious</p>
@@ -217,9 +217,6 @@
 
                 </div>
 
-
-
-
                 <div id="paneer">
                     <p id="catagory-name">
                         panner mania</p>
@@ -296,10 +293,6 @@
                         <p id="item-price">Price : $10</p>
                     </div> -->
                 </div>
-
-
-
-
 
                 <div id="vegetable">
                     <p id="catagory-name">
@@ -388,8 +381,6 @@
                     </div> -->
                 </div>
 
-
-
                 <div id="chinise">
                     <p id="catagory-name">
                         Chinese corner</p>
@@ -402,7 +393,6 @@
                         <p id="item-name">Chicken Curry</p>
                         <p id="item-price">Price : $10</p>
                     </div>
-
 
                     <div id="item-card">
                         <div id="card-top">
@@ -469,10 +459,7 @@
                         <p id="item-price">Price : $10</p>
                     </div> -->
 
-
-
                 </div>
-
 
                 <div id="south-indian">
                     <p id="catagory-name">
@@ -542,15 +529,14 @@
                     </div> -->
 
                 </div>
-
-
                
             </div>
         </div>
         <div id="cart">
             <div class="taste-header">
                 <div class="user">
-                   <a href="html/profile.html"> <i class="fa da-user-circle">
+                   <a href="html/profile.html" id = "account_btn">
+ <i class="fa da-user-circle">
                     Account</i></a>
                 </div>
             </div>
@@ -582,8 +568,6 @@
                     <a href="#south-indian" class="list-name">South-Indian</a>
                 </div>
 
-
-
             </div>
             <!-- <div id="checkout" class="cart-toggle">
                 <p id="total-item">Total Item : 5</p>
@@ -595,29 +579,57 @@
 
     </div>
 
-    
+    <!-- div
+    <div class="popup"></div> -->
+     
+<!-- </div> -->
+<div class="products-preview">
+
+    <div class="preview" data-target="p-1">
+       <i class="fas fa-times"></i>
+       <img id="popup_img" alt="">
+       <h3>fresh food  </h3>
+       <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+          <span>( 250 )</span>
+       </div>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+       <div class="price">$2.00</div>
+       <div class="buttons">
+          <a href="#" class="buy">buy now</a>
+          <a href="#" class="cart">add to cart</a>
+       </div>
+    </div>
+</div>
     <!-- Javascript start -->
 
+<script>
+    document.querySelector('#add-address').addEventListener('click',(e)=>{
+        const address = prompt('Enter your address', '');
+        localStorage.setItem("address",address)
+        const ok= localStorage.getItem("address")
+    if (address) {
+  
+        document.getElementById('add-address').innerText = ` ${  ok}`;
+      
+    }
+    else {
+        alert("Address not added")
+    }
 
+    } 
+    
+    );
 
-
-
-
-
-
-
-
-
-
-
+// function addAddress() {
+    
+// }
+</script>
     <script type="module" src="./assets/js/index.js"></script>
-
-    <script>
-
-    </script>
-    <!-- <script type="module" src="./assets/js/cartoggle.js"></script> -->
-    <!-- type="module" -->
-    <!-- <script src="./assets/js/fooditem.js"></script> -->
 </body>
 
 </html>

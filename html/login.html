@@ -10,25 +10,31 @@
 <body>
     <div class="login">
         <div class="head">
-            <a href="../index.html"><i class="fa-solid fa-arrow-left"></i></a>
-            <h5>New member? <a href="./signup.html" id="Sign_up">Sign Up</a></h5>
+            <a href="../index.html">
+<i class="fa-solid fa-arrow-left"></i>
+</a>
+            <h5>
+New member? <a href="./signup.html" id="Sign_up">Sign Up</a>
+</h5>
         </div>
         <div class="h2">
             <h2>Sign In</h2>
         </div>
         <form action="" id="form">
             <label for="email">Email :</label>
-            <input type="email" name="email" id="email" placeholder="Email" required ><br>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+<br>
             <label for="password">Password :</label>
-            <input type="password" name="password" id="password" placeholder="Password" required  pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
-            title="Your password must be at least 8 characters long, contain at least one digit or special character, one uppercase letter, and one lowercase letter, and must not contain dots or newline characters."><br>
+            <input type="password" name="password" id="password" placeholder="Password" required pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" 
+            title="Your password must be at least 8 characters long, contain at least one digit or special character, one uppercase letter, and one lowercase letter, and must not contain dots or newline characters.">
+<br>
             <button type="submit" id="btn">Sign in</button>
         </form>
     </div>
     <script src="https://kit.fontawesome.com/ee40c53027.js" crossorigin="anonymous" integrity="">
     </script>
     <script>
-       let form = document.querySelector("form");
+       const form = document.querySelector("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   login();
@@ -36,7 +42,7 @@ form.addEventListener("submit", (e) => {
 function login() {
   const log_email = document.getElementById("email").value;
   const log_password = document.getElementById("password").value;
-  let arr = JSON.parse(localStorage.getItem("user_details"));
+  const arr = JSON.parse(localStorage.getItem("user_details"));
 //   let result = arr.find(function (value) {
 //     return value.user_email === log_email;
 //   });
@@ -57,7 +63,7 @@ console.log(res);
  if (res==0) {
     alert("don't have an account ,create a new account");
  }
-  let ind = arr.findIndex(value => value == result);
+  const ind = arr.findIndex(value => value == result);
  if (res==1) {
     console.log("1111");
     if (log_password == result.user_Password) {
@@ -69,10 +75,6 @@ console.log(res);
       }
  }
 }
-
-
-
-
     </script>
 </body>
 </html>

@@ -21,7 +21,7 @@
             <div class="page">
                 <img src="https://ui-avatars.com/api/?name=Nithilan" id="profile" alt="error">
                 <div>
-                    <h4 id="customer">namw</h4>
+                    <h4 id="customer">name</h4>
                     <small>Customer_ID</small>
                 </div>
             </div>
@@ -40,12 +40,11 @@
                                 name="user name" title="First name connot contain spaces" placeholder="First Name"
                                 value="" disabled>
                         </div>
-                        <!-- This is Last name  -->
-                        <div class="last-name" id="align-num">
-                            <label class="more"> Last Name</label>
-                            <input class="name" id="user-lastname" type="text" name="user name" pattern="[A-Za-z]{1,32}"
-                                placeholder="Last Name" value="" title="Last name connot contain spaces" disabled>
+                        <div class="hotel">
+                            <label class="hotel-name"> Hotel name</label>
+                            <input type="text">
                         </div>
+                        
                         <!-- This is email input  -->
                         <div class="email" id="align-num">
                             <label class="more"> Email</label>
@@ -91,23 +90,23 @@
                             <button id="edit_btn">edit</button>
                             <button id="delete_btn">Delete profile</button>
                             <button type="submit" id="save">save</button>
-                           <button>
- <a href="../index.html" id="page">back to page</a>
-</button>
+                            <a href="../index.html">back to page</a>
 
                         </div>
 
                     </form>
                 </div>
             </div>
-            <script>                const form = document.getElementById("edit_btn");
+            <script>
+
+                let form = document.getElementById("edit_btn");
                 form.addEventListener("click", (e) => {
 
                     e.preventDefault();
                     profile();
                 });
 
-                const forms = document.getElementById("formBtn");
+                let forms = document.getElementById("formBtn");
                 forms.addEventListener("submit", (ex) => {
 
                     ex.preventDefault();
@@ -119,39 +118,43 @@
             //     name.removeAttribute("disabled")
             //  }
 
-                const remove = document.getElementById("delete_btn");
+                let remove = document.getElementById("delete_btn");
                 remove.addEventListener("click", (e) => {
                     e.preventDefault();
                     delete1();
 
                 })
-                const arr = JSON.parse(localStorage.getItem("user_details"));
-                const details = localStorage.getItem("logdetails");
+                let arr = JSON.parse(localStorage.getItem("user_details"));
+                let details = localStorage.getItem("logdetails");
                 console.log(details);
-                const result = arr.find((value) => value.user_email === details);
-                document.getElementById("profile").setAttribute("src", `https://ui-avatars.com/api/?name=${  result.user_name}`)
+                let result = arr.find(function (value) {
+                    return value.user_email === details;
+                });
+                document.getElementById("profile").setAttribute("src", "https://ui-avatars.com/api/?name=" + result.user_name)
                 document.getElementById("customer").innerHTML = result.user_name;
                 document.getElementById("user-firstname").value = result.user_name;
                 document.getElementById("user-lastname").value = result.second_name;
                 document.getElementById("user-email").value = result.user_email;
                 document.getElementById("user-password").value = result.user_Password;
                 document.getElementById("number").value = result.mobile;
-               const cit= document.getElementById("district")
+               let cit= document.getElementById("district")
                 cit.value=result.city;
                 document.getElementById("pincode").value = result.pincode;
                 // let new123 = document.getElementsByClassName("name");
                 // new123.setAttribute = ("disabled");
 
                 function profile() {
-                    const ind = arr.findIndex((value) => value.user_email === details);
-                    const firstname = document.getElementById("user-firstname");
-                    const lastname = document.getElementById("user-lastname");
-                    const useremail = document.getElementById("user-email");
-                    const password = document.getElementById("user-password");
-                    const mobile = document.getElementById("number");
-                    const district = document.getElementById("district");
-                    const pincode = document.getElementById("pincode");
-                    const new123 = document.getElementsByClassName("name");
+                    let ind = arr.findIndex(function (value) {
+                        return value.user_email === details
+                    });
+                    let firstname = document.getElementById("user-firstname");
+                    let lastname = document.getElementById("user-lastname");
+                    let useremail = document.getElementById("user-email");
+                    let password = document.getElementById("user-password");
+                    let mobile = document.getElementById("number");
+                    let district = document.getElementById("district");
+                    let pincode = document.getElementById("pincode");
+                    let new123 = document.getElementsByClassName("name");
                     new123.setAttribute = ("enable");
 
                     firstname.removeAttribute("disabled")
@@ -184,40 +187,40 @@
                     // localStorage.setItem("user_details", JSON.stringify(arr));
                 }
 
- const logOut= document.getElementById ("delete_btn");
- const loggedOut = localStorage.getItem("logdetails");
+ let logOut= document.getElementById ("delete_btn");
+ let loggedOut = localStorage.getItem("logdetails");
  logOut.addEventListener("click",()=>{
-    const loggedOut=""
+    let loggedOut=delete loggedOut
     localStorage.setItem("logdetails",loggedOut)
     window.location.href="../index.html"
  }) ;
-   const arr1 = JSON.parse(localStorage.getItem("user_details"));
+   let arr1 = JSON.parse(localStorage.getItem("user_details"));
                     console.log(arr1);
                 
                 function update() {
                 
-                    const firstname = document.getElementById("user-firstname");
-                    const lastname = document.getElementById("user-lastname");
-                    const useremail = document.getElementById("user-email");
-                    const password = document.getElementById("user-password");
-                    const mobile = document.getElementById("number");
-                    const district = document.getElementById("district");
-                    const pincode = document.getElementById("pincode");
-                    const new123 = document.getElementsByClassName("name");
-                    const address=document.getElementById("number")
+                    let firstname = document.getElementById("user-firstname");
+                    let lastname = document.getElementById("user-lastname");
+                    let useremail = document.getElementById("user-email");
+                    let password = document.getElementById("user-password");
+                    let mobile = document.getElementById("number");
+                    let district = document.getElementById("district");
+                    let pincode = document.getElementById("pincode");
+                    let new123 = document.getElementsByClassName("name");
+                    let address=document.getElementById("number")
                     // new123.setAttribute = ("enable");
 
                     arr1.find((e)=>{
                         
-                        if(details == e.user_email){
+                        if(details == e["user_email"]){
                           
-                            e.user_name=firstname.value;
-                            e.second_name=lastname.value;
-                            e.user_Password=password.value;
-                            e.mobile=mobile.value;
-                            e.city=district.value;
-                            e.pincode=pincode.value;
-                            e.address=address.value
+                            e["user_name"]=firstname.value;
+                            e["second_name"]=lastname.value;
+                            e["user_Password"]=password.value;
+                            e["mobile"]=mobile.value;
+                            e["city"]=district.value;
+                            e["pincode"]=pincode.value;
+                            e["address"]=address.value
 
                             localStorage.setItem("user_details",JSON.stringify(arr1));
                             firstname.setAttribute("disabled","")

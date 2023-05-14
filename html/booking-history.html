@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="../assets/css/booking-histroy.css">
+    <title>Order History</title>
+
+</head>
+
+<body>
+    <h1>Order History</h1>
+
+    <table id="orderTable">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Order ID</th>
+                <th>Product</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem("add_to_cart"))
+        let logDetails =localStorage.getItem("logdetails")
+        // console.log(cart);
+
+        let cart1= cart
+        console.log(delete cart);
+        // console.log(cart);
+        // console.log(cart1);
+        
+        // Sample order data
+        // var orders = [
+        //     { date: '2023-05-01', orderID: '001', product: 'Product A', price: '$19.99' },
+        //     { date: '2023-04-28', orderID: '002', product: 'Product B', price: '$14.99' },
+        //     { date: '2023-04-25', orderID: '003', product: 'Product C', price: '$9.99' }
+        //     // Add more orders as needed
+        // ];
+
+        // Generate table rows dynamically
+        var tableBody = document.querySelector('#orderTable tbody');
+
+        // orders.forEach(function(order) {
+        //   var row = document.createElement('tr');
+
+        //   var dateCell = document.createElement('td');
+        //   dateCell.textContent = order.date;
+        //   row.appendChild(dateCell);
+
+        //   var orderIDCell = document.createElement('td');
+        //   orderIDCell.textContent = order.orderID;
+        //   row.appendChild(orderIDCell);
+
+        //   var productCell = document.createElement('td');
+        //   productCell.textContent = order.product;
+        //   row.appendChild(productCell);
+
+        //   var priceCell = document.createElement('td');
+        //   priceCell.textContent = order.price;
+        //   row.appendChild(priceCell);
+
+        //   tableBody.appendChild(row);
+        // });
+        // console.log(orders[0]["date"]);
+        
+        for (let i = 0; i < cart.length; i++) {
+            if(cart[i]["user"] == logDetails){
+            var row = document.createElement('tr');
+
+            var dateCell = document.createElement('td');
+            dateCell.textContent = new Date().toLocaleDateString()
+            row.appendChild(dateCell);
+
+            var orderIDCell = document.createElement('td');
+            orderIDCell.textContent =i+1
+            row.appendChild(orderIDCell);
+
+            var productCell = document.createElement('td');
+            productCell.textContent = cart[i]["food_name"];
+            row.appendChild(productCell);
+
+            var priceCell = document.createElement('td');
+            priceCell.textContent = cart[i]["total_individual_price"];
+            row.appendChild(priceCell);
+
+            tableBody.appendChild(row);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

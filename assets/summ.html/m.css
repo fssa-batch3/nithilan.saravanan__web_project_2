@@ -1,0 +1,43 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // This code will be executed after the DOM has loaded
+  
+    // You can add any JavaScript logic or functionality here
+    // For example, you could perform additional actions or make API calls
+    
+    // Example: Fetching additional order details from an API
+    fetchOrderDetails('123456789')
+      .then(function(response) {
+        // Handle the API response and update the order details on the page
+        updateOrderDetails(response);
+      })
+      .catch(function(error) {
+        console.error('Error fetching order details:', error);
+      });
+  });
+  
+  function fetchOrderDetails(transactionId) {
+    // Example asynchronous function that simulates fetching order details from an API
+    return new Promise(function(resolve, reject) {
+      // Simulating API request delay with setTimeout
+      setTimeout(function() {
+        // Assuming the API call was successful, returning a sample response
+        var orderDetails = {
+          product: 'Example Product',
+          price: '$10.00',
+          transactionId: transactionId
+        };
+        resolve(orderDetails);
+      }, 2000); // Simulating a 2-second delay
+    });
+  }
+  
+  function updateOrderDetails(order) {
+    // Update the order details on the page
+    var productElement = document.getElementById('product');
+    var priceElement = document.getElementById('price');
+    var transactionIdElement = document.getElementById('transaction-id');
+  
+    productElement.textContent = order.product;
+    priceElement.textContent = order.price;
+    transactionIdElement.textContent = order.transactionId;
+  }
