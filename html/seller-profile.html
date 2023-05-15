@@ -36,26 +36,27 @@
                         <!-- This is First name  -->
                         <div class="name" id="align-num">
                             <label class="more"> Name-of-seller</label>
-                            <input class="name" id="Name-of-seller" type="text" pattern="[A-Za-z]{1,32}"
+                            <input class="name" id="name-of-seller" type="text" pattern="[A-Za-z]{1,32}"
                                 name="user name" title="First name connot contain spaces" placeholder="First Name"
                                 value="" disabled>
                         </div>
                         <!-- This is Last name  -->
+                        <!-- pattern="[A-Za-z]{1,32}" -->
                         <div class="last-name" id="align-num">
                             <label class="more"> Hotel-name</label>
-                            <input class="name" id="Hotel-name" type="text" name="user name" pattern="[A-Za-z]{1,32}"
+                            <input class="name" id="hotel-name" type="text" name="user name" 
                                 placeholder="Last Name" value="" title="Last name connot contain spaces" disabled>
                         </div>
-                        <!-- This is email input  -->
+                        <!-- This is email input  --> 
                         <div class="email" id="align-num">
                             <label class="more"> Email</label>
                             <input class="name_email" id="user-email" type="email" name="user email"
-                                placeholder="name@gmail.com" value="" required="true" disabled>
+                                placeholder="name@gmail.cgom" value="" required="true" disabled>
                         </div>
                         <!-- This is password input  -->
                         <div class="password" id="align-num">
                             <label class="more"> Change Password</label>
-                            <input class="name" id="Change Password" type="password" name="user password" disabled>
+                            <input class="name" id="change_Password" type="password" name="user password" disabled>
                         </div>
                         <!-- This is city -->
                         <div class="fCity-name" id="align-num">
@@ -64,7 +65,7 @@
                                 <option value="Chennai">Chennai</option>
                                 <option value="Tiruchy">Tiruchy</option>
                                 <option value="Vilupuram">Vilupuram</option>
-                                <option value="Madurai">Madurai</option>
+                                <option value="Ma_urai">Madurai</option>
                                 <option value="Selem">Selem</option>
                             </select>
 
@@ -120,16 +121,20 @@
                 //     name.removeAttribute("disabled")
                 //  }
 
-                const remove = document.getElementById("delete_btn");
-                remove.addEventListener("click", (e) => {
-                    e.preventDefault();
-                    delete1();
+                // const remove = document.getElementById("delete_btn");
+                // remove.addEventListener("click", (e) => {
+                //     e.preventDefault();
+                //     delete1();
 
-                })
+                // })
+
+
+                
                 const arr = JSON.parse(localStorage.getItem("seller_details"));
                 console.log(arr);
 
                 const details =JSON.parse(localStorage.getItem("sellerlogg"));
+                let selemail=details["seller_email"]
                 // console.log(details);
 
                 let result;
@@ -144,7 +149,7 @@
                          arr.find( function (obj){
                             // console.log(obj)
                             if(obj.seller_email == details.seller_email){
-                                result= obj
+                                result = obj
                                 console.log(obj)
                             }
                          })
@@ -154,37 +159,41 @@
 
                 console.log(result);
                 document.getElementById("profile").setAttribute("src", `https://ui-avatars.com/api/?name=${result.seller_name}`)
-                document.getElementById("Name-of-seller").value = result.seller_name + result.second_name;
-                document.getElementById("Hotel-name").value = result.hotel_name;
+                document.getElementById("name-of-seller").value = result.seller_name;
+                document.getElementById("hotel-name").value = result.hotel_name;
                 document.getElementById("hotel-Address").value = result.hotel_address;
                 // document.getElementById("user-lastname").value = result.second_name;
                 document.getElementById("user-email").value = result.seller_email;
-                document.getElementById("Change Password").value = result.seller_Password;
+                document.getElementById("change_Password").value = result.seller_Password;
                 document.getElementById("number").value = result.mobile;
                 const cit = document.getElementById("district")
                 cit.value = result.city;
-                // document.getElementById("pincode").value = result.pincode;
+
+                document.getElementById("pincode").value = result.pincode;
                 // let new123 = document.getElementsByClassName("name");
                 // new123.setAttribute = ("disabled");
 
                 function profile() {
-                    const ind = arr.findIndex((value) => value.user_email === details);
-                    const Seller_name = document.getElementById("Name-of-seller");
-                    const Hotel_name = document.getElementById("Hotel-name");
+                    const ind = arr.findIndex((value) => value.seller_email === selemail);
+                    const Seller_name = document.getElementById("name-of-seller");
+                    const Hotel_name = document.getElementById("hotel-name");
                     const hotel_address = document.getElementById("hotel-Address");
                     const email = document.getElementById("user-email");
-                    const pass = document.getElementById("Change Password");
+                    const pass = document.getElementById("change_Password");
                     const num = document.getElementById("number");
-                    // const pincode = document.getElementById("pincode");
+                    const pincode = document.getElementById("pincode");
                     // const new123 = document.getElementsByClassName("name");
                     // new123.setAttribute = ("enable");
-
+                    const district = document.getElementById("district");
                     Seller_name.removeAttribute("disabled")
                     Hotel_name.removeAttribute("disabled")
                     hotel_address.removeAttribute("disabled")
                     // email.removeAttribute("disabled")
                     pass.removeAttribute("disabled")
                     num.removeAttribute("disabled")
+                    pincode.removeAttribute("disabled");
+                    district.removeAttribute("disabled");
+                    
 
                     // let selectedValue;
                     // district.addEventListener("change", (event) => {
@@ -192,17 +201,17 @@
                     //     selectedValue = event.target.value;
                     // });
                     // let user_data = {
-                    //     "user_name": firstname,
-                    //     "second_name": lastname,
-                    //     "user_email": useremail,
-                    //     "user_Password": password,
+                    //     "user_name": Seller_name,
+                    //     // "second_name": lastname,
+                    //     "user_email": email,
+                    //     "user_Password": pass,
                     //     "district": selectedValue,
-                    //     "mobile_number": mobile,
+                    //     "mobile_number": num,
                     //     "pincode": pincode,
                     //     "city": district
                     // }
                     // arr[ind] = user_data;
-                    // arr[ind].mobile_number = `${mobile}`;
+                    // arr[ind].num = `${num}`;
                     // arr[ind].pincode = `${pincode}`;
                     // arr[ind].pincode = selectedValue;
                     // console.log(selectedValue);
@@ -210,45 +219,49 @@
                 }
 
                 const logOut = document.getElementById("delete_btn");
-                const loggedOut = localStorage.getItem("logdetails");
+                const loggedOut = JSON.parse(localStorage.getItem("sellerlogg"));
+                console.log(loggedOut);
                 logOut.addEventListener("click", () => {
-                    const loggedOut = ""
-                    localStorage.setItem("logdetails", loggedOut)
+                    const logged_out = delete loggedOut
+                    localStorage.setItem("sellerlogg", logged_out)
                     window.location.href = "../index.html"
                 });
-                const arr1 = JSON.parse(localStorage.getItem("user_details"));
+                const arr1 = JSON.parse(localStorage.getItem("seller_details"));
                 console.log(arr1);
 
                 function update() {
 
-                    const firstname = document.getElementById("user-firstname");
+                    const firstname = document.getElementById("name-of-seller");
 
                     console.log(firstname);
-                    const lastname = document.getElementById("user-lastname");
+                    const hotelname = document.getElementById("hotel-name");
                     const useremail = document.getElementById("user-email");
-                    const password = document.getElementById("user-password");
+                    const password = document.getElementById("change_Password");
                     const mobile = document.getElementById("number");
                     const district = document.getElementById("district");
                     const pincode = document.getElementById("pincode");
-                    const new123 = document.getElementsByClassName("name");
-                    const address = document.getElementById("number")
+                    // const new123 = document.getElementsByClassName("name");
+                    const number = document.getElementById("number");
+                    const hotel_Address=document.getElementById("hotel-Address")
                     // new123.setAttribute = ("enable");
 
                     arr1.find((e) => {
 
-                        if (details == e.user_email) {
+                       
 
-                            e.user_name = firstname.value;
-                            e.second_name = lastname.value;
-                            e.user_Password = password.value;
+                        if (selemail == e.seller_email) {
+                         e.seller_name=firstname.value
+                            e.hotel_name = hotelname.value
+                            // e.seller_name = lastname.value;
+                            e.seller_Password= password.value;
                             e.mobile = mobile.value;
                             e.city = district.value;
                             e.pincode = pincode.value;
-                            e.address = address.value
+                            e.hotel_address = hotel_Address.value
 
-                            localStorage.setItem("user_details", JSON.stringify(arr1));
+                            localStorage.setItem("seller_details", JSON.stringify(arr1));
                             firstname.setAttribute("disabled", "")
-                            lastname.setAttribute("disabled", "")
+                            // lastname.setAttribute("disabled", "")
                             password.setAttribute("disabled", "")
                             mobile.setAttribute("disabled", "")
                             district.setAttribute("disabled", "")
