@@ -19,7 +19,7 @@ function formSubmit() {
     array.some((y) => {
       // return y.food_Name==food_name
     })
-  ) {
+ if(something) {
     alert("this already taken");
   } else {
     array.push({

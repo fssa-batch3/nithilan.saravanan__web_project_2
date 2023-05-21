@@ -81,7 +81,7 @@
 
         let count = 0;
         cart_details.forEach(element => {
-            if (element.user == user) {
+            if (element.user == user && element.status =="true") {
                 count++
                 document.querySelector("#total-item").innerText = `Total Item :${  Number(count)}`
 
@@ -184,6 +184,7 @@
                 console.log(new_cart, "cart")
 
                 user_cart[ind].quantity += 1
+                // user_cart[ind].status="true"
                 const total_individual_price = user_cart[ind].quantity * user_cart[ind].price
                 price_data[ind].innerHTML = total_individual_price
                 user_cart[ind].total_individual_price = total_individual_price
@@ -298,13 +299,13 @@
       
         // });
 
-        // let checkout = document.getElementsByClassName("cart-btn");
-        // checkout.addEventListener("click", () => {
+        let checkout = document.getElementsByClassName("cart-btn");
+        checkout[0].addEventListener("click", () => {
         //    let  cart = [{}]
         //     cart_details.push(cart)
-        //     localStorage.setItem('cart_details', JSON.stringify(cart_details))
+            localStorage.setItem('current_page',"cart")
 
-        // })
+        })
     </script>
 </body>
 

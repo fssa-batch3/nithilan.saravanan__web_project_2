@@ -599,25 +599,37 @@ displayItems();
 //     }
 // }
 
-const loginUser = JSON.parse(localStorage.getItem("user_logged_in"));
+const loginUser = localStorage.getItem("logdetails");
 console.log(loginUser);
 const loginbtn = document.querySelector(".login");
+const loginbtn1 = document.querySelector(".login1");
 
-if (loginUser == null) {
-} else if (loginUser !== false) {
-  loginbtn.style.display = "none";
-  const myprofile = document.createElement("button");
-  myprofile.setAttribute("class", "login");
-  myprofile.innerText = "My Account";
-  myprofile.style.width = "150px";
-  myprofile.style.left = "50px";
-  myprofile.addEventListener("click", () => {
-    window.location.href = "html/profile.html";
-  });
-  document.querySelector(".contact").append(myprofile);
-} else {
-  loginbtn.style.display = "block";
-}
+// if (loginUser === null) {
+  
+//     loginbtn.style.display = "none";
+//     loginbtn1.style.display = "none";
+//     // const myprofile = document.createElement("a");
+//     // myprofile.setAttribute("class", "login");
+//     // myprofile.innerText = "My Account";
+//     // myprofile.style.width = "0px";
+//     // myprofile.style.left = "0px";
+//     // myprofile.style.display="none";
+
+// }
+// else if (loginUser !== "") {
+//   loginbtn.style.display = "none";
+//   const myprofile = document.createElement("a");
+//   myprofile.setAttribute("class", "login1");
+//   myprofile.innerText = "My Account";
+//   myprofile.style.width = "150px";
+//   myprofile.style.left = "50px";
+//   myprofile.addEventListener("click", () => {
+//     window.location.href = "html/profile.html";
+//   });
+//   document.querySelector(".contact").append(myprofile);
+// } else {
+//   loginbtn.style.display = "block";
+// }
 
 function displayItems() {
   const food_detail = JSON.parse(localStorage.getItem("food_details"));
@@ -633,6 +645,7 @@ function displayItems() {
   //   })
   if (food_detail == null) {
   } else {
+
     for (let j = 0; j <= food_detail.length - 1; j++) {
       // let image = document.createElement('img')
       // image.setAttribute('src',food_detail[j]["food_photo"]);
@@ -640,32 +653,47 @@ function displayItems() {
       // document.querySelector("#south-indian").append(image)
       // console.log(food_detail[j]["food_photo"]);
       // console.log(image);
-
-      const item_card = document.createElement("div");
-      item_card.setAttribute("id", "item-card");
-      document.querySelector("#south-indian").append(item_card);
-      const card_top = document.createElement("div");
-      card_top.setAttribute("id", "card-top");
-      item_card.append(card_top);
-      const i_tag = document.createElement("i");
-      i_tag.setAttribute("class", "fa fa-star");
-      i_tag.setAttribute("id", "rating");
-      i_tag.innerText = "$.3";
-      card_top.append(i_tag);
-      const i2_tag = document.createElement("i");
-      i2_tag.setAttribute("class", "fa fa-heart-o add-to-cart");
-      card_top.append(i2_tag);
-      const img = document.createElement("img");
-      img.setAttribute("src", food_detail[j].food_photo);
-      item_card.append(img);
-      const p_tag = document.createElement("p");
-      p_tag.setAttribute("id", "item-name");
-      p_tag.innerText = food_detail[j].food_Name;
-      card_top.append(p_tag);
-      const p2_tag = document.createElement("p");
-      p2_tag.setAttribute("id", "item-price");
-      p2_tag.innerText = `Price : ${food_detail[j].food_price}`;
-      card_top.append(p2_tag);
+      if (food_detail[j]["status"] == true) {
+        const item_card = document.createElement("div");
+        item_card.setAttribute("id", "item-card");
+        
+        const card_top = document.createElement("div");
+        card_top.setAttribute("id", "card-top");
+        
+        const i_tag = document.createElement("i");
+        i_tag.setAttribute("class", "fa fa-star");
+        i_tag.setAttribute("id", "rating");
+        i_tag.innerText = "$.3";
+        
+        const i2_tag = document.createElement("i");
+        i2_tag.setAttribute("class", "fa fa-heart-o add-to-cart");
+        card_top.append(i_tag);
+        card_top.append(i2_tag);
+        const img = document.createElement("img");
+        img.setAttribute("src", food_detail[j].food_image);
+        // item_card.append(img);
+        const p_tag = document.createElement("p");
+        p_tag.setAttribute("id", "item-name");
+        p_tag.innerText = food_detail[j].food_name;
+        // card_top.append(p_tag);
+        const p2_tag = document.createElement("p");
+        p2_tag.setAttribute("id", "item-price");
+        p2_tag.innerText = `Price : ${food_detail[j].price}`;
+        // card_top.append(p2_tag);
+        const anchor = document.createElement("a");
+        anchor.setAttribute("href", "#");
+        const btn = document.createElement("button");
+        btn.setAttribute("id", "buynow");
+        btn.innerText = "Buy now";
+        // btn.setAttribute("href","https://google.com/");
+        anchor.append(btn);
+        item_card.appendChild(card_top);
+    item_card.appendChild(img);
+    item_card.appendChild(p_tag);
+    item_card.appendChild(p2_tag);
+    item_card.appendChild(anchor);
+        document.querySelector("#south-indian").append(item_card);
+      }
     }
   }
   biriyaniData.find((item) => {
@@ -1045,6 +1073,7 @@ item_card.forEach((e) => {
           price: res.price,
           food_image: res.img,
           rating: res.rating,
+          status:"true",
           user: login_detail,
           quantity: 1,
           total_individual_price: res.price,
@@ -1076,10 +1105,11 @@ if (user == null) {
   }
 }
 
-const login_butn = document.getElementById("login");
+const login_butn = document.querySelector(".login");
 const account_btn = document.getElementById("account_btn");
 if (login_detail !== "") {
-  (login_butn.style.display = "none"), (account_btn.style.display = "block");
+  login_butn.style.display = "none"
+  account_btn.style.display = "block";
 } else {
   account_btn.style.display = "none";
 }
@@ -1142,8 +1172,9 @@ console.log(hotel_image.length);
 
 document.querySelectorAll("#item-card").forEach((product) => {
   product.onclick = () => {
-    console.log(product.children[1]);
+    console.log(product.children[2]);
     preveiwContainer.style.display = "flex";
+    previewBox[0].classList.add("active")
     previewBox[0].children[1].src = product.children[1].src;
     previewBox[0].children[2].innerText = product.children[2].innerText;
     previewBox[0].children[5].innerText = product.children[3].innerText;
@@ -1157,6 +1188,17 @@ document.querySelectorAll("#item-card").forEach((product) => {
     // //   let target = preview.getAttribute('data-target');
     // //   if(name == target){
     previewBox[0].classList.add("active");
+    let buy_now=document.querySelector(".buttons .buy");
+console.log(buy_now.parentElement.parentElement.children[2])
+
+buy_now.setAttribute("href","../html/payment-page.html?name="+buy_now.parentElement.parentElement.children[2].innerText)
+let cart_page=document.querySelector(".buttons .cart");
+cart_page.addEventListener("click",(el)=>{
+el.preventDefault();
+window.location.href="../../html/cart.html"
+
+})
+
 
     //   }
     // });
@@ -1169,3 +1211,8 @@ previewBox.forEach((close) => {
     preveiwContainer.style.display = "none";
   };
 });
+
+let buy_now=document.querySelector(".buttons .buy");
+buy_now.addEventListener("click",(e)=>{
+  localStorage.setItem('current_page',"buynow")
+})

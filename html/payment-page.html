@@ -12,6 +12,8 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/image/home/logo icon.png" alt="logo icon">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+
+
 </head>
 
 <body>
@@ -19,24 +21,24 @@
         <img id="logo" src="../assets/images/feshfood-logo.png" alt="logo1">
         <ul>
             <li>
-<a href="../../index.html">Home</a>
-</li>
+                <a href="../../index.html">Home</a>
+            </li>
             <li>
-<a href="../services/services.html">Services</a>
-</li>
+                <a href="../services/services.html">Services</a>
+            </li>
             <li>
-<a href="../cart/add-to- cart.html">Cart</a>
-</li>
+                <a href="../cart/add-to- cart.html">Cart</a>
+            </li>
             <li>
-<a href="../../index.html">
-<span class="material-symbols-outlined"
-                        style="width: 50px;">person</span></a></li>
+                <a href="../../index.html">
+                    <span class="material-symbols-outlined" style="width: 50px;">person</span></a>
+            </li>
         </ul>
     </nav>
 
     <!-- New Payment Page Starting -->
 
-    <form action="" onsubmit="page()">
+    <!-- <form action="" onsubmit="page()">
 
         <div class="cards">
             <div>
@@ -65,7 +67,7 @@ CASH ON<br>DELIVERY
 
         <div class="label margin">
             <label for="">Card number*
-                <input type="number" class="input_box" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}">
+                <input type="number" class="input_box" pattern="[A-Za-z0-9]+{1,15}">
             </label>
             <label for="">Cardholder*
                 <input type="text" class="input_box">
@@ -134,49 +136,1008 @@ CASH ON<br>DELIVERY
             <h3>TOTAL AMOUNT</h3>
             <h3>₹60.80</h3>
         </div>
-<!-- 
-        <a href="confirm_order.html"> -->
+
         <div class="label btn margin">
                 <p>.</p>
                 <button>
-<a href="../index.html">CONFIRM PAYMENT</a></a>
+<a href="order-finished.html">CONFIRM PAYMENT</a></a>
 </button>
 
                 <p>.</p>
         </div>
     </a>
 
-    </form>
+    </form> -->
 
-<script>
-    const add_to_cart = JSON.parse(localStorage.getItem("add_to_cart"))
-    const user=JSON.parse(localStorage.getItem("logdetails"))
-    add_to_cart.find((e)=>{
-        if(e.user==user){
-            
+
+
+
+
+
+
+
+
+    </header>
+
+    <div class="container">
+
+        <form id="payment_details">
+
+            <div class="row">
+
+                <div class="col">
+
+                    <h3 class="title">Shipping address</h3>
+
+                    <!-- <div class="inputBox">
+                        <span>full name :</span>
+                        <input id="fullname" type="text" title="Firstname cannot contain number or space"
+                            required="true" pattern="[A-Za-z]{1,32}">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input id="email" type="email"
+                            pattern="^[a-zA-Z0-9][a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                            title="Your password must be at least 8 characters long, contain at least one digit or special character, one uppercase letter, and one lowercase letter, and must not contain dots or newline characters."
+                            required="true">
+                    </div> -->
+                    <div class="inputBox">
+                        <span>address :</span>
+                        <input id="address" type="text" title="Fill the address field" required="true">
+                    </div>
+                    <div class="inputBox">
+                        <span>city :</span>
+                        <input id="city" type="text" title="City field cannot be empty" required="true"
+                            pattern="[A-Za-z]{1,32}">
+                    </div>
+
+                    <div class="flex">
+                        <div class="inputBox">
+                            <span>state :</span>
+                            <input id="state" type="text" title="State field cannot be empty" required="true"
+                                pattern="[A-Za-z]{1,32}">
+                        </div>
+                        <div class="inputBox">
+                            <span>Pincode :</span>
+                            <input id="pincode" type="number" minlength="5" maxlength="7"
+                                title="Firstname cannot contain space" required="true">
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <span>Mobile Number:</span>
+                        <input id="mobilenumber" type="tel" required="true">
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+
+                    <h3 class="title">payment</h3>
+                    <input type="radio" class="payment_option" id="upi" name="rdo" value="upi" required><span
+                        class="span1">UPI</span>
+                    <img class="labelimg1" src="../assets/image/google-pay.png" height="50px" width="50px" alt="img">
+                    <div class="inputBox">
+                        <span class="span2"><input type="radio" id="expand" name="rdo">cards accepted :</span>
+                        <img src="../assets/image/card_img.png" alt="error">
+                    </div>
+                    <div class="hidden">
+                        <!-- <div class="inputBox">
+                        <span>name on card :</span>
+                        <input id="name_on_card" class="payment_option" type="text">
+                    </div>
+                    <div class="inputBox">
+                        <span>Card number :</span>
+                        <input id="creditcard" type="number">
+                    </div>
+                    <div class="inputBox">
+                        <span class="mobile">Branch Name:</span>
+                        <input id="branchname" type="text">
+                    </div>
+                    <div class="inputBox">
+                        <label>Card Expiry (MM/YYYY)
+                        <input type="tel" id="cc-exp" placeholder="•• / ••••" data-payment='cc-exp'>
+                       </label>
+                    </div>
+                    <div class="inputBox">
+                        <span class="mobile">CVV Number:</span>
+                        <input id="branchname" type="text">
+                    </div> -->
+                    </div>
+                    <input type="radio" class="payment_option" id="cashondelivery" name="rdo" value="cash_on_delivery"
+                        required><span class="span3">Cash on Delivery</span>
+                    <img class="labelimg2" src="../assets/image/cash-payment.png" height="38px" width="40px" alt="img">
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- <input type="submit" value="proceed to checkout" class="submit-btn" > -->
+            <button class="submit-btn" type="submit">proceed to checkout</button>
+        </form>
+
+    </div>
+    <div class="store">
+
+        <h1 class="ordersummary">Order Summary</h1>
+
+        <!-- <div class="products-preview">
+
+            <div class="preview" data-target="p-1">
+                <div>
+                    <img id="popup_img" alt="error">
+                </div>
+                <div>
+                    <h2 id="food_name"></h2>
+                    <h2 class="price"></h2>
+                    <h3 id="rating"></h3>
+                </div>
+
+            </div>
+        </div> -->
+
+        <!-- <div class="box_div">
+            <p class="product1">Product:</p>
+            <img class="tomato" src="../assets/image/tomato.jpg" alt="image">
+            <p class="name1">Product Name:</p>
+            <h1 class="titlename">FreshorganicTomato</h1>
+            <p class="price">Product Price:</p>
+            <h2 class="amount">₹ 50</h2>
+          
+        </div> -->
+
+    </div>
+
+    <script>
+
+        const foodItem = [
+            {
+                id: 1,
+                name: "Ambur Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 13,
+                img: "https://iili.io/HSRLAmB.jpg",
+                quantity: 1,
+            },
+            {
+                id: 2,
+                name: "Hyderabadi Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 15,
+                img: "https://iili.io/HSRLo0b.jpg",
+                quantity: 1,
+            },
+            {
+                id: 3,
+                name: "Egg Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 18,
+                img: "https://iili.io/HSRLBse.jpg",
+                quantity: 1,
+            },
+            {
+                id: 4,
+                name: "Goan Fish Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 15,
+                img: "https://iili.io/HSRLqX9.jpg",
+                quantity: 1,
+            },
+            {
+                id: 5,
+                name: "Mutton Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 10,
+                img: "https://iili.io/HSRLxgj.png",
+                quantity: 1,
+            },
+            {
+                id: 6,
+                name: "Kamrupi Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 12,
+                img: "https://iili.io/HSRLT5Q.jpg",
+                quantity: 1,
+            },
+            {
+                id: 7,
+                name: "Kashmiri Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 13,
+                img: "https://iili.io/HSRLIdx.jpg",
+                quantity: 1,
+            },
+            {
+                id: 8,
+                name: "Memoni Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 20,
+                img: "https://iili.io/HSRLueV.jpg",
+                quantity: 1,
+            },
+            {
+                id: 9,
+                name: "Mughlai Biryani",
+                category: "biryani",
+                rating: 4.3,
+                price: 15,
+                img: "https://iili.io/HSRL5zP.jpg",
+                quantity: 1,
+            },
+            {
+                id: 10,
+                name: "Chicken Roast",
+                category: "chicken",
+                rating: 4.3,
+                price: 11,
+                img: "https://iili.io/HSRZqKu.jpg",
+                quantity: 1,
+            },
+            {
+                id: 11,
+                name: "Chicken Curry",
+                category: "chicken",
+                rating: 4.3,
+                price: 10,
+                img: "https://iili.io/HSRZFV9.jpg",
+                quantity: 1,
+            },
+            {
+                id: 12,
+                name: "Chicken Do Pyaza",
+                category: "chicken",
+                rating: 4.3,
+                price: 14,
+                img: "https://iili.io/HSRZBcb.jpg",
+                quantity: 1,
+            },
+            {
+                id: 13,
+                name: "Chicken Masala",
+                category: "chicken",
+                rating: 4.3,
+                price: 12,
+                img: "https://iili.io/HSRZ3o7.jpg",
+                quantity: 1,
+            },
+            {
+                id: 14,
+                name: "Handi Chicken",
+                category: "chicken",
+                rating: 4.3,
+                price: 17,
+                img: "https://iili.io/HSRZFV9.jpg",
+                quantity: 1,
+            },
+            {
+                id: 15,
+                name: "Murgh Musallam",
+                category: "chicken",
+                rating: 4.3,
+                price: 20,
+                img: "https://iili.io/HSRZBcb.jpg",
+                quantity: 1,
+            },
+            {
+                id: 16,
+                name: "Matar Paneer",
+                category: "paneer",
+                rating: 4.3,
+                price: 15,
+                img: "https://iili.io/HSRbHAv.jpg",
+                quantity: 1,
+            },
+            {
+                id: 17,
+                name: "Palak Paneer",
+                category: "paneer",
+                rating: 4.3,
+                price: 10,
+                img: "https://iili.io/HSRb9HJ.png",
+                quantity: 1,
+            },
+            {
+                id: 18,
+                name: "Paneer Butter Masala",
+                category: "paneer",
+                rating: 4.3,
+                price: 15,
+                img: "https://iili.io/HSRbHAv.jpg",
+                quantity: 1,
+            },
+            {
+                id: 19,
+                name: "Paneer Do Pyaza",
+                category: "paneer",
+                rating: 4.3,
+                price: 12,
+                img: "https://iili.io/HSRb9HJ.png",
+                quantity: 1,
+            },
+            {
+                id: 20,
+                name: "Hyderabadi Paneer",
+                category: "paneer",
+                rating: 4.3,
+                price: 8,
+                img: "https://iili.io/HSRDpSa.jpg",
+                quantity: 1,
+            },
+            {
+                id: 21,
+                name: "Paneer Lababdar",
+                category: "paneer",
+                rating: 4.3,
+                price: 7,
+                img: "https://iili.io/HSRtiBt.jpg",
+                quantity: 1,
+            },
+            {
+                id: 22,
+                name: "Shahi Paneer",
+                age: "32",
+                category: "paneer",
+                rating: 4.3,
+                price: 5,
+                img: "https://iili.io/HSRtsEX.jpg",
+                quantity: 1,
+            },
+            {
+                id: 23,
+                name: "Navratan Korma",
+                category: "vegetable",
+                rating: 4.3,
+                price: 8,
+                img: "https://iili.io/HSRmhhl.jpg",
+                quantity: 1,
+            },
+            {
+                id: 24,
+                name: "Veg Jalfrezi",
+                category: "vegetable",
+                rating: 4.3,
+                price: 7,
+                img: " https://iili.io/HSRmXI4.jpg",
+                quantity: 1,
+            },
+            {
+                id: 25,
+                name: "Veg Biryani",
+                category: "vegetable",
+                rating: 4.3,
+                price: 5,
+                img: "https://iili.io/HSRmjQ2.jpg",
+                quantity: 1,
+            },
+            {
+                id: 26,
+                name: "Veg Curry",
+                category: "vegetable",
+                rating: 4.3,
+                price: 7,
+                img: " https://iili.io/HSRmNBS.jpg",
+                quantity: 1,
+            },
+            {
+                id: 27,
+                name: "Veg Kolhapur",
+                category: "vegetable",
+                rating: 4.3,
+                price: 10,
+                img: "https://iili.io/HSRmOE7.png",
+                quantity: 1,
+            },
+            {
+                id: 28,
+                name: "Veg Masala",
+                category: "vegetable",
+                rating: 4.3,
+                price: 4,
+                img: "https://iili.io/HSRme49.jpg",
+                quantity: 1,
+            },
+            {
+                id: 29,
+                name: "Veg Pakora",
+                category: "vegetable",
+                rating: 4.3,
+                price: 4,
+                img: " https://iili.io/HSRm8Yu.jpg",
+                quantity: 1,
+            },
+            {
+                id: 30,
+                name: "Momos",
+                category: "chinese",
+                rating: 4.3,
+                price: 8,
+                img: "https://iili.io/HSRp58u.jpg  ",
+                quantity: 1,
+            },
+            {
+                id: 31,
+                name: "Chicken Manchurian",
+                category: "chinese",
+                rating: 4.3,
+                price: 7,
+                img: "https://iili.io/HSRpzn2.jpg",
+                quantity: 1,
+            },
+            {
+                id: 32,
+                name: "Chili Chicken",
+                category: "chinese",
+                rating: 4.3,
+                price: 5,
+                img: "https://iili.io/HSRpIGS.jpg    ",
+                quantity: 1,
+            },
+            {
+                id: 33,
+                name: "Chowmein",
+                category: "chinese",
+                rating: 4.3,
+                price: 16,
+                img: "https://iili.io/HSRpoZl.jpg",
+                quantity: 1,
+            },
+            {
+                id: 34,
+                name: "Spring Roll",
+                category: "chinese",
+                rating: 4.3,
+                price: 14,
+                img: "https://iili.io/HSRp7yb.jpg",
+                quantity: 1,
+            },
+            {
+                id: 35,
+                name: "Szechuan Chicken",
+                category: "chinese",
+                rating: 4.3,
+                price: 10,
+                img: "https://iili.io/HSRpAF9.jpg",
+                quantity: 1,
+            },
+            {
+                id: 36,
+                name: "Fried Rice",
+                category: "chinese",
+                rating: 4.3,
+                price: 8,
+                img: "https://iili.io/HSRpT67.jpg ",
+                quantity: 1,
+            },
+            {
+                id: 37,
+                name: "Butter Masala Dosa",
+                category: "south indian",
+                rating: 4.3,
+                price: 18,
+                img: "https://iili.io/HSRpRae.jpg",
+                quantity: 1,
+            },
+            {
+                id: 38,
+                name: "Idli",
+                category: "south indian",
+                rating: 4.3,
+                price: 20,
+                img: "https://iili.io/HSRyJNj.jpg",
+                quantity: 1,
+            },
+            {
+                id: 39,
+                name: "Masala Dosa",
+                category: "south indian",
+                rating: 4.3,
+                price: 12,
+                img: " https://iili.io/HSRyFVV.jpg",
+                quantity: 1,
+            },
+            {
+                id: 40,
+                name: "Mysore Bonda",
+                category: "south indian",
+                rating: 4.3,
+                price: 10,
+                img: "https://iili.io/HSRydDx.jpg",
+                quantity: 1,
+            },
+            {
+                id: 41,
+                name: "Onion Uttapam",
+                category: "south indian",
+                rating: 4.3,
+                price: 15,
+                img: "https://iili.io/HSRy3oQ.jpg",
+                quantity: 1,
+            },
+            {
+                id: 42,
+                name: "Plain Dosa",
+                category: "south indian",
+                rating: 4.3,
+                price: 40,
+                img: " https://iili.io/HSRyKiB.jpg",
+                quantity: 1,
+            },
+            {
+                id: 43,
+                name: "Rava Uttapam",
+                category: "south indian",
+                rating: 4.3,
+                price: 25,
+                img: " https://iili.io/HSRyBl1.jpg",
+                quantity: 1,
+            },
+            {
+                id: 44,
+                name: "Sambhar Vada",
+                category: "south indian",
+                rating: 4.3,
+                price: 34,
+                img: "https://iili.io/HSRyqKP.jpg",
+                // https://iili.io/HSRyCUF.png',
+                quantity: 1,
+            },
+        ];
+
+        let urls = window.location.search;
+        let url = new URLSearchParams(urls)
+        let id = url.get('name')
+
+        let current_page = localStorage.getItem("current_page");
+        console.log(current_page)
+        const cart_data = JSON.parse(localStorage.getItem("add_to_cart"))
+        const user = localStorage.getItem("logdetails");
+        let food_items = JSON.parse(localStorage.getItem("food_details"))
+
+        if (current_page == "cart") {
+
+            cart_data.forEach(element => {
+                if (element.user == user && element.status == "true") {
+                    // console.log(cart_data)
+                    //     let popup_img = document.getElementById("popup_img")
+                    // popup_img.setAttribute("src", element.food_image)
+
+                    // let food_name = document.getElementById("food_name")
+                    // food_name.innerText = "Title: " + element.food_name
+
+                    // let price = document.querySelector(".price")
+                    // price.innerText = "Price: " + "₹" + element.price
+
+                    // let rating = document.getElementById("rating")
+                    // rating.innerText = "Rating: " + element.rating
+
+                    let store_div = document.querySelector(".store");
+                    let check = ` <div class="products-preview">
+
+<div class="preview" data-target="p-1">
+    <div>
+        <img id="popup_img" src=${element.food_image} alt="error">
+    </div>
+    <div>
+        <h2 id="food_name">${element.food_name}</h2>
+        <h2 class="price">${element.total_individual_price}</h2>
+        <h3 id="rating">${element.rating}</h3>
+    </div>
+
+</div>
+</div>`
+                    store_div.insertAdjacentHTML("beforeend", check)
+
+
+                }
+
+
+            });
+
         }
-    })
 
-    document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault(); // prevent form submission
+        else {
+//             if (food_items) {
+//                 console.log("vfv")
+//                 food_items.forEach(element => {
+//                     console.log(element)
+//                     if (element.food_name==id) {
+//                         console.log(element)
+//                         let store_div = document.querySelector(".store");
+//                         let check = ` <div class="products-preview">
 
-  var name = document.getElementById("name").value;
-  var address = document.getElementById("address").value;
-  var food = document.getElementById("food").value;
+// <div class="preview" data-target="p-1">
+//     <div>
+//         <img id="popup_img" src=${element.food_image} alt="error">
+//     </div>
+//     <div>
+//         <h2 id="food_name">${element.food_name}</h2>
+//         <h2 class="price">${element.price}</h2>
+//     </div>
 
-  var order = {
-    name: name,
-    address: address,
-    food: food
-  };
+// </div>
+// </div>`
+// store_div.insertAdjacentHTML("beforeend", check)
+//                     }
+                   
+//                 })
 
-  // Save order to local storage
-  localStorage.setItem("order", JSON.stringify(order));
+//             }
+//             else {
+                foodItem.find((e) => {
+                    if (e.name == id) {
+                        console.log(e)
 
-  alert("Order placed successfully!");
-});
-</script>
+                        // let popup_img = document.getElementById("popup_img")
+                        // popup_img.setAttribute("src", e.img)
+
+                        // let food_name = document.getElementById("food_name")
+                        // food_name.innerText = "Title: " + e.name
+
+                        // let price = document.querySelector(".price")
+                        // price.innerText = "Price: " + "₹" + e.price
+
+                        // let rating = document.getElementById("rating")
+                        // rating.innerText = "Rating: " + e.rating
+
+                        // let prod_div = document.createElement("div")
+
+                        // let image_app = document.createElement("img")
+                        // image_app.src = e.img
+                        // console.log(image_app)
+                        // prod_div.append(image_app)
+                        // // console.log(prod_div)
+                        // document.body.append(prod_div)
+                        let store_div = document.querySelector(".store");
+                        let check = ` <div class="products-preview">
+
+<div class="preview" data-target="p-1">
+    <div>
+        <img id="popup_img" src=${e.img} alt="error">
+    </div>
+    <div>
+        <h2 id="food_name">${e.name}</h2>
+        <h2 class="price">${e.price}</h2>
+        <h3 id="rating">${e.rating}</h3>
+    </div>
+
+</div>
+</div>`
+
+                        let buy_details = {
+                            food_image
+                                : e.img,
+                            food_name
+                                : e.name,
+                            price
+                                : e.price,
+                            quantity
+                                : e.quantity,
+                            rating
+                                :
+                                e.rating,
+                            total_individual_price
+                                :
+                                e.price,
+                            user
+                                : user
+                        }
+                        cart_data.push(buy_details);
+                        localStorage.setItem("add_to_cart", JSON.stringify(cart_data))
+                        console.log(cart_data)
+                        store_div.insertAdjacentHTML("beforeend", check)
+
+
+
+
+                    }
+                })
+
+            }
+        // }
+
+        const getdetails = document.getElementById("payment_details");
+        getdetails.addEventListener("submit", (ele) => {
+            ele.preventDefault();
+            getdata()
+        })
+
+        let ondate;
+        const objectdate = new Date();
+        const month = objectdate.getUTCMonth() + 1;
+        const day = objectdate.getUTCDate();
+        const year = objectdate.getUTCFullYear();
+        ondate = `${day}/${month}/${year}`;
+        console.log(ondate);
+
+        // orderid
+        const order_id = Date.now();
+        console.log(order_id);
+
+
+        const products = JSON.parse(localStorage.getItem('food_details'));
+
+
+
+
+        const get_buyerdetails = JSON.parse(localStorage.getItem("buyerdetails")) ?? [];
+
+        function getdata() {
+            // let name1 = document.getElementById("fullname").value;
+            // let email = document.getElementById("email").value;
+            const address = document.getElementById("address").value;
+            const city = document.getElementById("city").value;
+            const state = document.getElementById("state").value;
+            const pincode = document.getElementById("pincode").value;
+            // const name_on_card = document.getElementById("name_on_card").value;
+            // const creditcard = document.getElementById("creditcard").value;
+            // const branchname = document.getElementById("branchname").value;
+            const mobilenumber = document.getElementById("mobilenumber").value;
+            const active_user = JSON.parse(localStorage.getItem("active_user"))
+
+            get_buyerdetails.push({
+                "fullname": active_user.Firstname,
+                "email": active_user.email,
+                address,
+                city,
+                state,
+                pincode,
+                // name_on_card,
+                // creditcard,
+                // branchname,
+                mobilenumber
+            })
+
+            localStorage.setItem("buyerdetails", JSON.stringify(get_buyerdetails));
+            // window.location.href = `../html/bankdet.html?name=${name}`;
+
+            const payment_option = document.querySelector(".payment_option:checked").value
+
+            const user = JSON.parse(localStorage.getItem("active_user"));
+            const order = JSON.parse(localStorage.getItem("order")) ?? [];
+
+
+            if (name == Number(name)) {
+
+                products.find((el) => {
+
+                    if (el.product_id === Number(name)) {
+
+                        console.log("working")
+                        const arr = {}
+
+                        arr.image = el.image;
+                        arr.price = el.price;
+                        arr.titlename = el.titlename;
+                        arr.product_id = el.product_id;
+                        arr.order_id = order_id;
+                        arr.order_date = ondate;
+                        arr.payment_option = payment_option;
+                        arr.email = user.email;
+
+                        order.push(arr);
+                        localStorage.setItem("order", JSON.stringify(order));
+                        window.location.href = "../html/orderplaced.html";
+
+                    }
+
+
+                })
+
+            }
+            else {
+                const cart_sample = JSON.parse(localStorage.getItem("cart"));
+                const user = JSON.parse(localStorage.getItem("active_user"));
+
+                cart_sample.find((e) => {
+                    if (e.email == user.email) {
+                        const arr = {}
+
+                        arr.image = e.image;
+                        arr.price = e.price;
+                        arr.titlename = e.titlename;
+                        arr.product_id = e.product_id;
+                        arr.order_id = order_id;
+                        arr.order_date = ondate;
+                        arr.payment_option = payment_option;
+                        arr.email = user.email;
+
+                        order.push(arr);
+                        localStorage.setItem("order", JSON.stringify(order));
+                        window.location.href = "../html/orderplaced.html";
+                    }
+                })
+            }
+        }
+
+
+
+        if (name == Number(name)) {
+
+            let result;
+            products.find((el) => {
+
+                if (el.product_id === Number(name)) {
+
+                    let div = document.createElement("div");
+                    div.setAttribute("class", "box_div");
+
+                    let para_1 = document.createElement("p");
+                    para_1.setAttribute("class", "product1");
+                    para_1.innerText = "Product:";
+                    div.append(para_1)
+
+                    let image_veg = document.createElement("img");
+                    image_veg.setAttribute("class", "tomato");
+                    image_veg.setAttribute("src", el.food_photo);
+                    div.append(image_veg);
+
+                    let para_2 = document.createElement("p");
+                    para_2.setAttribute("class", "name1");
+                    para_2.innerText = "Product Name:";
+                    div.append(para_2)
+
+                    let heading1 = document.createElement("h1");
+                    heading1.setAttribute("class", "titlename");
+                    heading1.innerText = el.food_Name;
+                    div.append(heading1);
+
+                    let para_3 = document.createElement("p");
+                    para_3.setAttribute("class", "price");
+                    para_3.innerText = "Product Price:";
+                    div.append(para_3)
+
+                    let heading2 = document.createElement("h2");
+                    heading2.setAttribute("class", "amount");
+                    heading2.innerText = `₹${el.food_price}`;
+                    div.append(heading2);
+
+                    // let decrement = document.createElement("button");
+                    // decrement.setAttribute("class", "btn1 btn-decrement");
+                    // decrement.innerText = "-"
+                    // div.append(decrement)
+
+                    // let adding = document.createElement("input");
+                    // adding.setAttribute("class", "btn-input")
+                    // adding.setAttribute("id", "quantity")
+                    // adding.setAttribute("type", "text")
+                    // adding.setAttribute("value", "1")
+                    // div.append(adding)
+
+                    // let increment = document.createElement("button")
+                    // increment.setAttribute("id", "increment")
+                    // increment.setAttribute("class", "btn1 btn-increment")
+                    // increment.innerText = "+"
+                    // div.append(increment)
+
+                    document.querySelector(".store").append(div);
+
+                }
+
+            });
+
+
+        }
+
+        else {
+
+            const cart_sample = JSON.parse(localStorage.getItem("add_to_cart"));
+            const user = JSON.parse(localStorage.getItem("logdetails"));
+
+            cart_sample.find((e) => {
+                if (e.email == user.email) {
+
+                    let div = document.createElement("div");
+                    div.setAttribute("class", "box_div");
+
+                    let para_1 = document.createElement("p");
+                    para_1.setAttribute("class", "product1");
+                    para_1.innerText = "Product:";
+                    div.append(para_1)
+
+                    let image_veg = document.createElement("img");
+                    image_veg.setAttribute("class", "tomato");
+                    image_veg.setAttribute("src", e.food_photo);
+                    div.append(image_veg);
+
+                    let para_2 = document.createElement("p");
+                    para_2.setAttribute("class", "name1");
+                    para_2.innerText = "Product Name:";
+                    div.append(para_2)
+
+                    let heading1 = document.createElement("h1");
+                    heading1.setAttribute("class", "titlename");
+                    heading1.innerText = e.food_Name;
+                    div.append(heading1);
+
+                    let para_3 = document.createElement("p");
+                    para_3.setAttribute("class", "price");
+                    para_3.innerText = "Product Price:";
+                    div.append(para_3)
+
+                    let heading2 = document.createElement("h2");
+                    heading2.setAttribute("class", "amount");
+                    heading2.innerText = `₹${e.food_price}`;
+                    div.append(heading2);
+
+                    document.querySelector(".store").append(div);
+
+                }
+            })
+        }
+
+        const form = document.getElementById("payment_details");
+
+        form.addEventListener("submit", (el) => {
+            el.preventDefault();
+
+
+        });
+        // payment
+        const pay = document.getElementById("upi")
+        const expand = document.getElementById("expand");
+        const hidden = document.querySelector(".hidden");
+        const cash = document.getElementById("cashondelivery");
+        expand.addEventListener("click", function () {
+            hidden.innerHTML = ` <div class="inputBox">
+                        <span>name on card :</span>
+                        <input id="name_on_card" class="payment_option" type="text">
+                    </div>
+                    <div class="inputBox">
+                        <span>Card number :</span>
+                        <input id="creditcard" type="number">
+                    </div>
+                    <div class="inputBox">
+                        <span class="mobile">Branch Name:</span>
+                        <input id="branchname" type="text">
+                    </div><br>
+                    <div class="inputBox">
+                        <label>Card Expiry (MM/YYYY)
+                        <input type="tel" id="cc-exp" placeholder="•• / ••••" data-payment='cc-exp'>
+                       </label>
+                    </div>
+                    <div class="inputBox">
+                        <span class="mobile">CVV Number:</span>
+                        <input id="branchname" type="text">
+                    </div> `
+        })
+        cash.addEventListener("click", function () {
+            hidden.innerHTML = ""
+
+        })
+        pay.addEventListener("click", function () {
+            hidden.innerHTML = ""
+
+        })
+        const add_to_cart = JSON.parse(localStorage.getItem("add_to_cart"))
+        let checkout = document.querySelector(".submit-btn")
+        checkout.addEventListener("click", (e) => {
+            e.preventDefault();
+            add_to_cart.forEach((element) => {
+                if (element.user == user && element.status == "true") {
+                    // console.log(element)
+                    element.status = "false";
+                }
+            })
+
+            localStorage.setItem("add_to_cart", JSON.stringify(add_to_cart))
+            window.location.href = "booking-history.html"
+        })
+
+
+
+    </script>
 
 </body>
 
-</html>     
+</html>
