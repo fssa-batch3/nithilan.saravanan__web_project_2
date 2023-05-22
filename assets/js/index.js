@@ -1,4 +1,4 @@
-const foodItem = [
+  const foodItem = [
   {
     id: 1,
     name: "Ambur Biryani",
@@ -692,7 +692,7 @@ function displayItems() {
     item_card.appendChild(p_tag);
     item_card.appendChild(p2_tag);
     item_card.appendChild(anchor);
-        document.querySelector("#south-indian").append(item_card);
+        document.querySelector("#near_food").append(item_card);
       }
     }
   }
@@ -1215,4 +1215,43 @@ previewBox.forEach((close) => {
 let buy_now=document.querySelector(".buttons .buy");
 buy_now.addEventListener("click",(e)=>{
   localStorage.setItem('current_page',"buynow")
+})
+
+
+
+
+
+// search function
+
+const search=document.getElementById("search2");
+
+
+
+
+
+search.addEventListener("keyup",(ee)=>{
+// console.log("ooksdd");
+
+    let text = ee.target.value.toLowerCase();
+
+
+//  console.log(text);
+
+ const product_div = document.querySelectorAll("#item-card");
+
+ console.log(product_div);
+
+ product_div.forEach((element)=>{
+
+   let content = element.children[2].textContent.toLowerCase();
+
+   if(content.includes(text)){
+    element.style.display="inline-block";
+   }
+   else{
+    element.style.display="none";
+   }
+
+ })
+
 })

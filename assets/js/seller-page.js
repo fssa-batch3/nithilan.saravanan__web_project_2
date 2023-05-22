@@ -92,15 +92,16 @@ let tbody= document.getElementById("tbody")
 
 for (let i = 0; i < productDetails.length; i++) {
     let seller_email = JSON.parse(localStorage.getItem("sellerlogg"))["seller_email"]
-if(productDetails[i]["seller_email"]==seller_email){
-
+ console.log(   productDetails[i]["seller_email"],seller_email);
+if(productDetails[i]["user"]==seller_email){
+console.log("utyfgdxcghvnm");
     tbody.innerHTML+=`
 <tr>
 <td id="foodImg">
-    <img src=${productDetails[i]["food_photo"]} alt="" class="imgname">
+    <img src=${productDetails[i]["food_image"]} alt="" class="imgname">
 </td>
-<td id="price">${productDetails[i]["food_price"]}</td>
-<td id="foodName">${productDetails[i]["food_Name"]}</td>
+<td id="price">${productDetails[i]["price"]}</td>
+<td id="foodName">${productDetails[i]["food_name"]}</td>
 <td id="postData">${productDetails[i]["post_date"]}</td>
 <td class="disable">${productDetails[i]["status"]}</td>
 </tr>`

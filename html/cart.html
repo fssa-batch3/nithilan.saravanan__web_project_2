@@ -62,7 +62,7 @@
 
         <div id="checkout" class="cart-toggle">
             <p id="total-item">Total Item :</p>
-            <p id="total-price">Total price : $ 50</p>
+            <p id="total-price"></p>
             <p id="delievery">Free delievery </p>
             <a href="payment-page.html">
  <button class="cart-btn" onclick="deletedata()"> Checkout</button>
@@ -156,7 +156,7 @@
                 }
 
             })
-            total_price_id.innerHTML = total_price
+            total_price_id.innerHTML =`Total price: ${total_price}`
 
         }//1
         increment.forEach((e, ind) => {
