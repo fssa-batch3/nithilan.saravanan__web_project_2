@@ -1,4 +1,4 @@
-  const foodItem = [
+const foodItem = [
   {
     id: 1,
     name: "Ambur Biryani",
@@ -7,6 +7,7 @@
     price: 13,
     img: "https://iili.io/HSRLAmB.jpg",
     quantity: 1,
+    status:true
   },
   {
     id: 2,
@@ -401,270 +402,36 @@
 
 displayItems();
 
-// document.querySelectorAll('.add-to-cart').forEach(item => {
-//     item.addEventListener('click', addToCart)
-// })
-
-// export let cartData = [];
-// function addToCart() {
-
-//     let itemToAdd = this.parentNode.nextSibling.nextSibling.innerText;
-//     let itemObj = foodItem.find(element => element.name == itemToAdd);
-
-//     let index = cartData.indexOf(itemObj);
-//     if (index === -1) {
-//         document.getElementById(itemObj.id).classList.add('toggle-heart');
-//         cartData = [...cartData, itemObj];
-//     }
-//     else if (index > -1) {
-//         alert("Added to cart!");
-//     }
-
-//     document.getElementById('cart-plus').innerText =
-//         ' ' + cartData.length + ' Items';
-//     // document.getElementById('m-cart-plus').innerText=
-//     // ' ' + cartData.length;
-//     totalAmount();
-//     cartItems();
-// }
-
-// function cartItems() {
-//     let tableBody = document.getElementById('table-body');
-//     tableBody.innerHTML = '';
-
-//     cartData.map(item => {
-//         let tableRow = document.createElement('tr');
-
-//         let rowData1 = document.createElement('td');
-//         let img = document.createElement('img');
-//         img.src = item.img;
-//         rowData1.appendChild(img);
-
-//         let rowData2 = document.createElement('td');
-//         rowData2.innerText = item.name;
-
-//         let rowData3 = document.createElement('td');
-//         let btn1 = document.createElement('button');
-//         btn1.setAttribute('class', 'decrease-item');
-//         btn1.innerText = '-';
-//         let span = document.createElement('span');
-//         span.innerText = item.quantity;
-//         let btn2 = document.createElement('button');
-//         btn2.setAttribute('class', 'increase-item');
-//         btn2.innerText = '+';
-
-//         rowData3.appendChild(btn1);
-//         rowData3.appendChild(span);
-//         rowData3.appendChild(btn2);
-
-//         let rowData4 = document.createElement('td');
-//         rowData4.innerText = item.price;
-
-//         tableRow.appendChild(rowData1);
-//         tableRow.appendChild(rowData2);
-//         tableRow.appendChild(rowData3);
-//         tableRow.appendChild(rowData4);
-
-//         tableBody.appendChild(tableRow);
-//     })
-//     document.querySelectorAll('.increase-item').forEach(item => {
-//         item.addEventListener('click', incrementItem)
-//     })
-
-//     document.querySelectorAll('.decrease-item').forEach(item => {
-//         item.addEventListener('click', decrementItem)
-//     })
-// }
-
-// function incrementItem() {
-//     let itemToInc = this.parentNode.previousSibling.innerText;
-//     // console.log(itemToInc)
-//     let incObj = cartData.find(element => element.name == itemToInc);
-//     incObj.quantity += 1;
-
-//     currPrice = (incObj.price * incObj.quantity - incObj.price * (incObj.quantity - 1)) / (incObj.quantity - 1);
-//     incObj.price = currPrice * incObj.quantity;
-//     totalAmount()
-//     cartItems();
-// }
-
-// let currPrice = 0;
-// function decrementItem() {
-//     let itemToInc = this.parentNode.previousSibling.innerText;
-//     let decObj = cartData.find(element => element.name == itemToInc);
-//     let ind = cartData.indexOf(decObj);
-//     if (decObj.quantity > 1) {
-//         currPrice = (decObj.price * decObj.quantity - decObj.price * (decObj.quantity - 1)) / (decObj.quantity);
-//         decObj.quantity -= 1;
-//         decObj.price = currPrice * decObj.quantity;
-//     }
-//     else {
-//         document.getElementById(decObj.id).classList.remove('toggle-heart')
-//         cartData.splice(ind, 1);
-//         document.getElementById('cart-plus').innerText = ' ' + cartData.length + ' Items';
-//         document.getElementById('m-cart-plus').innerText = ' ' + cartData.length;
-//         if (cartData.length < 1 && flag) {
-//             document.getElementById('food-items').classList.toggle('food-items');
-//             document.getElementById('category-list').classList.toggle('food-items');
-//             document.getElementById('m-cart-plus').classList.toggle('m-cart-toggle')
-//             document.getElementById('cart-page').classList.toggle('cart-toggle');
-//             document.getElementById('category-header').classList.toggle('toggle-category');
-//             document.getElementById('checkout').classList.toggle('cart-toggle');
-//             flag = false;
-//             alert("Currently no item in cart!");
-//             // console.log(flag)
-//         }
-//     }
-//     totalAmount()
-//     cartItems()
-// }
-
-// function totalAmount() {
-//     let sum = 0;
-//     cartData.map(item => {
-//         sum += item.price;
-//     })
-//     document.getElementById('total-item').innerText = 'Total Item : ' + cartData.length;
-//     document.getElementById('total-price').innerText = 'Total Price : ₹ ' + sum;
-//     document.getElementById('m-total-amount').innerText = 'Total Price : ₹ ' + sum;
-// }
-
-// document.getElementById('cart-plus').addEventListener('click', cartToggle);
-// // document.getElementById('m-cart-plus').addEventListener('click',cartToggle);
-
-// export let flag = false;
-// window.onresize = window.onload = function () {
-//     let size = window.screen.width;
-//     // console.log(size)
-//     if (size < 800) {
-//         let cloneFoodItems = document.getElementById('food-items').cloneNode(true);
-//         let cloneCartPage = document.getElementById('cart-page').cloneNode(true);
-//         document.getElementById('food-items').remove();
-//         document.getElementById('cart-page').remove();
-//         document.getElementById('category-header').after(cloneFoodItems);
-//         document.getElementById('food-items').after(cloneCartPage);
-//         addEvents()
-//     }
-//     if (size > 800) {
-//         let cloneFoodItems = document.getElementById('food-items').cloneNode(true);
-//         document.getElementById('food-items').remove();
-//         document.getElementById('header').after(cloneFoodItems);
-
-//         let cloneCartPage = document.getElementById('cart-page').cloneNode(true);
-//         document.getElementById('cart-page').remove();
-//         document.getElementById('food-items').after(cloneCartPage);
-//         addEvents()
-//     }
-// }
-
-// function addEvents() {
-//     document.querySelectorAll('.add-to-cart').forEach(item => {
-//         item.addEventListener('click', addToCart)
-//     });
-//     document.querySelectorAll('.increase-item').forEach(item => {
-//         item.addEventListener('click', incrementItem)
-//     })
-
-//     document.querySelectorAll('.decrease-item').forEach(item => {
-//         item.addEventListener('click', decrementItem)
-//     })
-// }
-
-// document.querySelector('#add-address').addEventListener('click', addAddress());
-
-// function addAddress() {
-//     let address = prompt('Enter your address', '');
-//     if (address) {
-//         document.getElementById('add-address').innerText = ' ' + address;
-//     }
-//     else {
-//         alert("Address not added")
-//     }
-
-// }
-// document.getElementById('cart-plus').addEventListener("click", function check() {
-//     document.getElementById('cart-page').classList.toggle('cart-toggle');
-//     // document.getElementById('checkout').classList.toggle('cart-toggle');
-// })
-// function cartToggle() {
-//     if (cartData.length > 0) {
-//         document.getElementById('food-items').classList.toggle('food-items');
-//         document.getElementById('cart-page').classList.toggle('cart-toggle');
-//         document.getElementById('checkout').classList.toggle('cart-toggle');
-//         flag = true;
-//         // console.log(flag);
-//     }
-//     else {
-//         alert("Currently no item in cart!");
-//     }
-// }
 
 const loginUser = localStorage.getItem("logdetails");
 console.log(loginUser);
 const loginbtn = document.querySelector(".login");
 const loginbtn1 = document.querySelector(".login1");
 
-// if (loginUser === null) {
-  
-//     loginbtn.style.display = "none";
-//     loginbtn1.style.display = "none";
-//     // const myprofile = document.createElement("a");
-//     // myprofile.setAttribute("class", "login");
-//     // myprofile.innerText = "My Account";
-//     // myprofile.style.width = "0px";
-//     // myprofile.style.left = "0px";
-//     // myprofile.style.display="none";
 
-// }
-// else if (loginUser !== "") {
-//   loginbtn.style.display = "none";
-//   const myprofile = document.createElement("a");
-//   myprofile.setAttribute("class", "login1");
-//   myprofile.innerText = "My Account";
-//   myprofile.style.width = "150px";
-//   myprofile.style.left = "50px";
-//   myprofile.addEventListener("click", () => {
-//     window.location.href = "html/profile.html";
-//   });
-//   document.querySelector(".contact").append(myprofile);
-// } else {
-//   loginbtn.style.display = "block";
-// }
 
 function displayItems() {
   const food_detail = JSON.parse(localStorage.getItem("food_details"));
   const biriyani = document.getElementById("biriyani");
 
   const biriyaniData = foodItem.filter((item) => item.category == "biryani");
-  // console.log(biriyaniData);
-
-  // cards
-  //   let food_detail=JSON.parse(localStorage.getItem("food_details"));
-  //   food_detail.find((e)=>{
-  //         if()
-  //   })
+  
   if (food_detail == null) {
   } else {
 
     for (let j = 0; j <= food_detail.length - 1; j++) {
-      // let image = document.createElement('img')
-      // image.setAttribute('src',food_detail[j]["food_photo"]);
-      // // image.setAttribute("item-card")
-      // document.querySelector("#south-indian").append(image)
-      // console.log(food_detail[j]["food_photo"]);
-      // console.log(image);
       if (food_detail[j]["status"] == true) {
         const item_card = document.createElement("div");
         item_card.setAttribute("id", "item-card");
-        
+
         const card_top = document.createElement("div");
         card_top.setAttribute("id", "card-top");
-        
+
         const i_tag = document.createElement("i");
         i_tag.setAttribute("class", "fa fa-star");
         i_tag.setAttribute("id", "rating");
         i_tag.innerText = "$.3";
-        
+
         const i2_tag = document.createElement("i");
         i2_tag.setAttribute("class", "fa fa-heart-o add-to-cart");
         card_top.append(i_tag);
@@ -688,10 +455,10 @@ function displayItems() {
         // btn.setAttribute("href","https://google.com/");
         anchor.append(btn);
         item_card.appendChild(card_top);
-    item_card.appendChild(img);
-    item_card.appendChild(p_tag);
-    item_card.appendChild(p2_tag);
-    item_card.appendChild(anchor);
+        item_card.appendChild(img);
+        item_card.appendChild(p_tag);
+        item_card.appendChild(p2_tag);
+        item_card.appendChild(anchor);
         document.querySelector("#near_food").append(item_card);
       }
     }
@@ -1010,20 +777,7 @@ function displayItems() {
   });
 }
 
-//     })
-// }
 
-// let cart_btn = document.getElementById("cart");
-
-// let display_cart_page = document.getElementById("cart-page");
-// console.log(display_cart_page);
-
-// cart_btn.addEventListener("click", function (e){
-//     e.preventDefault();
-//     console.log("aakash");
-//     display_cart_page.style.display="none";
-
-// } )
 
 const login_detail = localStorage.getItem("logdetails") ?? [];
 console.log(login_detail);
@@ -1073,7 +827,7 @@ item_card.forEach((e) => {
           price: res.price,
           food_image: res.img,
           rating: res.rating,
-          status:"true",
+          status: "true",
           user: login_detail,
           quantity: 1,
           total_individual_price: res.price,
@@ -1105,13 +859,18 @@ if (user == null) {
   }
 }
 
+
+let login_details = localStorage.getItem("logdetails") ?? []
 const login_butn = document.querySelector(".login");
 const account_btn = document.getElementById("account_btn");
-if (login_detail !== "") {
-  login_butn.style.display = "none"
-  account_btn.style.display = "block";
-} else {
+if (login_details == "") {
   account_btn.style.display = "none";
+  login_butn.style.display = "inline-block"
+
+} 
+else {
+  login_butn.style.display = "none"
+  account_btn.style.display = "flex";
 }
 
 const add_product = document.getElementById("add_product");
@@ -1178,30 +937,24 @@ document.querySelectorAll("#item-card").forEach((product) => {
     previewBox[0].children[1].src = product.children[1].src;
     previewBox[0].children[2].innerText = product.children[2].innerText;
     previewBox[0].children[5].innerText = product.children[3].innerText;
-    // for (let i = 0; i < hotel_image.length; i++) {//12
-    //   cnt++
+ 
     previewBox[0].children[4].innerHTML =
       hotel_image[Math.floor(Math.random() * 12)].hotel_name; // 0
-    // }
-    // let name = product.getAttribute('data-name');
-    // previewBox.forEach(preview =>{
-    // //   let target = preview.getAttribute('data-target');
-    // //   if(name == target){
+    
     previewBox[0].classList.add("active");
-    let buy_now=document.querySelector(".buttons .buy");
-console.log(buy_now.parentElement.parentElement.children[2])
+    let buy_now = document.querySelector(".buttons .buy");
+    console.log(buy_now.parentElement.parentElement.children[2])
 
-buy_now.setAttribute("href","../html/payment-page.html?name="+buy_now.parentElement.parentElement.children[2].innerText)
-let cart_page=document.querySelector(".buttons .cart");
-cart_page.addEventListener("click",(el)=>{
-el.preventDefault();
-window.location.href="../../html/cart.html"
+    buy_now.setAttribute("href", "../html/payment-page.html?name=" + buy_now.parentElement.parentElement.children[2].innerText)
+    let cart_page = document.querySelector(".buttons .cart");
+    cart_page.addEventListener("click", (el) => {
+      el.preventDefault();
+      window.location.href = "../../html/cart.html"
 
-})
+    })
 
 
-    //   }
-    // });
+   
   };
 });
 
@@ -1212,9 +965,9 @@ previewBox.forEach((close) => {
   };
 });
 
-let buy_now=document.querySelector(".buttons .buy");
-buy_now.addEventListener("click",(e)=>{
-  localStorage.setItem('current_page',"buynow")
+let buy_now = document.querySelector(".buttons .buy");
+buy_now.addEventListener("click", (e) => {
+  localStorage.setItem('current_page', "buynow")
 })
 
 
@@ -1223,35 +976,35 @@ buy_now.addEventListener("click",(e)=>{
 
 // search function
 
-const search=document.getElementById("search2");
+const search = document.getElementById("search2");
 
 
 
 
 
-search.addEventListener("keyup",(ee)=>{
-// console.log("ooksdd");
+search.addEventListener("keyup", (ee) => {
+  // console.log("ooksdd");
 
-    let text = ee.target.value.toLowerCase();
+  let text = ee.target.value.toLowerCase();
 
 
-//  console.log(text);
+  //  console.log(text);
 
- const product_div = document.querySelectorAll("#item-card");
+  const product_div = document.querySelectorAll("#item-card");
 
- console.log(product_div);
+  console.log(product_div);
 
- product_div.forEach((element)=>{
+  product_div.forEach((element) => {
 
-   let content = element.children[2].textContent.toLowerCase();
+    let content = element.children[2].textContent.toLowerCase();
 
-   if(content.includes(text)){
-    element.style.display="inline-block";
-   }
-   else{
-    element.style.display="none";
-   }
+    if (content.includes(text)) {
+      element.style.display = "inline-block";
+    }
+    else {
+      element.style.display = "none";
+    }
 
- })
+  })
 
 })

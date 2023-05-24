@@ -151,7 +151,8 @@
             const total_price_id = document.getElementById("total-price")
             let total_price = 0
             cart_details.forEach(e => {
-                if (user == e.user) {
+               
+                if (user == e.user&&e.status =="true") {
                     total_price += e.total_individual_price
                 }
 
@@ -246,58 +247,43 @@
 
         // remove
         const removebtn = document.querySelectorAll(".removebtn")
+      
+        function new_details(){
+        
+        }
+  
+        removebtn.forEach((e,i) => {
+           
+                        e.addEventListener("click", (el,ind) => {
+                            let new_detail =[]
+                            let new_balance_detail=[]
+                          let  cart_details1 = JSON.parse(localStorage.getItem("add_to_cart"))
+                          cart_details1.forEach((ele,index)=>{
 
-        removebtn.forEach((data) => {
-            data.addEventListener("click", (e) => {
-
-                for (let i = 0; i < cart_details.length; i++) {
-                    if (user == cart_details[i].user) {
-                        cart_details.splice(i, 1);
-                        localStorage.setItem("add_to_cart", JSON.stringify(cart_details));
-                        alert("Are you sure remove cart");
-                        location.reload();
-                        break;
+                    if(user==ele.user){
+                        new_detail.push(ele)
+                        console.log("pp");
+                        
                     }
-                }
+                    else{
+                        new_balance_detail.push(ele)
+
+                    }
+                })
+                console.log(new_detail)
+              new_detail.splice(i,1)
+              console.log(new_detail)
+             console.log(cart_details1)
+             let cart_details_new= new_detail.concat(new_balance_detail)
+             console.log(cart_details_new);
+              localStorage.setItem("add_to_cart",JSON.stringify(cart_details_new))
+              location.reload()
             })
+           
         })
 
         total_price_view()
 
-        // Sample order data
-        // let orders = [
-        //     { date: '2023-05-01', orderID: '001', product: 'Product A', price: '$19.99' },
-        //     { date: '2023-04-28', orderID: '002', product: 'Product B', price: '$14.99' },
-        //     { date: '2023-04-25', orderID: '003', product: 'Product C', price: '$9.99' }
-        //     // Add more orders as needed
-        // ];
-
-        // Generate table rows dynamically
-
-        // cart_details.forEach(function (order) {
-        
-            // let tableBody = document.querySelector('#orderTable tbody');
-            // let row = document.createElement('tr');
-
-            // let dateCell = document.createElement('td');
-            // dateCell.textContent = cart_details.date;
-            // row.appendChild(dateCell);
-
-            // let orderIDCell = document.createElement('td');
-            // orderIDCell.textContent = cart_details.orderID;
-            // row.appendChild(orderIDCell);
-
-            // let productCell = document.createElement('td');
-            // productCell.textContent = cart_details.product;
-            // row.appendChild(productCell);
-
-            // let priceCell = document.createElement('td');
-            // priceCell.textContent = cart_details.price;
-            // row.appendChild(priceCell);
-
-            // tableBody.append(row);
-      
-        // });
 
         let checkout = document.getElementsByClassName("cart-btn");
         checkout[0].addEventListener("click", () => {
