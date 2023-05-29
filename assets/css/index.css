@@ -46,6 +46,11 @@ body{
     background: rgb(250,212,218);
 }
 
+#search2{
+   /* border-style: none;
+     */
+     border:  1px solid white;
+}
 #food-container{
    background: whitesmoke;
    overflow: scroll;
@@ -583,7 +588,10 @@ margin-top: 40px;
     width: 300px;
 
  }
- 
+ #pro{
+    text-decoration: none;
+
+ }
  .products-preview .preview .fa-times{
     position: absolute;
     top:1rem; right:1.5rem;

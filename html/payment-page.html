@@ -36,120 +36,7 @@
         </ul>
     </nav>
 
-    <!-- New Payment Page Starting -->
-
-    <!-- <form action="" onsubmit="page()">
-
-        <div class="cards">
-            <div>
-                <input type="radio" name="fav_language">
-                <img src="../assets/images/payment-img/mastercard.png" alt="card brands">
-            </div>
-
-            <div>
-                <input type="radio" name="fav_language">
-                <img src="../assets/images/payment-img/paypal.png" alt="card brands">
-            </div>
-
-            <div>
-                <input type="radio" name="fav_language">
-                <img src="../assets/images/payment-img/visa.jfif" alt="card brands">
-            </div>
-
-            <div>
-                <input type="radio" name="fav_language">
-                <h2>
-CASH ON<br>DELIVERY
-</h2>
-            </div>
-
-        </div>
-
-        <div class="label margin">
-            <label for="">Card number*
-                <input type="number" class="input_box" pattern="[A-Za-z0-9]+{1,15}">
-            </label>
-            <label for="">Cardholder*
-                <input type="text" class="input_box">
-            </label>
-        </div>
-
-        <div class="label margin">
-            <label for="">Expiry date*
-                <select name="" id="" class="select_box">
-                    <option value="">Month</option>
-                    <option value="">01</option>
-                    <option value="">02</option>
-                    <option value="">03</option>
-                    <option value="">04</option>
-                    <option value="">05</option>
-                    <option value="">06</option>
-                    <option value="">07</option>
-                    <option value="">08</option>
-                    <option value="">09</option>
-                    <option value="">10</option>
-                    <option value="">11</option>
-                    <option value="">12</option>
-                </select>
-
-                <select name="" id="" class="select_box">
-                    <option value="">Year</option>
-                    <option value="">2023</option>
-                    <option value="">2024</option>
-                    <option value="">2025</option>
-                    <option value="">2026</option>
-                    <option value="">2027</option>
-                    <option value="">2028</option>
-                    <option value="">2029</option>
-                    <option value="">2030</option>
-                    <option value="">2031</option>
-                    <option value="">2032</option>
-                </select>
-            </label>
-
-            <label for="">CVV
-                <input type="number" class="input_box">
-                <span>!</span>
-            </label>
-        </div>
-
-        <label for="">
-            <input type="checkbox" id="checkbox">Save my details for future purchases
-        </label>
-
-        <div class="total_background margin">
-            
-    <label for="address">Address:</label>
-    <textarea id="address" name="address" required></textarea>
-
-            <div class="label">
-                <h3>Subtotal</h3>
-                <h3>₹60.80</h3>
-            </div>
-            <div class="label">
-                <p>Home Delivery Cost</p>
-                <p>Free Delivery</p>
-            </div>
-
-        </div>
-        <div class="label total_background">
-            <h3>TOTAL AMOUNT</h3>
-            <h3>₹60.80</h3>
-        </div>
-
-        <div class="label btn margin">
-                <p>.</p>
-                <button>
-<a href="order-finished.html">CONFIRM PAYMENT</a></a>
-</button>
-
-                <p>.</p>
-        </div>
-    </a>
-
-    </form> -->
-
-
+ 
 
 
 
@@ -183,29 +70,28 @@ CASH ON<br>DELIVERY
                     </div> -->
                     <div class="inputBox">
                         <span>address :</span>
-                        <input id="address" type="text" title="Fill the address field" required="true">
+                        <input id="address" type="text" title="Fill the address field" required>
                     </div>
                     <div class="inputBox">
                         <span>city :</span>
-                        <input id="city" type="text" title="City field cannot be empty" required="true"
-                            pattern="[A-Za-z]{1,32}">
+                        <input id="city" type="text" title="City field cannot be empty" required pattern="[A-Za-z]{1,32}">
                     </div>
 
                     <div class="flex">
                         <div class="inputBox">
                             <span>state :</span>
-                            <input id="state" type="text" title="State field cannot be empty" required="true"
+                            <input id="state" type="text" title="State field cannot be empty" required
                                 pattern="[A-Za-z]{1,32}">
                         </div>
                         <div class="inputBox">
                             <span>Pincode :</span>
                             <input id="pincode" type="number" minlength="5" maxlength="7"
-                                title="Firstname cannot contain space" required="true">
+                                title="Firstname cannot contain space" required>
                         </div>
                     </div>
                     <div class="inputBox">
                         <span>Mobile Number:</span>
-                        <input id="mobilenumber" type="tel" required="true">
+                        <input id="mobilenumber" type="tel" required>
                     </div>
 
 
@@ -222,27 +108,7 @@ CASH ON<br>DELIVERY
                         <img src="https://iili.io/Hgvm7X2.webp" alt="error">
                     </div>
                     <div class="hidden">
-                        <!-- <div class="inputBox">
-                        <span>name on card :</span>
-                        <input id="name_on_card" class="payment_option" type="text">
-                    </div>
-                    <div class="inputBox">
-                        <span>Card number :</span>
-                        <input id="creditcard" type="number">
-                    </div>
-                    <div class="inputBox">
-                        <span class="mobile">Branch Name:</span>
-                        <input id="branchname" type="text">
-                    </div>
-                    <div class="inputBox">
-                        <label>Card Expiry (MM/YYYY)
-                        <input type="tel" id="cc-exp" placeholder="•• / ••••" data-payment='cc-exp'>
-                       </label>
-                    </div>
-                    <div class="inputBox">
-                        <span class="mobile">CVV Number:</span>
-                        <input id="branchname" type="text">
-                    </div> -->
+                        
                     </div>
                     <input type="radio" class="payment_option" id="cashondelivery" name="rdo" value="cash_on_delivery"
                         required><span class="span3">Cash on Delivery</span>

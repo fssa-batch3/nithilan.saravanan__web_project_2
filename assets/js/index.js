@@ -431,9 +431,9 @@ function displayItems() {
         i_tag.setAttribute("class", "fa fa-star");
         i_tag.setAttribute("id", "rating");
         i_tag.innerText = "$.3";
-
+{/* <i class="fa-solid fa-cart-plus"></i> */}
         const i2_tag = document.createElement("i");
-        i2_tag.setAttribute("class", "fa fa-heart-o add-to-cart");
+        i2_tag.setAttribute("class", "fa-solid fa-cart-plus");
         card_top.append(i_tag);
         card_top.append(i2_tag);
         const img = document.createElement("img");
@@ -478,9 +478,9 @@ function displayItems() {
     star.innerText = ` ${item.rating}`;
 
     const heart = document.createElement("i");
-    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("class", "fa-solid fa-cart-plus");
     heart.setAttribute("id", item.id);
-    heart.innerText = ` ${item.rating}`;
+    // heart.innerText = ` ${item.rating}`;
 
     cardTop.appendChild(star);
     cardTop.appendChild(heart);
@@ -532,7 +532,7 @@ function displayItems() {
     star.innerText = ` ${item.rating}`;
 
     const heart = document.createElement("i");
-    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("class", "fa-solid fa-cart-plus");
     heart.setAttribute("id", item.id);
     // heart.innerText = ' ' + item.rating;
 
@@ -585,7 +585,7 @@ function displayItems() {
     star.innerText = ` ${item.rating}`;
 
     const heart = document.createElement("i");
-    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("class", "fa-solid fa-cart-plus");
     heart.setAttribute("id", item.id);
     // heart.innerText = ' ' + item.rating;
 
@@ -637,7 +637,7 @@ function displayItems() {
     star.innerText = ` ${item.rating}`;
 
     const heart = document.createElement("i");
-    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("class", "fa-solid fa-cart-plus");
     heart.setAttribute("id", item.id);
     // heart.innerText = ' ' + item.rating;
 
@@ -689,7 +689,7 @@ function displayItems() {
     star.innerText = ` ${item.rating}`;
 
     const heart = document.createElement("i");
-    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("class", "fa-solid fa-cart-plus");
     heart.setAttribute("id", item.id);
     // heart.innerText = ' ' + item.rating;
 
@@ -741,7 +741,7 @@ function displayItems() {
     star.innerText = ` ${item.rating}`;
 
     const heart = document.createElement("i");
-    heart.setAttribute("class", "fa fa-heart-o add-to-cart");
+    heart.setAttribute("class", "fa-solid fa-cart-plus");
     heart.setAttribute("id", item.id);
     // heart.innerText = ' ' + item.rating;
 
@@ -781,7 +781,7 @@ function displayItems() {
 
 const login_detail = localStorage.getItem("logdetails") ?? [];
 console.log(login_detail);
-const item_card = document.querySelectorAll(".add-to-cart");
+const item_card = document.querySelectorAll(".fa-cart-plus");
 
 let food_name;
 let res;
@@ -877,11 +877,7 @@ const add_product = document.getElementById("add_product");
 if (code == "user") {
   add_product.style.display = "none";
 }
-// else if(code === "seller"){
-//     add_product.style.display = "block"
-// }
 
-// user.for()
 
 const hotel_image = [
   {

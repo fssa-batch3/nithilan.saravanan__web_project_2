@@ -43,21 +43,7 @@
                 <td>Remove</td>
 
             </thead>
-            <!-- <tbody id="table-body">
-                <tr>
-                    <td>
-                        <img src="assets/images/chicken/Chicken-do-Pyaza.jpg" alt="error">
-                    </td>
-                    <td>Chicken pyaza</td>
-                    <td>
-                        <button class="decerease-item">-</button>
-                        <span>1</span>
-                        <button class="increase-item">+</button>
-                    </td>
-                    <td>10</td>
-                </tr>
-
-            </tbody> -->
+           
         </table>
 
         <div id="checkout" class="cart-toggle">
@@ -136,7 +122,6 @@
 
         });
 
-        // let add_item = document.querySelectorAll(".increase-item")
         const increment = document.querySelectorAll(".increase-item");
         const decrement = document.querySelectorAll(".decerease-item");
         const ttl_price = document.querySelectorAll("#table-body");
@@ -159,7 +144,11 @@
             })
             total_price_id.innerHTML =`Total price: ${total_price}`
 
-        }//1
+        }
+
+        // increment value in cart
+
+
         increment.forEach((e, ind) => {
 
             e.addEventListener("click", (el) => {
@@ -287,8 +276,6 @@
 
         let checkout = document.getElementsByClassName("cart-btn");
         checkout[0].addEventListener("click", () => {
-        //    let  cart = [{}]
-        //     cart_details.push(cart)
             localStorage.setItem('current_page',"cart")
 
         })

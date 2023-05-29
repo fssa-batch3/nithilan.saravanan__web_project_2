@@ -128,7 +128,9 @@ th {
     padding: 3px 8px;
 
 }
-
+.removebtn{
+    cursor: pointer;
+}
 #cart-page table tbody img {
     width: 75px;
     height: 75px;
