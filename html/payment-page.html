@@ -713,6 +713,7 @@
         // }
 
         const getdetails = document.getElementById("payment_details");
+
         getdetails.addEventListener("submit", (ele) => {
             ele.preventDefault();
             getdata()
@@ -763,9 +764,11 @@
                 // branchname,
                 mobilenumber
             })
+            
 
             localStorage.setItem("buyerdetails", JSON.stringify(get_buyerdetails));
             // window.location.href = `../html/bankdet.html?name=${name}`;
+    
 
             const payment_option = document.querySelector(".payment_option:checked").value
 
@@ -997,7 +1000,7 @@
             })
 
             localStorage.setItem("add_to_cart", JSON.stringify(add_to_cart))
-            window.location.href = "booking-history.html"
+            window.location.href = "./order-finished.html"
         })
 
 
